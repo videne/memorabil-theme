@@ -1,0 +1,125 @@
+{%- comment -%}
+  Memorabil: pagina Contact (șablonul page.contact), în același stil cu pagina Despre noi.
+  Textele se schimbă din Customize; stilurile sunt în assets/mem-contact.css.
+{%- endcomment -%}
+{{ 'mem-contact.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign s = section.settings
+  assign contact_email = s.email | default: shop.email
+  assign form_id = 'mem-contact-' | append: section.id
+-%}
+<div class="mem-contact">
+  <header class="mc-hero">
+    {%- if s.eyebrow != blank -%}<p class="mc-eyebrow">{{ s.eyebrow | escape }}</p>{%- endif -%}
+    <h1 class="mc-title">{{ s.title | escape }}{% if s.title_accent != blank %}<br><em>{{ s.title_accent | escape }}</em>{% endif %}</h1>
+    {%- if s.intro != blank -%}<div class="mc-intro">{{ s.intro }}</div>{%- endif -%}
+  </header>
+
+  <div class="mc-grid">
+    <aside class="mc-info">
+      {%- if contact_email != blank -%}
+        <div class="mc-card">
+          <p class="mc-label">Email</p>
+          <p><a href="mailto:{{ contact_email }}">{{ contact_email }}</a></p>
+        </div>
+      {%- endif -%}
+      {%- if s.order_note != blank -%}
+        <div class="mc-card">
+          <p class="mc-label">Despre o comandă</p>
+          <p>{{ s.order_note | escape }}</p>
+        </div>
+      {%- endif -%}
+      {%- if s.company != blank -%}
+        <div class="mc-card">
+          <p class="mc-label">Firma</p>
+          <p>{{ s.company | escape | newline_to_br }}</p>
+        </div>
+      {%- endif -%}
+      <div class="mc-card mc-links">
+        <p class="mc-label">Poate găsești răspunsul aici</p>
+        <ul>
+          <li><a href="/pages/politica-de-livrare">Livrare</a></li>
+          <li><a href="/pages/politica-de-retur">Retur</a></li>
+          <li><a href="/pages/tabel-marimi-tricouri">Tabel de mărimi</a></li>
+          <li><a href="/pages/faq">Întrebări frecvente</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <div class="mc-form">
+      {%- form 'contact', id: form_id -%}
+        {%- if form.posted_successfully? -%}
+          <div class="mc-success" role="status">
+            <p class="mc-success-title">{{ s.success_title | escape }}</p>
+            <p>{{ s.success_text | escape }}</p>
+          </div>
+        {%- else -%}
+          {{ form.errors | default_errors }}
+
+          <div class="mc-row">
+            <div class="mc-field">
+              <label for="{{ form_id }}-name">Nume</label>
+              <input type="text" id="{{ form_id }}-name" name="contact[name]" autocomplete="name" autocapitalize="words" required
+                value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}">
+            </div>
+            <div class="mc-field">
+              <label for="{{ form_id }}-email">Email</label>
+              <input type="email" id="{{ form_id }}-email" name="contact[email]" autocomplete="email" autocapitalize="off" required
+                value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
+            </div>
+          </div>
+
+          <fieldset class="mc-field mc-topics">
+            <legend>Despre ce e vorba?</legend>
+            {%- assign topics = 'O comandă,Mărimi și produse,O idee de replică,Colaborare,Altceva' | split: ',' -%}
+            {%- for topic in topics -%}
+              <label class="mc-chip">
+                <input type="radio" name="contact[Subiect]" value="{{ topic }}"{% if forloop.first %} checked{% endif %}>
+                <span>{{ topic }}</span>
+              </label>
+            {%- endfor -%}
+          </fieldset>
+
+          <div class="mc-row">
+            <div class="mc-field">
+              <label for="{{ form_id }}-order">Număr comandă <span class="mc-optional">(dacă ai)</span></label>
+              <input type="text" id="{{ form_id }}-order" name="contact[Numar comanda]" inputmode="numeric" placeholder="#1234">
+            </div>
+            <div class="mc-field">
+              <label for="{{ form_id }}-phone">Telefon <span class="mc-optional">(opțional)</span></label>
+              <input type="tel" id="{{ form_id }}-phone" name="contact[phone]" autocomplete="tel"
+                value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+            </div>
+          </div>
+
+          <div class="mc-field">
+            <label for="{{ form_id }}-message">Mesajul tău</label>
+            <textarea id="{{ form_id }}-message" name="contact[body]" rows="6" required placeholder="{{ s.message_placeholder | escape }}">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+          </div>
+
+          <button type="submit" class="mc-submit">{{ s.button | default: 'Trimite mesajul' | escape }}</button>
+          <div class="mc-legal">{{ 'shopify.online_store.spam_detection.disclaimer_html' | t }}</div>
+        {%- endif -%}
+      {%- endform -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Memorabil: contact",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Text mic deasupra titlului", "default": "Contact" },
+    { "type": "text", "id": "title", "label": "Titlu", "default": "Ai ceva de zis?" },
+    { "type": "text", "id": "title_accent", "label": "Titlu, partea a doua (italic)", "default": "Zi-ne." },
+    { "type": "richtext", "id": "intro", "label": "Text sub titlu", "default": "<p>Despre o comandă, o mărime sau o replică pe care ai vrea s-o vezi pe un tricou.</p>" },
+    { "type": "text", "id": "email", "label": "Email de contact", "info": "Gol = emailul magazinului din Settings." },
+    { "type": "text", "id": "order_note", "label": "Notă despre comenzi", "default": "Trece și numărul comenzii. Așa găsim mai repede ce cauți." },
+    { "type": "textarea", "id": "company", "label": "Datele firmei" },
+    { "type": "text", "id": "message_placeholder", "label": "Text-exemplu în mesaj", "default": "Scrie aici. Fără formalități." },
+    { "type": "text", "id": "button", "label": "Buton", "default": "Trimite mesajul" },
+    { "type": "text", "id": "success_title", "label": "Titlu după trimitere", "default": "Mulțumim! Ți-am primit mesajul." },
+    { "type": "text", "id": "success_text", "label": "Text după trimitere", "default": "Îți răspundem pe email cât de repede putem." }
+  ]
+}
+{% endschema %}
