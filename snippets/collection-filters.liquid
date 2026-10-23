@@ -1,3 +1,4 @@
+{%- comment -%} Memorabil: etichetele de disponibilitate vin de la Shopify în engleză (limba principală e „en”), așa că le traducem aici. {%- endcomment -%}
 {%- assign tag_limit = 5 -%}
 {%- assign show_button_limit = tag_limit | minus: 1  -%}
 {%- assign total_active_filters = 0  -%}
@@ -11,7 +12,7 @@
       {%- for filter_value in filter.active_values -%}
         <li class="tag tag--remove">
           <a class="btn btn--small js-no-transition" href="{{ filter_value.url_to_remove }}">
-            {{ filter_value.label | escape }}
+            {{ filter_value.label | replace: 'Out of stock', 'Stoc epuizat' | replace: 'In stock', 'În stoc' | escape }}
           </a>
           <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><title>icon-X</title><path d="m19 17.61 27.12 27.13m0-27.12L19 44.74"/></svg>
         </li>
@@ -107,7 +108,7 @@
                         {%- else -%}
                         <span class="tag__checkbox"></span>
                         <span>
-                            <span class="tag__text">{{ filter_value.label | escape }}</span> ({{ filter_value.count }})
+                            <span class="tag__text">{{ filter_value.label | replace: 'Out of stock', 'Stoc epuizat' | replace: 'In stock', 'În stoc' | escape }}</span> ({{ filter_value.count }})
                         </span>
                         {%- endif -%}
                     </label>
