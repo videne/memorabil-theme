@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "mem-page",
+      "settings": {
+        "eyebrow": "Bine de știut"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

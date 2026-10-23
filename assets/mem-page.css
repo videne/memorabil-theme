@@ -1,0 +1,263 @@
+/* Memorabil: pagini de informații (șablonul page.info). Același limbaj vizual ca Despre noi și Contact. */
+.mem-page {
+  --mp-blue: var(--colorBtnPrimary, #0064fa);
+  --mp-text: var(--colorTextBody, #111);
+  --mp-head: var(--typeHeaderPrimary), var(--typeHeaderFallback, sans-serif);
+  --mp-line: color-mix(in srgb, var(--mp-blue) 22%, transparent);
+  --mp-soft: color-mix(in srgb, var(--mp-blue) 6%, #fff);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px clamp(64px, 9vw, 112px);
+  color: var(--mp-text);
+}
+
+/* ---------- titlul */
+.mp-hero { padding: clamp(48px, 9vh, 112px) 0 clamp(32px, 5vh, 56px); }
+.mp-eyebrow {
+  margin: 0 0 20px;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mp-blue);
+}
+.mp-title {
+  margin: 0;
+  max-width: 14ch;
+  font-family: var(--mp-head);
+  font-weight: 700;
+  font-size: clamp(40px, 7vw, 96px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--mp-blue);
+  text-transform: none;
+}
+
+/* ---------- cuprins + text */
+.mp-layout {
+  border-top: 1px solid var(--mp-line);
+  padding-top: clamp(32px, 5vw, 56px);
+}
+.mp-layout--toc {
+  display: grid;
+  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+  gap: clamp(32px, 6vw, 88px);
+}
+.mp-toc { position: sticky; top: 110px; align-self: start; }
+.mp-toc-label {
+  margin: 0 0 14px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mp-blue);
+}
+.mp-toc ol { margin: 0; padding: 0; list-style: none; counter-reset: mp; }
+.mp-toc li { margin: 0; counter-increment: mp; }
+.mp-toc a {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--mp-line);
+  font-size: 15px;
+  line-height: 1.35;
+  color: var(--mp-text);
+  text-decoration: none;
+}
+.mp-toc a::before { content: counter(mp, decimal-leading-zero); color: var(--mp-blue); font-size: 12px; padding-top: 2px; }
+.mp-toc a:hover { color: var(--mp-blue); }
+
+.mp-content { max-width: 760px; font-size: clamp(17px, 1.4vw, 19px); line-height: 1.7; }
+.mp-content > :first-child { margin-top: 0; }
+.mp-content p { margin: 0 0 1em; }
+.mp-content h2 {
+  scroll-margin-top: 110px;
+  margin: clamp(48px, 6vw, 72px) 0 18px;
+  font-family: var(--mp-head);
+  font-weight: 700;
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  color: var(--mp-blue);
+  text-transform: none;
+}
+.mp-content h3 {
+  margin: 32px 0 10px;
+  font-family: var(--mp-head);
+  font-weight: 700;
+  font-size: clamp(19px, 1.8vw, 22px);
+  line-height: 1.3;
+  color: var(--mp-text);
+  text-transform: none;
+  letter-spacing: 0;
+}
+.mp-content ul, .mp-content ol { margin: 0 0 1.2em; padding-left: 1.2em; }
+.mp-content li { margin: 0 0 0.4em; }
+.mp-content a { color: var(--mp-blue); text-decoration: underline; text-underline-offset: 3px; }
+.mp-content strong { font-weight: 700; }
+
+/* paragraf de deschidere */
+.mp-lead {
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1.45;
+  color: var(--mp-blue);
+}
+.mp-updated { font-size: 14px; opacity: 0.6; }
+
+/* casete cu cifre-cheie */
+.mp-facts {
+  list-style: none;
+  padding: 0 !important;
+  margin: 28px 0 36px !important;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+}
+.mp-facts li {
+  margin: 0 !important;
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: var(--mp-soft);
+  font-size: 15px;
+  line-height: 1.4;
+}
+.mp-facts strong {
+  display: block;
+  margin-bottom: 4px;
+  font-family: var(--mp-head);
+  font-size: clamp(22px, 2.2vw, 30px);
+  line-height: 1.1;
+  color: var(--mp-blue);
+}
+
+/* pași numerotați */
+.mp-steps { list-style: none; padding: 0 !important; counter-reset: step; }
+.mp-steps li {
+  position: relative;
+  margin: 0 0 18px !important;
+  padding-left: 52px;
+  counter-increment: step;
+}
+.mp-steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--mp-blue);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 34px;
+  text-align: center;
+}
+
+/* notă evidențiată */
+.mp-note {
+  margin: 24px 0 28px;
+  padding: 20px 24px;
+  border-left: 4px solid var(--mp-blue);
+  border-radius: 0 16px 16px 0;
+  background: var(--mp-soft);
+}
+.mp-note p:last-child { margin-bottom: 0; }
+
+/* tabele (mărimi) */
+.mp-table-wrap { overflow-x: auto; margin: 20px 0 28px; }
+.mp-content table { width: 100%; border-collapse: collapse; font-size: 16px; min-width: 460px; }
+.mp-content th, .mp-content td { padding: 12px 10px; text-align: center; border-bottom: 1px solid var(--mp-line); }
+.mp-content thead th {
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mp-blue);
+  border-bottom: 2px solid var(--mp-blue);
+}
+.mp-content tbody th { text-align: left; font-weight: 400; }
+.mp-content tbody tr:hover td { background: var(--mp-soft); }
+
+/* întrebări frecvente: acordeon */
+.mp-faq { margin: 0 0 8px; border-top: 1px solid var(--mp-line); }
+.mp-faq details { border-bottom: 1px solid var(--mp-line); }
+.mp-faq summary {
+  position: relative;
+  padding: 20px 44px 20px 0;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--mp-head);
+  font-weight: 700;
+  font-size: clamp(18px, 1.6vw, 21px);
+  line-height: 1.35;
+}
+.mp-faq summary::-webkit-details-marker { display: none; }
+.mp-faq summary::after {
+  content: "+";
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--mp-blue);
+  transition: transform 0.2s ease;
+}
+.mp-faq details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+.mp-faq summary:hover { color: var(--mp-blue); }
+.mp-faq summary:focus-visible { outline: 2px solid var(--mp-blue); outline-offset: 4px; }
+.mp-faq details > div { padding: 0 0 22px; }
+.mp-faq details > div p:last-child { margin-bottom: 0; }
+
+/* butoane în text */
+.mp-button {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 999px;
+  background: var(--mp-blue);
+  color: #fff !important;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+
+/* caseta de la final */
+.mp-help {
+  margin-top: clamp(56px, 8vw, 96px);
+  padding: clamp(28px, 4vw, 44px);
+  border-radius: 28px;
+  background: var(--mp-blue);
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.mp-help-title {
+  margin: 0;
+  max-width: 30ch;
+  font-family: var(--mp-head);
+  font-weight: 700;
+  font-size: clamp(22px, 2.4vw, 32px);
+  line-height: 1.15;
+}
+.mp-help-btn {
+  display: inline-block;
+  padding: 16px 34px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--mp-blue) !important;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+}
+
+@media (max-width: 900px) {
+  .mp-layout--toc { grid-template-columns: minmax(0, 1fr); }
+  .mp-toc { position: static; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mp-faq summary::after { transition: none; }
+}
