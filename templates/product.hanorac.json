@@ -97,7 +97,14 @@
         },
         "mem_details": {
           "type": "mem_details",
-          "settings": {}
+          "settings": {
+            "material": "85% bumbac organic, 15% poliester reciclat, 280 g/m²",
+            "marime": "Unisex, croială clasică (medium fit). Un M unisex corespunde unui L de damă.",
+            "imprimare": "Direct în țesătură (DTG)",
+            "continut": "1 hanorac",
+            "detalii": "Glugă cu șnur, căptușită cu bumbac single jersey\nInterior din bumbac pieptănat, cu textură pufoasă\nGuler întărit pe interior\nManșete și margine inferioară elastice\nBuzunar frontal tip marsupiu",
+            "ingrijire": "Se spală pe dos, la maximum 30 °C\nNu se folosește înălbitor sau șervețele care captează culoarea\nNu se usucă prin centrifugare\nSe calcă pe dos, la maximum 110 °C, fără abur\nNu se curăță chimic"
+          }
         }
       },
       "block_order": [

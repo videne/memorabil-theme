@@ -76,7 +76,12 @@
         },
         "mem_details": {
           "type": "mem_details",
-          "settings": {}
+          "settings": {
+            "material": "80% bumbac organic reciclat, 20% poliester reciclat, 300 g/m²",
+            "continut": "1 tote bag",
+            "detalii": "Mânere lungi, cu cusături întărite\nCusătură la bază pentru volum suplimentar",
+            "ingrijire": "Se spală la mașină, pe dos, la maximum 30 °C, cu culori asemănătoare\nSe folosește detergent pentru rufe colorate sau delicate\nNu se folosește înălbitor\nNu se usucă la uscător\nSe calcă pe dos, ferind zona imprimată"
+          }
         }
       },
       "block_order": [
