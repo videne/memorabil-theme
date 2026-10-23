@@ -23,7 +23,7 @@
             "color_accent": "rgba(0,0,0,0)",
             "text_align": "vertical-bottom horizontal-left",
             "image": "shopify://shop_images/hero_memorabil_ro.jpg",
-            "image_mobile": "shopify://shop_images/hero_memorabil_ro.jpg"
+            "image_mobile": ""
           }
         }
       },
@@ -37,7 +37,7 @@
         "mobile_size": 30,
         "autoplay": false,
         "autoplay_speed": 5,
-        "lazyload_images": true
+        "lazyload_images": false
       }
     },
     "mem_avantaje": {
