@@ -151,7 +151,8 @@
         "color_scheme": "button",
         "direction": "left",
         "speed": 300
-      }
+      },
+      "disabled": true
     },
     "featured-collection-slider2": {
       "type": "featured-collection-slider",
@@ -354,6 +355,26 @@
         "bottom_padding": true,
         "lazyload_images": true
       }
+    },
+    "mem_statement": {
+      "type": "rich-text",
+      "blocks": {
+        "mem_statement_text": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>Unele replici se uită până seara. Altele rămân ani întregi: la birou, în gașcă, la masa de duminică. Pe acelea le punem pe tricouri și hanorace Stanley/Stella, din bumbac organic certificat GOTS, gros cât să țină și moale cât să nu-ți vină să-l mai dai jos. Le imprimăm direct în țesătură, în București, abia după ce le alegi tu. Pentru că nu ne stă bine să tăcem.</p><p><a href=\"/pages/manifest\">Citește manifestul →</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "mem_statement_text"
+      ],
+      "settings": {
+        "align_text": "left",
+        "narrow_column": false,
+        "alt": false
+      }
     }
   },
   "order": [
@@ -361,6 +382,7 @@
     "mem_avantaje",
     "featured-collections",
     "featured-collection-slider",
+    "mem_statement",
     "scrolling_text_VeJP3P",
     "featured-collection-slider2",
     "featured-collection",
