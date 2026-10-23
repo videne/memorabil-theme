@@ -1,0 +1,210 @@
+{%- comment -%}
+  Memorabil: subsolul site-ului, în același stil cu paginile Despre noi, Contact și paginile de informații.
+  Coloanele vin din meniurile „Subsol: …” din Online Store → Navigation. Stilurile sunt în assets/mem-footer.css.
+{%- endcomment -%}
+{{ 'mem-footer.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign s = section.settings
+  assign contact_email = s.email | default: shop.email
+  assign company = s.company | default: shop.name
+-%}
+<footer class="mem-footer" data-section-id="{{ section.id }}">
+  <div class="mf-inner">
+    <div class="mf-top">
+      {%- if s.eyebrow != blank -%}<p class="mf-eyebrow">{{ s.eyebrow | escape }}</p>{%- endif -%}
+      {%- if s.headline != blank -%}<p class="mf-big">{{ s.headline | escape }}</p>{%- endif -%}
+      {%- if s.button_label != blank and s.button_link != blank -%}
+        <a class="mf-btn" href="{{ s.button_link }}">{{ s.button_label | escape }}<span aria-hidden="true"> →</span></a>
+      {%- endif -%}
+    </div>
+
+    <div class="mf-cols">
+      {%- assign columns = 'shop,help,about' | split: ',' -%}
+      {%- for col in columns -%}
+        {%- liquid
+          case col
+            when 'shop'
+              assign col_title = s.title_shop
+              assign col_menu = s.menu_shop
+            when 'help'
+              assign col_title = s.title_help
+              assign col_menu = s.menu_help
+            when 'about'
+              assign col_title = s.title_about
+              assign col_menu = s.menu_about
+          endcase
+        -%}
+        {%- if col_menu != blank and linklists[col_menu].links.size > 0 -%}
+          <nav class="mf-col" aria-label="{{ col_title | default: linklists[col_menu].title | escape }}">
+            {%- if col_title != blank -%}<h2 class="mf-title">{{ col_title | escape }}</h2>{%- endif -%}
+            <ul>
+              {%- for link in linklists[col_menu].links -%}
+                <li><a href="{{ link.url }}"{% if link.active %} aria-current="page"{% endif %}>{{ link.title | escape }}</a></li>
+              {%- endfor -%}
+            </ul>
+          </nav>
+        {%- endif -%}
+      {%- endfor -%}
+
+      {%- if contact_email != blank or s.contact_note != blank -%}
+        <div class="mf-col mf-col--contact">
+          {%- if s.title_contact != blank -%}<h2 class="mf-title">{{ s.title_contact | escape }}</h2>{%- endif -%}
+          {%- if contact_email != blank -%}
+            <p class="mf-email"><a href="mailto:{{ contact_email }}">{{ contact_email }}</a></p>
+          {%- endif -%}
+          {%- if s.contact_note != blank -%}<p class="mf-note">{{ s.contact_note | escape }}</p>{%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="mf-bottom">
+      <p class="mf-copy">&copy; {{ 'now' | date: '%Y' }} {{ company | escape }}{% if s.company_details != blank %}<span> · {{ s.company_details | escape }}</span>{% endif %}</p>
+
+      {%- if s.menu_legal != blank and linklists[s.menu_legal].links.size > 0 -%}
+        <ul class="mf-legal">
+          {%- for link in linklists[s.menu_legal].links -%}
+            <li><a href="{{ link.url }}"{% if link.type == 'http_link' %} target="_blank" rel="noopener"{% endif %}>{{ link.title | escape }}</a></li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      {%- if s.show_payment_icons -%}
+        {%- unless shop.enabled_payment_types == empty -%}
+          <ul class="mf-pay" aria-label="Metode de plată">
+            {%- for type in shop.enabled_payment_types -%}
+              <li>{{ type | payment_type_svg_tag }}</li>
+            {%- endfor -%}
+          </ul>
+        {%- endunless -%}
+      {%- endif -%}
+    </div>
+  </div>
+
+  {%- if s.wordmark != blank -%}
+    <p class="mf-word" aria-hidden="true">{{ s.wordmark | escape }}</p>
+  {%- endif -%}
+</footer>
+
+{% schema %}
+{
+  "name": "Memorabil: subsol",
+  "class": "mem-footer-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Mesajul de sus"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Text mic",
+      "default": "Replici care se poartă."
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Titlu mare",
+      "default": "Ai ceva de zis? Poartă-l."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Text buton",
+      "default": "Alege-ți replica"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link buton"
+    },
+    {
+      "type": "header",
+      "content": "Coloane"
+    },
+    {
+      "type": "text",
+      "id": "title_shop",
+      "label": "Titlu coloana 1",
+      "default": "Magazin"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_shop",
+      "label": "Meniu coloana 1"
+    },
+    {
+      "type": "text",
+      "id": "title_help",
+      "label": "Titlu coloana 2",
+      "default": "Ajutor"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_help",
+      "label": "Meniu coloana 2"
+    },
+    {
+      "type": "text",
+      "id": "title_about",
+      "label": "Titlu coloana 3",
+      "default": "Memorabil"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_about",
+      "label": "Meniu coloana 3"
+    },
+    {
+      "type": "text",
+      "id": "title_contact",
+      "label": "Titlu coloana contact",
+      "default": "Scrie-ne"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email",
+      "info": "Gol = emailul magazinului."
+    },
+    {
+      "type": "text",
+      "id": "contact_note",
+      "label": "Text sub email",
+      "default": "Răspundem de luni până vineri."
+    },
+    {
+      "type": "header",
+      "content": "Partea de jos"
+    },
+    {
+      "type": "text",
+      "id": "company",
+      "label": "Firma",
+      "default": "MEMORABIL MEDIA S.R.L."
+    },
+    {
+      "type": "text",
+      "id": "company_details",
+      "label": "Date firmă",
+      "default": "CUI 45509196 · J40/1000/2022"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_legal",
+      "label": "Meniu legal"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_icons",
+      "label": "Arată metodele de plată",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "wordmark",
+      "label": "Cuvânt mare decorativ",
+      "default": "memorabil"
+    }
+  ]
+}
+{% endschema %}
