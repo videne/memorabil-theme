@@ -206,3 +206,27 @@
   border-bottom: 1px solid currentColor;
   padding-bottom: 2px;
 }
+
+/* Ghidul de mărimi deschis pe pagina de produs (fereastra „Tabel mărimi”).
+   Textul vine din paginile tabel-marimi-*, scrise cu clasele mp-* din mem-page.css. */
+.tool-tip__content .mp-lead { font-size: 1.05em; line-height: 1.45; color: var(--colorBtnPrimary, #0064fa); }
+.tool-tip__content h2 { margin: 1.4em 0 0.6em; font-size: 1.15em; text-transform: none; letter-spacing: 0; color: var(--colorBtnPrimary, #0064fa); }
+.tool-tip__content .mp-table-wrap { overflow-x: auto; margin: 0 0 0.8em; }
+.tool-tip__content table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 420px; }
+.tool-tip__content th, .tool-tip__content td { padding: 8px 6px; text-align: center; border-bottom: 1px solid rgba(0, 0, 0, 0.12); }
+.tool-tip__content tbody th { text-align: left; font-weight: 400; }
+.tool-tip__content thead th { font-size: 12px; letter-spacing: 0.1em; color: var(--colorBtnPrimary, #0064fa); border-bottom: 2px solid var(--colorBtnPrimary, #0064fa); }
+.tool-tip__content .mp-updated { font-size: 13px; opacity: 0.65; }
+.tool-tip__content .mp-figure { margin: 0 0 1em; }
+.tool-tip__content .mp-figure img { display: block; width: 100%; max-width: 520px; height: auto; }
+.tool-tip__content .mp-steps { list-style: none; padding: 0; margin: 0 0 1em; counter-reset: step; }
+.tool-tip__content .mp-steps li { position: relative; margin: 0 0 10px; padding-left: 36px; counter-increment: step; }
+.tool-tip__content .mp-steps li::before {
+  content: counter(step);
+  position: absolute; left: 0; top: 0;
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--colorBtnPrimary, #0064fa); color: #fff;
+  font-size: 12px; font-weight: 700; line-height: 24px; text-align: center;
+}
+.tool-tip__content .mp-note { margin: 0 0 1em; padding: 14px 16px; border-left: 3px solid var(--colorBtnPrimary, #0064fa); background: rgba(0, 100, 250, 0.06); }
+.tool-tip__content .mp-note p:last-child { margin-bottom: 0; }

@@ -108,12 +108,19 @@
             "gpsr_producator": "MEMORABIL MEDIA S.R.L.\nStrada Salubrității 42A, bl. B, sc. B, et. 1, ap. 13\n013996 București, România",
             "gpsr_contact": "george@memorabil.ro"
           }
+        },
+        "size_chart_hanorac": {
+          "type": "size_chart",
+          "settings": {
+            "size_chart": "tabel-marimi-hanorace"
+          }
         }
       },
       "block_order": [
         "sales_point_hdnETQ",
         "mem_badges",
         "price",
+        "size_chart_hanorac",
         "variant_picker",
         "inventory_status",
         "buy_buttons",

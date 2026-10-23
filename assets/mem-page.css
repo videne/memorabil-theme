@@ -176,6 +176,10 @@
 .mp-content tbody th { text-align: left; font-weight: 400; }
 .mp-content tbody tr:hover td { background: var(--mp-soft); }
 
+/* imagini (schițe de măsurat) */
+.mp-figure { margin: 24px 0 32px; }
+.mp-figure img { display: block; width: 100%; max-width: 640px; height: auto; border-radius: 18px; background: #fff; }
+
 /* întrebări frecvente: acordeon */
 .mp-faq { margin: 0 0 8px; border-top: 1px solid var(--mp-line); }
 .mp-faq details { border-bottom: 1px solid var(--mp-line); }
