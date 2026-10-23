@@ -21,7 +21,10 @@ finalul Manifestului și Organization din snippets/structured-data.liquid (datel
 - sections/mem-contact.liquid + templates/page.contact.json + assets/mem-contact.css: pagina Contact (textele se schimbă din Customize)
 - sections/mem-page.liquid + templates/page.info.json + assets/mem-page.css: paginile de informații (livrare, retur, termeni,
   confidențialitate, cookie-uri, întrebări frecvente, ghiduri de mărimi). Textul e în conținutul paginii, cu clase mp-*
-  (mp-lead, mp-facts, mp-steps, mp-note, mp-faq cu <details>, mp-table-wrap); cuprinsul se face singur din h2.
+  (mp-lead, mp-facts, mp-steps, mp-note, mp-faq cu <details>, mp-table-wrap, mp-figure); cuprinsul se face singur din h2.
+  Paginile tabel-marimi-tricouri și tabel-marimi-hanorace apar și în fereastra „Tabel mărimi” de pe produs
+  (blocul size_chart din șabloanele tricouri, alexa-lincu-tricouri, hanorac); stilurile pentru fereastră sunt în mem.css (.tool-tip__content).
+  Politicile din Shopify admin (Settings → Policies, apar în checkout) trebuie ținute la zi manual, cu aceleași texte.
 - snippets/mem-product-jsonld.liquid: datele structurate pentru Google (randat din product-template-variables.liquid)
 - Blocurile noi sunt declarate în sections/main-product.liquid și randate în snippets/product-template.liquid
 - Setări: Theme settings → Memorabil (prag livrare gratuită, zile de producție/livrare, ora limită, zile libere)
