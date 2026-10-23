@@ -10,58 +10,23 @@
 {
   "sections": {
     "main": {
-      "type": "main-page",
-      "disabled": true,
-      "settings": {}
-    },
-    "rich-text": {
-      "type": "rich-text",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "title": "Contactează-ne"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": false,
-            "text": "<p>Ai întrebări sau vrei să ne transmiți un mesaj? Folosește formularul de contact de mai jos și vom răspunde cât mai curând posibil.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
+      "type": "mem-contact",
       "settings": {
-        "align_text": "center",
-        "narrow_column": true,
-        "alt": false
-      }
-    },
-    "form": {
-      "type": "contact-form",
-      "settings": {
-        "title": "",
-        "show_phone": true,
-        "narrow_column": true
-      }
-    },
-    "rich_text_TWE7df": {
-      "type": "rich-text",
-      "settings": {
-        "align_text": "center",
-        "narrow_column": true,
-        "alt": false
+        "eyebrow": "Contact",
+        "title": "Ai ceva de zis?",
+        "title_accent": "Zi-ne.",
+        "intro": "<p>Despre o comandă, o mărime sau o replică pe care ai vrea s-o vezi pe un tricou. Nouă nu ne stă bine să tăcem. Nici ție.</p>",
+        "email": "",
+        "order_note": "Trece și numărul comenzii. Așa găsim mai repede ce cauți.",
+        "company": "MEMORABIL MEDIA S.R.L.\nStrada Salubrității 42A, bl. B, sc. B, et. 1, ap. 13\n013996 București, România",
+        "message_placeholder": "Scrie aici. Fără formalități.",
+        "button": "Trimite mesajul",
+        "success_title": "Mulțumim! Ți-am primit mesajul.",
+        "success_text": "Îți răspundem pe email cât de repede putem."
       }
     }
   },
   "order": [
-    "main",
-    "rich-text",
-    "form",
-    "rich_text_TWE7df"
+    "main"
   ]
 }

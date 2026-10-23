@@ -18,6 +18,7 @@ finalul Manifestului și Organization din snippets/structured-data.liquid (datel
   Nu adăuga alt Organization în altă parte, ar fi dublat.
 - sections/mem-manifest.liquid + templates/page.manifest.json + assets/mem-manifest.css: pagina Despre noi (manifestul).
   Textul e în conținutul paginii „Despre noi”, cu clase mm-*. /pages/manifest e redirecționat spre /pages/despre-noi.
+- sections/mem-contact.liquid + templates/page.contact.json + assets/mem-contact.css: pagina Contact (textele se schimbă din Customize)
 - snippets/mem-product-jsonld.liquid: datele structurate pentru Google (randat din product-template-variables.liquid)
 - Blocurile noi sunt declarate în sections/main-product.liquid și randate în snippets/product-template.liquid
 - Setări: Theme settings → Memorabil (prag livrare gratuită, zile de producție/livrare, ora limită, zile libere)
