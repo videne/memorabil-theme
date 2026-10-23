@@ -10,420 +10,420 @@
 {
   "general": {
     "404": {
-      "title": "404 Page Not Found",
-      "subtext_html": "<p>The page you were looking for does not exist. </p><p><a href='{{ url }}'>Continue shopping</a></p>"
+      "title": "Pagina nu există",
+      "subtext_html": "<p>Pagina pe care o cauți nu mai există sau s-a mutat.</p><p><a href='{{ url }}'>Înapoi la magazin</a></p>"
     },
     "accessibility": {
-      "skip_to_content": "Skip to content",
-      "close_modal": "Close (esc)",
-      "close": "Close",
-      "learn_more": "Learn more",
-      "loading": "Loading"
+      "skip_to_content": "Sari la conținut",
+      "close_modal": "Închide (Esc)",
+      "close": "Închide",
+      "learn_more": "Află mai multe",
+      "loading": "Se încarcă"
     },
     "meta": {
-      "tags": "Tagged \"{{ tags }}\"",
-      "page": "Page {{ page }}"
+      "tags": "Etichetă: „{{ tags }}”",
+      "page": "Pagina {{ page }}"
     },
     "pagination": {
-      "previous": "Previous",
-      "next": "Next"
+      "previous": "Înapoi",
+      "next": "Înainte"
     },
     "password_page": {
       "login_form_password_label": "Parola",
       "login_form_password_placeholder": "Parola ta",
-      "login_form_submit": "Enter",
+      "login_form_submit": "Intră",
       "signup_form_email_label": "Email",
-      "signup_form_success": "We will send you an email right before we open!",
-      "admin_link_html": "Store owner? <a href=\"/admin\" class=\"text-link\">Log in here</a>",
+      "signup_form_success": "Îți trimitem un email chiar înainte să deschidem!",
+      "admin_link_html": "Ești proprietarul magazinului? <a href=\"/admin\" class=\"text-link\">Intră aici</a>",
       "password_link": "Parola",
-      "powered_by_shopify_html": "This shop will be powered by {{ shopify }}"
+      "powered_by_shopify_html": "Magazin creat cu {{ shopify }}"
     },
     "social": {
-      "share_on_facebook": "Share",
-      "share_on_x": "Share",
-      "share_on_pinterest": "Pin it",
+      "share_on_facebook": "Distribuie",
+      "share_on_x": "Distribuie",
+      "share_on_pinterest": "Salvează",
       "alt_text": {
-        "share_on_facebook": "Share on Facebook",
-        "share_on_x": "Tweet on X",
-        "share_on_pinterest": "Pin on Pinterest"
+        "share_on_facebook": "Distribuie pe Facebook",
+        "share_on_x": "Distribuie pe X",
+        "share_on_pinterest": "Salvează pe Pinterest"
       },
-      "pictured": "Pictured"
+      "pictured": "În imagine"
     },
     "newsletter_form": {
-      "newsletter_email": "Enter your email",
-      "newsletter_confirmation": "Thanks for subscribing",
-      "submit": "Subscribe"
+      "newsletter_email": "Adresa ta de email",
+      "newsletter_confirmation": "Mulțumim că te-ai abonat",
+      "submit": "Abonează-mă"
     },
     "search": {
-      "view_more": "Show all results for \"{{ terms }}\"",
+      "view_more": "Vezi toate rezultatele pentru „{{ terms }}”",
       "products": "Produse",
-      "suggestions": "Suggestions",
-      "collections": "Collections",
-      "pages": "Pages",
-      "articles": "Articles",
-      "no_results_html": "Search for \"{{ terms }}\"",
-      "results_for_html": "Your search for \"{{ terms }}\" revealed the following:",
-      "title": "Cauta",
-      "placeholder": "Cauta",
-      "submit": "Cauta",
-      "cancel": "Cancel",
-      "search_title": "Top searched",
+      "suggestions": "Sugestii",
+      "collections": "Colecții",
+      "pages": "Pagini",
+      "articles": "Articole",
+      "no_results_html": "Caută „{{ terms }}”",
+      "results_for_html": "Rezultatele pentru „{{ terms }}”:",
+      "title": "Caută",
+      "placeholder": "Caută",
+      "submit": "Caută",
+      "cancel": "Anulează",
+      "search_title": "Cele mai căutate",
       "result_count": {
-        "one": "{{ count }} result",
-        "other": "{{ count }} results"
+        "one": "{{ count }} rezultat",
+        "other": "{{ count }} rezultate"
       }
     },
     "drawers": {
-      "home": "Home",
-      "navigation": "Menu",
-      "close_menu": "Close menu",
-      "expand_submenu": "Expand submenu",
-      "collapse_submenu": "Collapse submenu"
+      "home": "Acasă",
+      "navigation": "Meniu",
+      "close_menu": "Închide meniul",
+      "expand_submenu": "Deschide submeniul",
+      "collapse_submenu": "Închide submeniul"
     },
     "currency": {
-      "dropdown_label": "Currency"
+      "dropdown_label": "Monedă"
     },
     "language": {
-      "dropdown_label": "Language"
+      "dropdown_label": "Limbă"
     }
   },
   "sections": {
     "map": {
-      "get_directions": "Get directions",
-      "address_error": "Error looking up that address",
-      "address_no_results": "No results for that address",
+      "get_directions": "Indicații de orientare",
+      "address_error": "Nu am putut găsi adresa",
+      "address_no_results": "Niciun rezultat pentru această adresă",
       "address_query_limit_html": "You have exceeded the Google API usage limit. Consider upgrading to a <a href=\"https://developers.google.com/maps/premium/usage-limits\">Premium Plan</a>.",
       "auth_error_html": "There was a problem authenticating your Google Maps account. Create and enable the <a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">JavaScript API</a> and <a href=\"https://developers.google.com/maps/documentation/geocoding/get-api-key\">Geocoding API</a> permissions of your app."
     },
     "slideshow": {
-      "play_slideshow": "Play slideshow",
-      "pause_slideshow": "Pause slideshow"
+      "play_slideshow": "Pornește prezentarea",
+      "pause_slideshow": "Oprește prezentarea"
     }
   },
   "blogs": {
     "article": {
-      "view_all": "View all",
-      "tags": "Tags",
-      "read_more": "Continue reading"
+      "view_all": "Vezi toate",
+      "tags": "Etichete",
+      "read_more": "Citește mai departe"
     },
     "comments": {
-      "view_comments": "View comments",
-      "title": "Leave a comment",
-      "name": "Name",
+      "view_comments": "Vezi comentariile",
+      "title": "Lasă un comentariu",
+      "name": "Nume",
       "email": "Email",
-      "message": "Message",
-      "post": "Post comment",
-      "moderated": "Please note, comments must be approved before they are published",
-      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
-      "success": "Your comment was posted successfully! Thank you!",
+      "message": "Mesaj",
+      "post": "Trimite comentariul",
+      "moderated": "Comentariile sunt publicate după ce le aprobăm.",
+      "success_moderated": "Comentariul a fost trimis. Îl publicăm după ce îl aprobăm.",
+      "success": "Comentariul a fost publicat. Mulțumim!",
       "with_count": {
-        "one": "{{ count }} comment",
-        "other": "{{ count }} comments"
+        "one": "{{ count }} comentariu",
+        "other": "{{ count }} comentarii"
       }
     }
   },
   "cart": {
     "general": {
-      "title": "Coș de cumpărături",
-      "remove": "Elimina",
-      "delete_confirm": "Are you sure you want to remove this item?",
+      "title": "Coșul tău",
+      "remove": "Șterge",
+      "delete_confirm": "Sigur vrei să ștergi produsul din coș?",
       "note": "Adaugă informații suplimentare",
       "subtotal": "Subtotal",
-      "discounts": "Discounts",
-      "shipping_at_checkout": "Costul transportului și alte reduceri vor fi adăugate la finalizarea comenzii.",
-      "update": "Update cart",
+      "discounts": "Reduceri",
+      "shipping_at_checkout": "Costul transportului și reducerile se calculează la finalizarea comenzii.",
+      "update": "Actualizează coșul",
       "checkout": "Finalizează comanda",
       "empty": "Coșul tău este gol",
       "continue_shopping": "Continuă cumpărăturile",
       "continue_browsing_html": "Mai adaugă produse în coș de <a href='{{ url }}'>aici</a>.",
-      "close_cart": "Inchide cosul",
-      "reduce_quantity": "Reduce item quantity by one",
-      "increase_quantity": "Increase item quantity by one",
-      "terms": "I agree with the terms and conditions",
-      "terms_html": "I agree with the <a href='{{ url }}' target='_blank'>terms and conditions</a>",
-      "terms_confirm": "You must agree with the terms and conditions of sales to check out",
+      "close_cart": "Închide coșul",
+      "reduce_quantity": "Scade cantitatea cu unu",
+      "increase_quantity": "Crește cantitatea cu unu",
+      "terms": "Sunt de acord cu termenii și condițiile",
+      "terms_html": "Sunt de acord cu <a href='{{ url }}' target='_blank'>termenii și condițiile</a>",
+      "terms_confirm": "Trebuie să fii de acord cu termenii și condițiile ca să finalizezi comanda",
       "item_count": {
         "one": "{{count}} produs",
         "other": "{{count}} produse"
       },
-      "max_quantity": "You can only have {{ quantity }} of {{ title }} in your cart."
+      "max_quantity": "Poți avea în coș cel mult {{ quantity }} × {{ title }}."
     },
     "label": {
-      "price": "Price",
-      "quantity": "Quantity",
+      "price": "Preț",
+      "quantity": "Cantitate",
       "total": "Total"
     }
   },
   "collections": {
     "general": {
-      "catalog_title": "Catalog",
-      "all_of_collection": "View all",
-      "see_more": "Show more",
-      "see_less": "Show less",
-      "no_matches": "Sorry, there are no products in this collection."
+      "catalog_title": "Toate produsele",
+      "all_of_collection": "Vezi toate",
+      "see_more": "Vezi mai multe",
+      "see_less": "Vezi mai puține",
+      "no_matches": "Nu există încă produse în această colecție."
     },
     "sorting": {
-      "title": "Sort"
+      "title": "Sortează"
     },
     "filters": {
-      "title_tags": "Filter",
+      "title_tags": "Filtrează",
       "all_tags": "Toate produsele"
     }
   },
   "contact": {
     "form": {
-      "name": "Name",
+      "name": "Nume",
       "email": "Email",
-      "phone": "Phone number",
-      "message": "Message",
-      "send": "Send",
-      "post_success": "Thanks for contacting us. We'll get back to you as soon as possible."
+      "phone": "Telefon",
+      "message": "Mesaj",
+      "send": "Trimite",
+      "post_success": "Mulțumim pentru mesaj. Îți răspundem cât de repede putem."
     }
   },
   "customer": {
     "account": {
       "title": "Contul meu",
-      "details": "Account details",
-      "view_addresses": "View addresses",
-      "return": "Return to account"
+      "details": "Detaliile contului",
+      "view_addresses": "Vezi adresele",
+      "return": "Înapoi la cont"
     },
     "activate_account": {
-      "title": "Activate account",
-      "subtext": "Create your password to activate your account.",
+      "title": "Activează contul",
+      "subtext": "Alege o parolă ca să-ți activezi contul.",
       "password": "Parola",
-      "password_confirm": "Confirm password",
-      "submit": "Activate account",
-      "cancel": "Decline invitation"
+      "password_confirm": "Confirmă parola",
+      "submit": "Activează contul",
+      "cancel": "Refuză invitația"
     },
     "addresses": {
-      "title": "Addresses",
-      "default": "Default",
-      "add_new": "Add address",
-      "edit_address": "Edit address",
-      "first_name": "Nume",
-      "last_name": "Prenume",
-      "company": "Company",
-      "address1": "Address1",
-      "address2": "Address2",
-      "city": "City",
-      "country": "Country",
-      "province": "Province",
-      "zip": "Postal/Zip code",
-      "phone": "Phone",
-      "set_default": "Set as default address",
-      "add": "Add address",
-      "update": "Update address",
-      "cancel": "Cancel",
-      "edit": "Edit",
-      "delete": "Delete",
-      "delete_confirm": "Are you sure you wish to delete this address?"
+      "title": "Adrese",
+      "default": "Adresa principală",
+      "add_new": "Adaugă o adresă",
+      "edit_address": "Editează adresa",
+      "first_name": "Prenume",
+      "last_name": "Nume",
+      "company": "Firmă",
+      "address1": "Adresă",
+      "address2": "Apartament, scară, etaj (opțional)",
+      "city": "Localitate",
+      "country": "Țară",
+      "province": "Județ",
+      "zip": "Cod poștal",
+      "phone": "Telefon",
+      "set_default": "Setează ca adresă principală",
+      "add": "Adaugă adresa",
+      "update": "Actualizează adresa",
+      "cancel": "Anulează",
+      "edit": "Editează",
+      "delete": "Șterge",
+      "delete_confirm": "Sigur vrei să ștergi această adresă?"
     },
     "login": {
-      "title": "Intra in cont",
+      "title": "Intră în cont",
       "email": "Email",
       "password": "Parola",
-      "forgot_password": "Ai uitat-o?",
-      "sign_in": "Sign In",
-      "cancel": "Return to Store",
-      "guest_title": "Continue as a guest",
-      "guest_continue": "Continue"
+      "forgot_password": "Ai uitat parola?",
+      "sign_in": "Intră în cont",
+      "cancel": "Înapoi la magazin",
+      "guest_title": "Continuă fără cont",
+      "guest_continue": "Continuă"
     },
     "orders": {
       "title": "Istoricul comenzilor",
-      "order_number": "Order",
-      "date": "Date",
+      "order_number": "Comanda",
+      "date": "Data",
       "payment_status": "Starea plății",
-      "fulfillment_status": "Status",
+      "fulfillment_status": "Starea livrării",
       "total": "Total",
-      "none": "You haven't placed any orders yet."
+      "none": "Nu ai plasat încă nicio comandă."
     },
     "order": {
-      "title": "Order {{ name }}",
-      "date_html": "Placed on {{ date }}",
-      "cancelled_html": "Order cancelled on {{ date }}",
-      "cancelled_reason": "Reason: {{ reason }}",
-      "billing_address": "Billing address",
-      "payment_status": "Payment status",
-      "shipping_address": "Shipping address",
-      "fulfillment_status": "Status",
-      "discount": "Discount",
-      "shipping": "Shipping",
-      "tax": "Tax",
-      "product": "Product",
-      "sku": "SKU",
-      "price": "Price",
-      "quantity": "Quantity",
+      "title": "Comanda {{ name }}",
+      "date_html": "Plasată pe {{ date }}",
+      "cancelled_html": "Comandă anulată pe {{ date }}",
+      "cancelled_reason": "Motiv: {{ reason }}",
+      "billing_address": "Adresa de facturare",
+      "payment_status": "Starea plății",
+      "shipping_address": "Adresa de livrare",
+      "fulfillment_status": "Starea livrării",
+      "discount": "Reducere",
+      "shipping": "Transport",
+      "tax": "TVA",
+      "product": "Produs",
+      "sku": "Cod produs",
+      "price": "Preț",
+      "quantity": "Cantitate",
       "total": "Total",
-      "fulfilled_at_html": "Fulfilled {{ date }}",
+      "fulfilled_at_html": "Expediată pe {{ date }}",
       "subtotal": "Subtotal"
     },
     "recover_password": {
-      "title": "Reset your password",
+      "title": "Resetează parola",
       "email": "Email",
-      "submit": "Submit",
-      "cancel": "Cancel",
-      "subtext": "We will send you an email to reset your password.",
-      "success": "We've sent you an email with a link to update your password."
+      "submit": "Trimite",
+      "cancel": "Anulează",
+      "subtext": "Îți trimitem un email ca să-ți resetezi parola.",
+      "success": "Ți-am trimis un email cu linkul pentru schimbarea parolei."
     },
     "reset_password": {
-      "title": "Reset account password",
-      "subtext": "Enter a new password for {{ email }}",
-      "password": "Password",
-      "password_confirm": "Confirm Password",
-      "submit": "Reset Password"
+      "title": "Resetează parola contului",
+      "subtext": "Alege o parolă nouă pentru {{ email }}",
+      "password": "Parola",
+      "password_confirm": "Confirmă parola",
+      "submit": "Resetează parola"
     },
     "register": {
-      "title": "Creeaza un cont nou",
-      "first_name": "Nume",
-      "last_name": "Prenume",
+      "title": "Creează un cont nou",
+      "first_name": "Prenume",
+      "last_name": "Nume",
       "email": "Email",
       "password": "Parola",
-      "submit": "Creeaza",
-      "cancel": "Return to Store"
+      "submit": "Creează contul",
+      "cancel": "Înapoi la magazin"
     }
   },
   "home_page": {
     "onboarding": {
-      "product_title": "Example product",
-      "product_description": "This area is used to describe your product’s details. Tell customers about the look, feel, and style of your product. Add details on color,  materials used, sizing, and where it was made.",
-      "collection_title": "Example collection",
-      "no_content": "This section doesn’t currently include any content. Add content to this section using the sidebar."
+      "product_title": "Produs exemplu",
+      "product_description": "Aici apare descrierea produsului.",
+      "collection_title": "Colecție exemplu",
+      "no_content": "Secțiunea nu are încă conținut. Adaug-o din bara laterală."
     }
   },
   "layout": {
     "cart": {
-      "title": "Cart"
+      "title": "Coș"
     },
     "customer": {
-      "account": "Account",
-      "log_out": "Log out",
-      "log_in": "Intra in cont",
-      "create_account": "Creeaza un cont nou"
+      "account": "Cont",
+      "log_out": "Ieși din cont",
+      "log_in": "Intră în cont",
+      "create_account": "Creează un cont nou"
     },
     "footer": {
-      "social_platform": "{{ name }} on {{ platform }}"
+      "social_platform": "{{ name }} pe {{ platform }}"
     }
   },
   "products": {
     "general": {
       "color_swatch_trigger": "Culoare",
-      "size_trigger": "Marime",
-      "size_chart": "Tabel de marimi",
-      "sale": "Sale",
-      "save_html": "Save {{ saved_amount }}",
-      "next_product": "Urmatorul: {{ title }}",
-      "sale_price": "Sale price",
-      "regular_price": "Regular price",
-      "from_text_html": "from {{ price }}",
-      "related_products": "Posibil sa-ti placa si",
-      "collection_return": "Inapoi la {{ collection }}",
+      "size_trigger": "Mărime",
+      "size_chart": "Tabel de mărimi",
+      "sale": "Reducere",
+      "save_html": "Economisești {{ saved_amount }}",
+      "next_product": "Următorul: {{ title }}",
+      "sale_price": "Preț redus",
+      "regular_price": "Preț întreg",
+      "from_text_html": "de la {{ price }}",
+      "related_products": "S-ar putea să-ți placă și",
+      "collection_return": "Înapoi la {{ collection }}",
       "reviews": "Recenzii"
     },
     "product": {
       "description": "Descriere",
-      "in_stock_label": "In stock, ready to ship",
+      "in_stock_label": "În stoc",
       "stock_label": {
-        "one": "Low stock - {{ count }} item left",
-        "other": "Low stock - {{ count }} items left"
+        "one": "Ultima bucată",
+        "other": "Ultimele {{ count }} bucăți"
       },
-      "sold_out": "Sold Out",
-      "unavailable": "Nu este disponibil",
+      "sold_out": "Stoc epuizat",
+      "unavailable": "Indisponibil",
       "quantity": "Cantitate",
-      "add_to_cart": "Adauga in cos",
+      "add_to_cart": "Adaugă în coș",
       "preorder": "Pre-comandă",
-      "include_taxes": "Taxele sunt incluse.",
-      "shipping_policy_html": "<a href='{{ link }}'>Costul transportului</a> va fi adăugat la finalizarea comenzii.",
-      "will_not_ship_until": "Ready to ship {{ date }}",
-      "will_be_in_stock_after": "Back in stock {{ date }}",
-      "waiting_for_stock": "Backordered, shipping soon",
-      "view_in_space": "View in your space",
-      "view_in_space_label": "View in your space, loads item in augmented reality window"
+      "include_taxes": "TVA inclus.",
+      "shipping_policy_html": "<a href='{{ link }}'>Costul transportului</a> se adaugă la finalizarea comenzii.",
+      "will_not_ship_until": "Se livrează din {{ date }}",
+      "will_be_in_stock_after": "Revine în stoc pe {{ date }}",
+      "waiting_for_stock": "În curând în stoc",
+      "view_in_space": "Vezi în spațiul tău",
+      "view_in_space_label": "Vezi în spațiul tău, în realitate augmentată"
     }
   },
   "store_availability": {
     "general": {
-      "view_store_info": "View store information",
-      "check_other_stores": "Check availability at other stores",
-      "pick_up_available": "Pickup available",
-      "pick_up_currently_unavailable": "Pickup currently unavailable",
-      "pick_up_available_at_html": "Pickup available at <strong>{{ location_name }}</strong>",
-      "pick_up_unavailable_at_html": "Pickup currently unavailable at <strong>{{ location_name }}</strong>"
+      "view_store_info": "Vezi informațiile magazinului",
+      "check_other_stores": "Verifică disponibilitatea în alte magazine",
+      "pick_up_available": "Ridicare personală disponibilă",
+      "pick_up_currently_unavailable": "Ridicarea personală nu e disponibilă acum",
+      "pick_up_available_at_html": "Ridicare personală disponibilă la <strong>{{ location_name }}</strong>",
+      "pick_up_unavailable_at_html": "Ridicarea personală nu e disponibilă acum la <strong>{{ location_name }}</strong>"
     }
   },
   "gift_cards": {
     "issued": {
-      "title_html": "Here's your {{ value }} gift card for {{ shop }}!",
-      "subtext": "Here's your gift card!",
-      "disabled": "Disabled",
-      "expired": "Expired on {{ expiry }}",
-      "active": "Expires on {{ expiry }}",
-      "redeem": "Use this code at checkout to redeem your gift card",
-      "shop_link": "Start shopping",
-      "print": "Print",
-      "add_to_apple_wallet": "Add to Apple Wallet"
+      "title_html": "Iată cardul tău cadou de {{ value }} pentru {{ shop }}!",
+      "subtext": "Iată cardul tău cadou!",
+      "disabled": "Dezactivat",
+      "expired": "A expirat pe {{ expiry }}",
+      "active": "Expiră pe {{ expiry }}",
+      "redeem": "Folosește acest cod la finalizarea comenzii",
+      "shop_link": "Începe cumpărăturile",
+      "print": "Printează",
+      "add_to_apple_wallet": "Adaugă în Apple Wallet"
     }
   },
   "recipient": {
     "form": {
-      "checkbox": "I want to send this as a gift",
-      "email_label": "Recipient email",
+      "checkbox": "Vreau să trimit acest card cadou cuiva",
+      "email_label": "Emailul destinatarului",
       "email": "Email",
-      "name_label": "Recipient name (optional)",
-      "name": "Name",
-      "message_label": "Message (optional)",
-      "message": "Message",
-      "max_characters": "{{ max_chars }} characters max",
-      "send_on_label": "Send on (optional)"
+      "name_label": "Numele destinatarului (opțional)",
+      "name": "Nume",
+      "message_label": "Mesaj (opțional)",
+      "message": "Mesaj",
+      "max_characters": "Maximum {{ max_chars }} de caractere",
+      "send_on_label": "Trimite pe (opțional)"
     }
   },
   "date_formats": {
-    "month_day_year": "%b %d, %Y"
+    "month_day_year": "%d.%m.%Y"
   },
   "info": {
-    "unable_to_add_item_to_cart": "Unable to add item to cart",
-    "item_added_to_cart_html": "{{ product_title }} added to cart!",
+    "unable_to_add_item_to_cart": "Nu am putut adăuga produsul în coș",
+    "item_added_to_cart_html": "{{ product_title }} a fost adăugat în coș!",
     "low_stock_count": {
-      "one": "Low stock - {{ count }} item left",
-      "other": "Low stock - {{ count }} items left"
+      "one": "Ultima bucată",
+      "other": "Ultimele {{ count }} bucăți"
     },
-    "back_in_stock_on": "Back in stock {{ date }}",
-    "backordered": "Backordered, shipping soon",
-    "in_stock": "In stock",
-    "sold_out": "Sold out",
-    "tax_included": "Tax included.",
-    "shipping_policy_html": "<a href='{{ link }}'>Shipping</a> calculated at checkout.",
-    "pick_up_available": "Pickup available",
-    "pick_up_currently_unavailable": "Pick up currently unavailable",
-    "pick_up_available_at_html": "Pickup available at <strong>{{ location_name }}</strong>",
-    "pick_up_unavailable_at_html": "Pickup currently unavailable at <strong>{{ location_name }}</strong>"
+    "back_in_stock_on": "Revine în stoc pe {{ date }}",
+    "backordered": "În curând în stoc",
+    "in_stock": "În stoc",
+    "sold_out": "Stoc epuizat",
+    "tax_included": "TVA inclus.",
+    "shipping_policy_html": "<a href='{{ link }}'>Transportul</a> se calculează la finalizarea comenzii.",
+    "pick_up_available": "Ridicare personală disponibilă",
+    "pick_up_currently_unavailable": "Ridicarea personală nu e disponibilă acum",
+    "pick_up_available_at_html": "Ridicare personală disponibilă la <strong>{{ location_name }}</strong>",
+    "pick_up_unavailable_at_html": "Ridicarea personală nu e disponibilă acum la <strong>{{ location_name }}</strong>"
   },
   "labels": {
-    "quantity": "Quantity",
-    "search": "Search",
-    "close": "Close",
-    "get_directions": "Get directions",
-    "view_store_info": "View store information",
-    "check_availability": "Check availability at other stores",
-    "show_all_results": "Show all results for \"{{ terms }}\"",
-    "from_price": "from {{ price }}"
+    "quantity": "Cantitate",
+    "search": "Caută",
+    "close": "Închide",
+    "get_directions": "Indicații de orientare",
+    "view_store_info": "Vezi informațiile magazinului",
+    "check_availability": "Verifică disponibilitatea în alte magazine",
+    "show_all_results": "Vezi toate rezultatele pentru „{{ terms }}”",
+    "from_price": "de la {{ price }}"
   },
   "actions": {
-    "add_to_cart": "Add to Cart",
-    "close": "Close",
-    "get_directions": "Get directions",
-    "view_store_info": "View store information",
-    "check_availability": "Check availability at other stores",
-    "show_all_results": "Show all results for \"{{ terms }}\""
+    "add_to_cart": "Adaugă în coș",
+    "close": "Închide",
+    "get_directions": "Indicații de orientare",
+    "view_store_info": "Vezi informațiile magazinului",
+    "check_availability": "Verifică disponibilitatea în alte magazine",
+    "show_all_results": "Vezi toate rezultatele pentru „{{ terms }}”"
   },
   "shopify": {
     "checkout": {
       "customer_account": {
-        "sign_in_link_label": "Intra in cont",
+        "sign_in_link_label": "Intră în cont",
         "save_my_information_label": "Salvează aceste informații pentru data viitoare",
         "rollup_label": "Cont"
       },
       "payment": {
-        "credit_card_vaulting_sign_in_banner_button_label": "Intra in cont",
+        "credit_card_vaulting_sign_in_banner_button_label": "Intră în cont",
         "ftd_vault_credit_card_label": "Salvează datele cardului pentru a ușura achiziția data viitoare.",
         "card_expiry_label": "Data de expirare a cardului (LL/AA)",
         "card_expiry_placeholder": "Data de expirare a cardului (LL/AA)",
@@ -441,7 +441,7 @@
             "card_number": "Numărul cardului"
           }
         },
-        "order_edit_banner_updated_order_label": "Actualizeză comanda",
+        "order_edit_banner_updated_order_label": "Actualizează comanda",
         "same_billing_address_checkbox_label": "Folosește adresa de expediere și pentru facturare",
         "name_on_card_label": "Numele de pe card",
         "name_on_card_placeholder": "Numele de pe card",
@@ -458,27 +458,27 @@
       "payment_gateway": {
         "login_prompt": {
           "no_access": {
-            "link": "Intra in cont"
+            "link": "Intră în cont"
           }
         },
         "credit_card_label": "Introdu datele cardului"
       },
       "thank_you": {
-        "login": "Intra in cont",
+        "login": "Intră în cont",
         "return_to_store_link_label": "Continuă cumpărăturile",
-        "title": "Multumim pentru comanda!",
-        "page_title": "Multumim, {{ display_name }}!",
-        "page_title_no_name": "Multumim!",
-        "thank_you_title": "Comanda ta este confirmata!"
+        "title": "Mulțumim pentru comandă!",
+        "page_title": "Mulțumim, {{ display_name }}!",
+        "page_title_no_name": "Mulțumim!",
+        "thank_you_title": "Comanda ta este confirmată!"
       },
       "pickup_point": {
-        "search_button": "Cauta"
+        "search_button": "Caută"
       },
       "contact": {
-        "first_name_label": "Nume",
-        "optional_first_name_label": "Nume (optional)",
-        "last_name_label": "Prenume",
-        "optional_last_name_label": "Prenume (optional)",
+        "first_name_label": "Prenume",
+        "optional_first_name_label": "Prenume (opțional)",
+        "last_name_label": "Nume",
+        "optional_last_name_label": "Nume (opțional)",
         "country_label": "Țară/Regiune",
         "address_title": "Adresă",
         "address1_label": "Adresă",
@@ -492,7 +492,7 @@
         "phone_label": "Telefon",
         "optional_phone_label": "Telefon (opțional)",
         "phone_placeholder": "Telefon",
-        "delivery_option_title": "Meetodă de livrare"
+        "delivery_option_title": "Metodă de livrare"
       },
       "stock": {
         "status_column_header": "Starea comenzii",
@@ -527,7 +527,7 @@
             "february": "Februarie",
             "march": "Martie",
             "april": "Aprilie",
-            "may": "Mai ",
+            "may": "Mai",
             "june": "Iunie",
             "july": "Iulie",
             "august": "August",
@@ -570,15 +570,15 @@
       }
     },
     "page_titles": {
-      "search": "Cauta",
-      "create_account": "Creeaza un cont nou",
+      "search": "Caută",
+      "create_account": "Creează un cont nou",
       "shopping_cart": "Coșul tău de cumpărături",
       "account": "Cont",
       "products": "Produse"
     },
     "attributes": {
       "password": "parola",
-      "last_name": "prenume"
+      "last_name": "nume"
     },
     "errors": {
       "verify_email": "Am trimis un e-mail la {{ customer_email }}, te rugăm să dai click link-ul primit pentru a verifica adresa ta de e-mail."
@@ -596,31 +596,31 @@
     },
     "collections": {
       "sorting": {
-        "best_selling": "Cele mai vandute",
+        "best_selling": "Cele mai vândute",
         "az": "Alfabetic, A-Z",
         "za": "Alfabetic, Z-A",
-        "price_ascending": "Pret crescator",
+        "price_ascending": "Preț crescător",
         "date_descending": "Cele mai noi",
         "date_ascending": "Cele mai vechi",
-        "price_descending": "Pret descrescator"
+        "price_descending": "Preț descrescător"
       }
     },
     "search": {
       "sorting": {
-        "price_ascending": "Pret crescator",
-        "price_descending": "Pret descrescator"
+        "price_ascending": "Preț crescător",
+        "price_descending": "Preț descrescător"
       }
     }
   },
   "customer_accounts": {
     "order_details": {
-      "log_in": "Intra in cont",
+      "log_in": "Intră în cont",
       "marketing_checkbox_label": "Doresc să primesc e-mailuri cu noutăți și oferte"
     },
     "account_information": {
       "profile_card": {
-        "first_name": "Nume",
-        "last_name": "Prenume"
+        "first_name": "Prenume",
+        "last_name": "Nume"
       }
     },
     "B2B": {
@@ -643,7 +643,7 @@
       },
       "list_title": "Comenzi",
       "status_title": "Starea comenzii",
-      "buy_again": "Cumpara din nou"
+      "buy_again": "Cumpără din nou"
     },
     "payment_methods": {
       "card_fields": {

@@ -1,0 +1,29 @@
+{%- comment -%}
+  Memorabil: „Mai ai X lei până la livrare gratuită”, în coșul lateral și pe pagina coșului.
+  Pragul și costul se setează în Theme settings → Memorabil. Se actualizează singură din /cart.js (vezi assets/mem.js).
+{%- endcomment -%}
+{%- if settings.mem_free_shipping_enable and settings.mem_free_shipping_threshold > 0 -%}
+  {%- liquid
+    assign threshold_cents = settings.mem_free_shipping_threshold | times: 100
+    assign left = threshold_cents | minus: cart.total_price
+    assign progress = cart.total_price | times: 100 | divided_by: threshold_cents
+    if progress > 100
+      assign progress = 100
+    endif
+  -%}
+  <mem-free-shipping
+    class="mem-fs"
+    data-threshold="{{ settings.mem_free_shipping_threshold }}"
+    data-total="{{ cart.total_price }}"
+    {% if cart.item_count == 0 %}hidden{% endif %}
+  >
+    <p class="mem-fs__text" data-fs-text>
+      {%- if left > 0 -%}
+        Mai ai <strong>{{ left | money_without_trailing_zeros }}</strong> până la livrare gratuită.
+      {%- else -%}
+        <strong>Livrarea e gratuită.</strong>
+      {%- endif -%}
+    </p>
+    <div class="mem-fs__track" aria-hidden="true"><div class="mem-fs__fill" data-fs-fill style="width: {{ progress }}%;"></div></div>
+  </mem-free-shipping>
+{%- endif -%}

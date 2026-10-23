@@ -43,7 +43,7 @@
         "text_9HMpCh": {
           "type": "text",
           "settings": {
-            "text": "Cană din ceramică de cea mai bună calitate, cu capacitate de 350 ml. Se poate folosi la cuptorul cu microunde. Personalizarea se face prin transfer termic. Se recomandă spălarea manuală cu un burete (lavetă) moale."
+            "text": "Cană din ceramică de cea mai bună calitate, cu capacitate de 300 ml. Se poate folosi la cuptorul cu microunde. Personalizarea se face prin transfer termic. Se recomandă spălarea manuală cu un burete (lavetă) moale."
           }
         },
         "tab": {
@@ -58,32 +58,46 @@
           "type": "tab",
           "settings": {
             "title": "În cât timp se livrează",
-            "content": "<p>Dureaza intre 2 si 7 zile lucratoare ca sa producem textilele (tricouri, sacose, etc) sau sa le comandam in cazul ca nu sunt pe stoc. Peste acest termen trebuie sa adaugi timpul de livrare (prin firma de curierat) care este de obicei de maxim 2 zile lucratoare.</p>",
-            "page": ""
-          }
-        },
-        "tab_p6xKbR": {
-          "type": "tab",
-          "settings": {
-            "title": "Cum să ai grijă de cana ta",
-            "content": "<p>Se recomandă spălarea manuală cu un burete (lavetă) moale.</p>",
+            "content": "<p>Fiecare produs e imprimat special pentru tine. Producem comanda în <strong>maximum 3 zile lucrătoare</strong>, iar curierul o livrează în <strong>1–2 zile lucrătoare</strong>. Primești coletul în maximum 5 zile lucrătoare de la comandă.</p>",
             "page": ""
           }
         },
         "share": {
           "type": "share",
           "settings": {}
+        },
+        "mem_badges": {
+          "type": "mem_badges",
+          "settings": {}
+        },
+        "mem_delivery": {
+          "type": "mem_delivery",
+          "settings": {}
+        },
+        "mem_details": {
+          "type": "mem_details",
+          "settings": {
+            "material": "Ceramică albă",
+            "marime": "Capacitate 300 ml · diametru 80 mm · înălțime 96 mm",
+            "imprimare": "Transfer termic",
+            "continut": "1 cană",
+            "ingrijire": "Se recomandă spălarea de mână, cu un burete moale\nSe poate folosi la cuptorul cu microunde",
+            "gpsr_producator": "MEMORABIL MEDIA S.R.L.\nStrada Salubrității 42A, bl. B, sc. B, et. 1, ap. 13\n013996 București, România",
+            "gpsr_contact": "george@memorabil.ro"
+          }
         }
       },
       "block_order": [
+        "mem_badges",
         "price",
         "variant_picker",
         "inventory_status",
         "buy_buttons",
+        "mem_delivery",
         "text_9HMpCh",
+        "mem_details",
         "tab",
         "tab_pgdVtN",
-        "tab_p6xKbR",
         "share"
       ],
       "settings": {

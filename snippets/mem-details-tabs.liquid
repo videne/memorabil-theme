@@ -1,0 +1,80 @@
+{%- comment -%}
+  Memorabil: tab-uri construite din câmpurile produsului (metafields custom.*), în stilul tab-urilor Streamline.
+  Un tab apare doar dacă are conținut, deci produsele fără câmpuri completate nu afișează tab-uri goale.
+    Detalii și materiale: material, marime, imprimare, continut, detalii, cod produs
+    Îngrijire:            ingrijire (câte o instrucțiune pe rând)
+    Siguranța produsului: gpsr_producator, gpsr_contact, gpsr_responsabil_ue, gpsr_avertismente
+{%- endcomment -%}
+{%- liquid
+  assign mf = product.metafields.custom
+  assign bs = block.settings
+  assign current_variant = product.selected_or_first_available_variant
+  comment
+    Valoarea de pe produs (metafield) are prioritate; altfel se folosește valoarea comună din setările blocului.
+  endcomment
+  assign v_material = mf.material.value | default: bs.material
+  assign v_marime = mf.marime.value | default: bs.marime
+  assign v_imprimare = mf.imprimare.value | default: bs.imprimare
+  assign v_continut = mf.continut.value | default: bs.continut
+  assign v_detalii = mf.detalii.value | default: bs.detalii
+  assign v_ingrijire = mf.ingrijire.value | default: bs.ingrijire
+  assign v_producator = mf.gpsr_producator.value | default: bs.gpsr_producator
+  assign v_contact = mf.gpsr_contact.value | default: bs.gpsr_contact
+  assign v_responsabil = mf.gpsr_responsabil_ue.value | default: bs.gpsr_responsabil_ue
+  assign v_avertismente = mf.gpsr_avertismente.value | default: bs.gpsr_avertismente
+-%}
+
+{%- capture details -%}
+  {%- if v_material != blank -%}<div class="mem-row"><dt>Material</dt><dd>{{ v_material | escape }}</dd></div>{%- endif -%}
+  {%- if v_marime != blank -%}<div class="mem-row"><dt>Mărime și croială</dt><dd>{{ v_marime | escape }}</dd></div>{%- endif -%}
+  {%- if v_imprimare != blank -%}<div class="mem-row"><dt>Imprimare</dt><dd>{{ v_imprimare | escape }}</dd></div>{%- endif -%}
+  {%- if v_continut != blank -%}<div class="mem-row"><dt>În pachet</dt><dd>{{ v_continut | escape }}</dd></div>{%- endif -%}
+  {%- if v_detalii != blank -%}
+    <div class="mem-row mem-row--list"><dt>Detalii</dt><dd><ul>
+      {%- assign lines = v_detalii | newline_to_br | split: '<br />' -%}
+      {%- for line in lines -%}{%- assign l = line | strip -%}{%- if l != blank -%}<li>{{ l | escape }}</li>{%- endif -%}{%- endfor -%}
+    </ul></dd></div>
+  {%- endif -%}
+  {%- if current_variant.sku != blank -%}<div class="mem-row"><dt>Cod produs</dt><dd>{{ current_variant.sku | escape }}</dd></div>{%- endif -%}
+{%- endcapture -%}
+{%- liquid
+  assign has_details = false
+  if v_material != blank or v_marime != blank or v_imprimare != blank
+    assign has_details = true
+  endif
+  if v_continut != blank or v_detalii != blank
+    assign has_details = true
+  endif
+-%}
+{%- if has_details -%}
+  {%- capture content -%}<dl class="mem-list">{{ details }}</dl>{%- endcapture -%}
+  <div class="product-block product-block--tab" {{ block.shopify_attributes }}>
+    {%- render 'tab', id: 'mem-details', title: 'Detalii și materiale', content: content -%}
+  </div>
+{%- endif -%}
+
+{%- if v_ingrijire != blank -%}
+  {%- capture content -%}
+    <ul class="mem-care">
+      {%- assign lines = v_ingrijire | newline_to_br | split: '<br />' -%}
+      {%- for line in lines -%}{%- assign l = line | strip -%}{%- if l != blank -%}<li>{{ l | escape }}</li>{%- endif -%}{%- endfor -%}
+    </ul>
+  {%- endcapture -%}
+  <div class="product-block product-block--tab">
+    {%- render 'tab', id: 'mem-care', title: 'Îngrijire', content: content -%}
+  </div>
+{%- endif -%}
+
+{%- if v_producator != blank -%}
+  {%- capture content -%}
+    <dl class="mem-list">
+      <div class="mem-row"><dt>Producător</dt><dd>{{ v_producator | escape | newline_to_br }}</dd></div>
+      {%- if v_contact != blank -%}<div class="mem-row"><dt>Contact</dt><dd>{{ v_contact | escape }}</dd></div>{%- endif -%}
+      {%- if v_responsabil != blank -%}<div class="mem-row"><dt>Persoană responsabilă în UE</dt><dd>{{ v_responsabil | escape | newline_to_br }}</dd></div>{%- endif -%}
+      {%- if v_avertismente != blank -%}<div class="mem-row"><dt>Avertismente</dt><dd>{{ v_avertismente | escape | newline_to_br }}</dd></div>{%- endif -%}
+    </dl>
+  {%- endcapture -%}
+  <div class="product-block product-block--tab">
+    {%- render 'tab', id: 'mem-safety', title: 'Siguranța produsului', content: content -%}
+  </div>
+{%- endif -%}

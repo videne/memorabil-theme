@@ -1,0 +1,37 @@
+{%- comment -%}
+  Memorabil: etichete automate pe pagina de produs.
+  - Nou: produs publicat în ultimele X zile (Theme settings → Memorabil)
+  - Bestseller: produsul are tag-ul setat în Theme settings (implicit „bestseller”)
+  - Reducere: varianta curentă are preț vechi mai mare decât prețul actual
+{%- endcomment -%}
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign new_days = settings.mem_new_days | default: 30
+  assign new_seconds = new_days | times: 86400
+  assign now_s = 'now' | date: '%s' | plus: 0
+  assign published_s = product.published_at | date: '%s' | plus: 0
+  assign age = now_s | minus: published_s
+  assign best_tag = settings.mem_bestseller_tag | default: 'bestseller' | downcase
+
+  assign is_best = false
+  for tag in product.tags
+    assign t = tag | downcase
+    if t == best_tag
+      assign is_best = true
+    endif
+  endfor
+
+  assign discount = 0
+  if current_variant.compare_at_price > current_variant.price
+    assign saved = current_variant.compare_at_price | minus: current_variant.price | times: 100.0
+    assign discount = saved | divided_by: current_variant.compare_at_price | round
+  endif
+-%}
+{%- capture badges -%}
+  {%- if is_best -%}<span class="mem-badge mem-badge--best">Bestseller</span>{%- endif -%}
+  {%- if published_s > 0 and age < new_seconds -%}<span class="mem-badge mem-badge--new">Nou</span>{%- endif -%}
+  {%- if discount > 0 -%}<span class="mem-badge mem-badge--sale">−{{ discount }}%</span>{%- endif -%}
+{%- endcapture -%}
+{%- if badges != blank -%}
+  <div class="product-block mem-badges" {{ block.shopify_attributes }}>{{ badges }}</div>
+{%- endif -%}

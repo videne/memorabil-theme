@@ -1,0 +1,125 @@
+/* Memorabil: stiluri pentru funcțiile mem- (livrare estimată, etichete, tab-uri din câmpuri, bara de livrare gratuită).
+   Folosesc culorile din Theme settings ale Streamline, deci se potrivesc automat cu restul temei. */
+
+/* ---------------------------------------------------------------- livrare estimată */
+.mem-delivery {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px 16px;
+  border: 1px solid var(--colorBodyMediumDim, #e5e5e5);
+  border-radius: 8px;
+  text-align: left;
+}
+.mem-delivery__icon {
+  flex: 0 0 22px;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  color: var(--colorBtnPrimary, #0064fa);
+}
+.mem-delivery__text {
+  margin: 0;
+  line-height: 1.45;
+}
+.mem-delivery__text strong {
+  display: block;
+}
+.mem-delivery__note {
+  display: block;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+/* ---------------------------------------------------------------- etichete */
+.mem-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.mem-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+.mem-badge--best {
+  background: var(--colorBtnPrimary, #0064fa);
+  color: var(--colorBtnPrimaryText, #fff);
+}
+.mem-badge--new {
+  background: var(--colorTextBody, #111);
+  color: var(--colorBody, #fff);
+}
+.mem-badge--sale {
+  background: var(--colorSaleTag, #ff4747);
+  color: var(--colorSaleTagText, #fff);
+}
+
+/* ---------------------------------------------------------------- tab-uri din câmpuri */
+.mem-list {
+  margin: 0;
+}
+.mem-row {
+  display: grid;
+  grid-template-columns: minmax(110px, 38%) 1fr;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--colorBodyMediumDim, #eee);
+}
+.mem-row:last-child {
+  border-bottom: 0;
+}
+.mem-row dt {
+  font-weight: 700;
+  margin: 0;
+}
+.mem-row dd {
+  margin: 0;
+}
+.mem-row ul,
+.mem-care {
+  margin: 0;
+  padding-left: 1.1em;
+}
+@media (max-width: 589px) {
+  .mem-row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+
+/* ---------------------------------------------------------------- bara de livrare gratuită */
+.mem-fs {
+  display: block;
+  margin: 0 0 14px;
+  text-align: left;
+}
+.mem-fs[hidden] {
+  display: none;
+}
+.mem-fs__text {
+  margin: 0 0 6px;
+  font-size: 0.9em;
+}
+.mem-fs__track {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--colorBodyMediumDim, #eee);
+  overflow: hidden;
+}
+.mem-fs__fill {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--colorBtnPrimary, #0064fa);
+  transition: width 0.4s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .mem-fs__fill {
+    transition: none;
+  }
+}

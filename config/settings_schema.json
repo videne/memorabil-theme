@@ -753,5 +753,112 @@
         ]
       }
     ]
+  },
+  {
+    "name": "Memorabil",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Setările funcțiilor Memorabil: livrare estimată, bara de livrare gratuită și datele pentru Google."
+      },
+      {
+        "type": "header",
+        "content": "Livrare gratuită"
+      },
+      {
+        "type": "checkbox",
+        "id": "mem_free_shipping_enable",
+        "label": "Arată bara „Mai ai X lei până la livrare gratuită”",
+        "default": true
+      },
+      {
+        "type": "number",
+        "id": "mem_free_shipping_threshold",
+        "label": "Prag livrare gratuită (lei)",
+        "default": 300
+      },
+      {
+        "type": "number",
+        "id": "mem_shipping_cost",
+        "label": "Cost livrare sub prag (lei)",
+        "default": 20
+      },
+      {
+        "type": "header",
+        "content": "Livrare estimată"
+      },
+      {
+        "type": "range",
+        "id": "mem_production_days",
+        "label": "Zile lucrătoare de producție (imprimare)",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "unit": "zi",
+        "default": 3
+      },
+      {
+        "type": "range",
+        "id": "mem_transit_days",
+        "label": "Zile lucrătoare de livrare (curier)",
+        "min": 1,
+        "max": 5,
+        "step": 1,
+        "unit": "zi",
+        "default": 2
+      },
+      {
+        "type": "range",
+        "id": "mem_cutoff_hour",
+        "label": "Ora limită pentru comenzile de azi",
+        "info": "Comenzile plasate după această oră încep să fie produse în următoarea zi lucrătoare.",
+        "min": 8,
+        "max": 22,
+        "step": 1,
+        "unit": "h",
+        "default": 14
+      },
+      {
+        "type": "textarea",
+        "id": "mem_holidays",
+        "label": "Zile libere (nu se lucrează și nu se livrează)",
+        "info": "Date în format AAAA-LL-ZZ, separate prin virgulă.",
+        "default": "2026-11-30,2026-12-01,2026-12-25,2026-12-26,2027-01-01,2027-01-02,2027-01-06,2027-01-07,2027-01-24,2027-04-30,2027-05-01,2027-05-02,2027-05-03,2027-06-01,2027-06-20,2027-06-21,2027-08-15,2027-11-30,2027-12-01,2027-12-25,2027-12-26"
+      },
+      {
+        "type": "header",
+        "content": "Etichete"
+      },
+      {
+        "type": "range",
+        "id": "mem_new_days",
+        "label": "Câte zile e un produs „Nou”",
+        "min": 7,
+        "max": 60,
+        "step": 1,
+        "unit": "zi",
+        "default": 30
+      },
+      {
+        "type": "text",
+        "id": "mem_bestseller_tag",
+        "label": "Tag pentru eticheta „Bestseller”",
+        "default": "bestseller"
+      },
+      {
+        "type": "header",
+        "content": "Retur"
+      },
+      {
+        "type": "range",
+        "id": "mem_return_days",
+        "label": "Zile pentru retur",
+        "min": 14,
+        "max": 60,
+        "step": 1,
+        "unit": "zi",
+        "default": 14
+      }
+    ]
   }
 ]

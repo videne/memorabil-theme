@@ -375,6 +375,12 @@
                           </div>
                         </div>
                       </div>
+                    {%- when 'mem_badges' -%}
+                      {%- render 'mem-badges', product: product, block: block -%}
+                    {%- when 'mem_delivery' -%}
+                      {%- render 'mem-delivery', product: product, block: block -%}
+                    {%- when 'mem_details' -%}
+                      {%- render 'mem-details-tabs', product: product, block: block -%}
                     {%- when 'custom' -%}
                       <div class="product-block" {{ block.shopify_attributes }}>
                         {{ block.settings.code }}
