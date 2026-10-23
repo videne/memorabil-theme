@@ -218,7 +218,6 @@
     <script src="https://api.archetypethemes.co/design-mode.js" defer="defer"></script>
   {% endif %}
   {{ 'mem.css' | asset_url | stylesheet_tag }}
-  {%- if request.page_type == 'index' -%}{%- render 'mem-organization-jsonld' -%}{%- endif -%}
   <script src="{{ 'mem.js' | asset_url }}" defer="defer"></script>
 </head>
 

@@ -56,7 +56,7 @@
       "type": "collection-header",
       "settings": {
         "collection_image_enable": false,
-        "description_enable": false
+        "description_enable": true
       }
     },
     "collection-filters": {
