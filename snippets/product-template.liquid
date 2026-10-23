@@ -70,7 +70,10 @@
   data-history="{{ enableHistory }}"
   data-modal="{{ isModal }}">
 
+  {%- comment -%} Memorabil: datele pentru Google doar pe pagina produsului, nu și în ferestrele de previzualizare din liste. {%- endcomment -%}
+  {%- unless isModal -%}
   {%- render 'product-template-variables', product: product, current_variant: current_variant -%}
+  {%- endunless -%}
 
   <div class="page-content">
     <div class="page-width">

@@ -54,11 +54,16 @@
     # Eager is the default loading behavior of the browser, which is the same as not including the attribute and means the image is loaded as soon as possible
     # We are setting it explicitly here but there are no performance benefits
 
+  comment
+    Memorabil: imaginea încărcată imediat (preload) primește fetchpriority=high, ca browserul s-o ceară prima.
+  endcomment
+  assign fetchpriority = 'auto'
   if loading == 'eager'
     assign loading = 'eager'
   elsif loading == false
     assign loading = 'eager'
     assign preload = true
+    assign fetchpriority = 'high'
   else
     assign loading = 'lazy'
     assign preload = false
@@ -113,6 +118,7 @@
     {{ img
       | image_url: width: img_width, format: format
       | image_tag: preload: preload,
+                  fetchpriority: fetchpriority,
                   height: img_tag_height,
                   width: img_tag_width,
                   class: classes,
@@ -138,6 +144,7 @@
     {{ img
       | image_url: width: img_width, format: format
       | image_tag: preload: preload,
+                  fetchpriority: fetchpriority,
                   height: img_tag_height,
                   width: img_tag_width,
                   class: classes,
