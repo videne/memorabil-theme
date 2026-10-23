@@ -9,8 +9,10 @@
   {%- if template == 'password' -%}
     {{ shop.name }}
   {%- else -%}
-    {%- unless page_title contains shop.name -%}
-      &ndash; {{ shop.name }}
+    {%- comment -%} Memorabil: numele magazinului are un spațiu la final („Memorabil ”), de aceea strip. {%- endcomment -%}
+    {%- assign shop_name_clean = shop.name | strip -%}
+    {%- unless page_title contains shop_name_clean -%}
+      &ndash; {{ shop_name_clean }}
     {%- endunless -%}
   {%- endif -%}
 {%- endcapture -%}
