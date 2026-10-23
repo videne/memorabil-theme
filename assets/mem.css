@@ -171,7 +171,8 @@
 .color-swatch[style*="background-color: negru;"] {
   background-color: #111;
 }
-/* Filtrul de preț nu ajută: tricourile au același preț. Rămâne în pagină, dar nu se mai vede. */
+/* ---------------------------------------------------------------- filtre în colecții */
+/* Filtrul de preț nu ajută: produsele dintr-o colecție au același preț. Rămâne în pagină, dar nu se mai vede. */
 .collection-filter__group--price {
   display: none;
 }
