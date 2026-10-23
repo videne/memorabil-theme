@@ -1,0 +1,66 @@
+{%- comment -%}
+  Memorabil: pagini de informații (livrare, retur, termeni, confidențialitate, cookie-uri, întrebări frecvente, ghiduri de mărimi).
+  Titlul vine din titlul paginii; textul din conținutul paginii (clase mp-*). Cuprinsul se face singur din titlurile h2.
+  Stilurile sunt în assets/mem-page.css.
+{%- endcomment -%}
+{{ 'mem-page.css' | asset_url | stylesheet_tag }}
+<article class="mem-page">
+  <header class="mp-hero">
+    {%- if section.settings.eyebrow != blank -%}<p class="mp-eyebrow">{{ section.settings.eyebrow | escape }}</p>{%- endif -%}
+    <h1 class="mp-title">{{ page.title | escape }}</h1>
+  </header>
+  <div class="mp-layout">
+    <nav class="mp-toc" aria-label="Cuprins" hidden>
+      <p class="mp-toc-label">Pe pagina asta</p>
+      <ol></ol>
+    </nav>
+    <div class="mp-content">
+      {{ page.content }}
+    </div>
+  </div>
+  <aside class="mp-help">
+    <p class="mp-help-title">Ai o întrebare la care nu găsești răspuns aici?</p>
+    <a class="mp-help-btn" href="/pages/contact">Scrie-ne</a>
+  </aside>
+</article>
+
+<script>
+  (function () {
+    var content = document.querySelector('.mem-page .mp-content');
+    var toc = document.querySelector('.mem-page .mp-toc');
+    if (!content || !toc) return;
+    var headings = content.querySelectorAll('h2');
+    if (headings.length >= 3) {
+      var list = toc.querySelector('ol');
+      headings.forEach(function (h, i) {
+        if (!h.id) h.id = 'sectiunea-' + (i + 1);
+        var li = document.createElement('li');
+        var a = document.createElement('a');
+        a.href = '#' + h.id;
+        a.textContent = h.textContent;
+        li.appendChild(a);
+        list.appendChild(li);
+      });
+      toc.hidden = false;
+      toc.closest('.mp-layout').classList.add('mp-layout--toc');
+    }
+    // Butonul „Preferințe cookie” deschide fereastra de consimțământ Shopify.
+    content.querySelectorAll('[data-cookie-prefs]').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (window.privacyBanner && typeof window.privacyBanner.showPreferences === 'function') {
+          window.privacyBanner.showPreferences();
+        }
+      });
+    });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Memorabil: pagină info",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Text mic deasupra titlului", "default": "Bine de știut" }
+  ]
+}
+{% endschema %}
