@@ -1,0 +1,125 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": false
+          }
+        },
+        "inventory_status": {
+          "type": "inventory_status",
+          "settings": {
+            "inventory_threshold": 10,
+            "inventory_transfers_enable": true
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "surface_pickup_enable": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "text_9HMpCh": {
+          "type": "text",
+          "settings": {
+            "text": "Cană din ceramică de cea mai bună calitate, cu capacitate de 350 ml. Se poate folosi la cuptorul cu microunde. Personalizarea se face prin transfer termic. Se recomandă spălarea manuală cu un burete (lavetă) moale."
+          }
+        },
+        "tab": {
+          "type": "tab",
+          "settings": {
+            "title": "Cât costă livrarea",
+            "content": "<p>Pentru comenzile până în 300 de lei, transportul este 20 lei, iar pentru comenzile peste 300 lei, transportul este gratuit.</p>",
+            "page": ""
+          }
+        },
+        "tab_pgdVtN": {
+          "type": "tab",
+          "settings": {
+            "title": "În cât timp se livrează",
+            "content": "<p>Dureaza intre 2 si 7 zile lucratoare ca sa producem textilele (tricouri, sacose, etc) sau sa le comandam in cazul ca nu sunt pe stoc. Peste acest termen trebuie sa adaugi timpul de livrare (prin firma de curierat) care este de obicei de maxim 2 zile lucratoare.</p>",
+            "page": ""
+          }
+        },
+        "tab_p6xKbR": {
+          "type": "tab",
+          "settings": {
+            "title": "Cum să ai grijă de cana ta",
+            "content": "<p>Se recomandă spălarea manuală cu un burete (lavetă) moale.</p>",
+            "page": ""
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "price",
+        "variant_picker",
+        "inventory_status",
+        "buy_buttons",
+        "text_9HMpCh",
+        "tab",
+        "tab_pgdVtN",
+        "tab_p6xKbR",
+        "share"
+      ],
+      "settings": {
+        "product_image_size": "large",
+        "product_image_type": "stacked",
+        "thumbnail_height": "flexible",
+        "product_zoom_enable": true,
+        "enable_video_looping": true,
+        "product_video_style": "muted",
+        "sku_enable": false
+      }
+    },
+    "sub": {
+      "type": "product-full-width",
+      "disabled": true,
+      "settings": {
+        "max_width": true
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "product_recommendations_heading": "Alți clienți au mai adăugat în cos și:",
+        "related_count": 4
+      }
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "disabled": true,
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "sub",
+    "product-recommendations",
+    "collection-return"
+  ]
+}

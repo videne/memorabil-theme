@@ -1,0 +1,231 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "sales_point_hdnETQ": {
+          "type": "sales_point",
+          "disabled": true,
+          "settings": {
+            "icon": "tag",
+            "text": "DISCOUNT -20% direct în coș"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": false
+          }
+        },
+        "inventory_status": {
+          "type": "inventory_status",
+          "settings": {
+            "inventory_threshold": 10,
+            "inventory_transfers_enable": true
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "surface_pickup_enable": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "text_9HMpCh": {
+          "type": "text",
+          "settings": {
+            "text": "tricou unisex cu maneca scurta, medium fit (180g/m2), din bumbac organic 100%, printat DTG"
+          }
+        },
+        "size_chart_m9zcBj": {
+          "type": "size_chart",
+          "settings": {
+            "size_chart": "tabel-marimi-tricouri"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "is_tab": true
+          }
+        },
+        "tab_XYAxwp": {
+          "type": "tab",
+          "settings": {
+            "title": "Povestea tricoului",
+            "content": "<p>Creator 2.0 de la Stanley/Stella este tricoul nostru premium unisex, emblematic și de înaltă calitate. Cu un design atemporal și proporții actualizate, inclusiv un guler mai lat și mâneci mai lungi, Creator 2.0 este definiția unui tricou clasic modern. Fabricat din bumbac 100% organic, compact și ringspun, acest tricou oferă un confort deosebit și o potrivire excelentă, alături de o suprafață ideală pentru imprimare. Creator 2.0 nu doar că arată și se simte minunat, dar este și prietenos cu mediul. Alege Creator 2.0 pentru un tricou unisex versatil și de calitate superioară. </p>",
+            "page": ""
+          }
+        },
+        "tab": {
+          "type": "tab",
+          "settings": {
+            "title": "Cât costă livrarea",
+            "content": "<p>Pentru comenzile până în 300 de lei, transportul este 20 lei, iar pentru comenzile peste 300 lei, transportul este gratuit.</p>",
+            "page": ""
+          }
+        },
+        "tab_pgdVtN": {
+          "type": "tab",
+          "settings": {
+            "title": "În cât timp se livrează",
+            "content": "<p>Dureaza intre 2 si 7 zile lucratoare ca sa producem textilele (tricouri, sacose, etc) sau sa le comandam in cazul ca nu sunt pe stoc. Peste acest termen trebuie sa adaugi timpul de livrare (prin firma de curierat) care este de obicei de maxim 2 zile lucratoare.</p>",
+            "page": ""
+          }
+        },
+        "tab_p6xKbR": {
+          "type": "tab",
+          "settings": {
+            "title": "Cum să ai grijă de tricoul tău",
+            "content": "<ul><li>Spalati pe dos, la o temperatura de max. 30 de grade.</li><li>Nu folositi inalbitor sau șervețele captatoare de culoare</li><li>Nu uscati prin centrifugare</li><li>Calcati pe dos, la temperaturi de cel mult 110 grade, fara abur</li><li>Nu curatati chimic</li><li>Spalați cu toate fermoarele inchise</li></ul>",
+            "page": ""
+          }
+        },
+        "trust_badge_4AM8mP": {
+          "type": "trust_badge",
+          "settings": {
+            "trust_image": "shopify://shop_images/trust_badges_certificari.jpg"
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "sales_point_hdnETQ",
+        "price",
+        "variant_picker",
+        "inventory_status",
+        "buy_buttons",
+        "text_9HMpCh",
+        "size_chart_m9zcBj",
+        "description",
+        "tab_XYAxwp",
+        "tab",
+        "tab_pgdVtN",
+        "tab_p6xKbR",
+        "trust_badge_4AM8mP",
+        "share"
+      ],
+      "settings": {
+        "product_image_size": "large",
+        "product_image_type": "stacked",
+        "thumbnail_height": "flexible",
+        "product_zoom_enable": true,
+        "enable_video_looping": true,
+        "product_video_style": "muted",
+        "sku_enable": false
+      }
+    },
+    "sub": {
+      "type": "product-full-width",
+      "disabled": true,
+      "settings": {
+        "max_width": true
+      }
+    },
+    "advanced_content_bCqW4C": {
+      "type": "advanced-content",
+      "blocks": {
+        "image_EMCniJ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_28.jpg",
+            "link": "shopify://blogs/blog/textile-premium-din-materiale-sustenabile-stanley-stella",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "liquid_barCRM": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>Textile premium din materiale sustenabile - Stanley / Stella\n</h2><p>Stanley/Stella este unul dintre cei mai renumiti producători de textile premium din lume pentru calitate și folosirea exclusiv a materialelor sustenabile confecționate din bumbac organic și polyester reciclat. Produsele lor sunt certificate GOTS, FairWear, PETA și se supun standardului Global Recycled.</p>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_EMCniJ",
+        "liquid_barCRM"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": false,
+        "alt": false,
+        "lazyload_images": true
+      }
+    },
+    "advanced_content_KDeyC4": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_g9LPXY": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>La Memorabil.ro, ne preocupăm nu doar de designul produselor noastre, ci și de materialele din care sunt realizate.</h2>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "image_atpfhp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Direct_din_inima_naturii_1.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_g9LPXY",
+        "image_atpfhp"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": false,
+        "alt": false,
+        "lazyload_images": true
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "product_recommendations_heading": "Alți clienți au mai adăugat în cos și:",
+        "related_count": 4
+      }
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "disabled": true,
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "sub",
+    "advanced_content_bCqW4C",
+    "advanced_content_KDeyC4",
+    "product-recommendations",
+    "collection-return"
+  ]
+}

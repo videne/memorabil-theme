@@ -1,0 +1,391 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow_eg8B6N": {
+      "type": "slideshow",
+      "blocks": {
+        "image_wm79jE": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify://shop_images/hero_memorabil_ro.jpg",
+            "image_mobile": "shopify://shop_images/hero_memorabil_ro.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_wm79jE"
+      ],
+      "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
+      "settings": {
+        "style": "arrows",
+        "desktop_size": -20,
+        "mobile_size": 30,
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "lazyload_images": true
+      }
+    },
+    "hero-animated": {
+      "type": "hero-animated",
+      "blocks": {
+        "hero-animated-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hero_memorabil_ro.jpg",
+            "image_mobile": "shopify://shop_images/hero_memorabil_ro.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "hero-animated-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "style": "fading",
+        "title": "Ușor de purtat. Greu de uitat.",
+        "title_size": 40,
+        "subheading": "Tricouri, căni, hanorace și tote bags cu mesaje care rămân în minte. Din bumbac organic, cu umor 100% românesc.",
+        "link": "shopify://collections/all",
+        "link_text": "Vezi toate modelele",
+        "color_accent": "#ffffff",
+        "text_align": "vertical-center horizontal-center",
+        "desktop_size": -10,
+        "mobile_size": 0
+      }
+    },
+    "featured-collections": {
+      "type": "featured-collections",
+      "blocks": {
+        "featured-collections-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "tricouri"
+          }
+        },
+        "featured-collections-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "hanorace-cumpara-online-memorabil"
+          }
+        },
+        "featured-collections-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "cani-personalizate"
+          }
+        },
+        "featured-collections-3": {
+          "type": "collection",
+          "settings": {
+            "collection": "tote-bag"
+          }
+        }
+      },
+      "block_order": [
+        "featured-collections-0",
+        "featured-collections-1",
+        "featured-collections-2",
+        "featured-collections-3"
+      ],
+      "settings": {
+        "title": "Categorii de produse",
+        "alt": false
+      }
+    },
+    "scrolling_text_VeJP3P": {
+      "type": "scrolling-text",
+      "settings": {
+        "text": "★ Bumbac organic certificat ★ Transport gratuit peste 300 lei ★ Modele noi în fiecare lună",
+        "link": "",
+        "text_size": 36,
+        "text_spacing": true,
+        "color_scheme": "button",
+        "direction": "left",
+        "speed": 300
+      }
+    },
+    "featured-collection-slider": {
+      "type": "featured-collection-slider",
+      "settings": {
+        "title": "Cele mai populare",
+        "description": "Modelele pe care le comandă toată lumea. Există un motiv.",
+        "home_featured_products": "cele-mai-memorabile-modele",
+        "per_row": "medium",
+        "alt": false
+      }
+    },
+    "featured_collection_slider_HkXaDR": {
+      "type": "featured-collection-slider",
+      "settings": {
+        "title": "Cele mai noi produse",
+        "description": "Proaspăt ieșite din capul nostru. Tu decizi dacă au haz.",
+        "home_featured_products": "cele-mai-noi-produse",
+        "per_row": "small",
+        "alt": false
+      }
+    },
+    "scrolling_text_hbHt3B": {
+      "type": "scrolling-text",
+      "settings": {
+        "text": "Glume bune, pe bumbac organic",
+        "link": "",
+        "text_size": 20,
+        "text_spacing": true,
+        "color_scheme": "button",
+        "direction": "left",
+        "speed": 140
+      }
+    },
+    "featured-collection-slider2": {
+      "type": "featured-collection-slider",
+      "settings": {
+        "title": "Căni memorabile",
+        "description": "Aceleași replici, în varianta cu cafea. Cadoul ideal de birou.",
+        "home_featured_products": "cani-personalizate",
+        "per_row": "small",
+        "alt": false
+      }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Hanorace memorabile",
+        "description": "Mai mult material, aceleași mesaje. Pentru zilele comode cu ceva de zis.",
+        "home_featured_products": "hanorace-cumpara-online-memorabil",
+        "rows": 2,
+        "per_row_desktop": 4,
+        "per_row_mobile": "2",
+        "view_all": false,
+        "alt": false
+      }
+    },
+    "featured_collection_8KwEC7": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Memorabil x Varzzza",
+        "description": "",
+        "home_featured_products": "varzzza",
+        "rows": 1,
+        "per_row_desktop": 4,
+        "per_row_mobile": "2",
+        "view_all": true,
+        "alt": true
+      }
+    },
+    "text_and_image_TmnPDw": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify://shop_images/banner_alexa_lincu.jpg",
+        "image_mask": "none",
+        "image2_mask": "rounded",
+        "subtitle": "Memorabil x Alexa Lincu",
+        "title": "Alexa Lincu Collection",
+        "text": "",
+        "button_label": "Vezi produsele din colecție",
+        "button_link": "shopify://collections/alexa-lincu",
+        "button_style": "secondary",
+        "align_text": "center",
+        "image_width": "66",
+        "layout": "right",
+        "alt": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "featured_collection_slider_Xgd3px": {
+      "type": "featured-collection-slider",
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "description": "",
+        "home_featured_products": "alexa-lincu",
+        "per_row": "medium",
+        "alt": false
+      }
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "title": "Textile premium din materiale sustenabile - Stanley / Stella"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>Stanley/Stella este unul dintre cei mai renumiti producători de textile premium din lume pentru calitate și folosirea exclusiv a materialelor sustenabile confecționate din bumbac organic și polyester reciclat. Produsele lor sunt certificate GOTS, FairWear, PETA și se supun standardului Global Recycled.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "alt": false
+      }
+    },
+    "text-and-image": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify://shop_images/Direct_din_inima_naturii_1.jpg",
+        "image_mask": "none",
+        "image2": "shopify://shop_images/Direct_din_inima_naturii_2.jpg",
+        "image2_mask": "none",
+        "subtitle": "De ce Memorabil",
+        "title": "",
+        "text": "<h2>Glume bune, pe materiale serioase.</h2><p>Tricourile și hanoracele noastre sunt din bumbac organic 100% ringspun, imprimate cu cerneluri ecologice și livrate în ambalaje din hârtie reciclată, certificate FSC. Mesajul te face memorabil — materialele te țin confortabil.</p>",
+        "button_label": "Despre noi",
+        "button_link": "shopify://pages/despre-noi",
+        "button_style": "secondary",
+        "align_text": "center",
+        "image_width": "50",
+        "layout": "right",
+        "alt": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "newsletter_memorabil": {
+      "type": "newsletter",
+      "blocks": {
+        "nl-title": {
+          "type": "title",
+          "settings": {
+            "title": "Modele noi, glume noi. Le primești primul.",
+            "heading_size": "h2"
+          }
+        },
+        "nl-text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Abonează-te și afli înaintea tuturor când lansăm mesaje noi. Fără spam — avem și noi inbox.</p>"
+          }
+        },
+        "nl-form": {
+          "type": "form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "nl-title",
+        "nl-text",
+        "nl-form"
+      ],
+      "settings": {
+        "align_text": "center",
+        "image_width": "33",
+        "image_mask": "none",
+        "image_position": "right",
+        "color_background": "#f9f9f9",
+        "color_text": "#1c1d1d",
+        "top_padding": true,
+        "bottom_padding": true
+      }
+    },
+    "scrolling-text": {
+      "type": "scrolling-text",
+      "settings": {
+        "text": "Transport gratuit pentru comenzi peste 300 lei",
+        "link": "",
+        "text_size": 20,
+        "text_spacing": true,
+        "color_scheme": "button",
+        "direction": "left",
+        "speed": 140
+      }
+    },
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slideshow-0": {
+          "type": "image",
+          "settings": {
+            "title": "Two line\nslide title.",
+            "title_size": 70,
+            "subheading": "And an optional subheading",
+            "link": "",
+            "link_text": "Optional button",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-bottom horizontal-left"
+          }
+        }
+      },
+      "block_order": [
+        "slideshow-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "style": "arrows",
+        "desktop_size": 0,
+        "mobile_size": 0,
+        "autoplay": false,
+        "autoplay_speed": 7,
+        "lazyload_images": true
+      }
+    },
+    "text-and-image-2": {
+      "type": "text-and-image",
+      "disabled": true,
+      "settings": {
+        "image_mask": "none",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Image with text",
+        "text": "<p>Pair large text with an image to tell a story, explain a detail about your product, or describe a new promotion.</p>",
+        "button_label": "Contact us",
+        "button_link": "",
+        "button_style": "secondary",
+        "align_text": "center",
+        "image_width": "50",
+        "layout": "left",
+        "alt": false,
+        "top_padding": true,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    }
+  },
+  "order": [
+    "slideshow_eg8B6N",
+    "hero-animated",
+    "featured-collections",
+    "scrolling_text_VeJP3P",
+    "featured-collection-slider",
+    "featured_collection_slider_HkXaDR",
+    "scrolling_text_hbHt3B",
+    "featured-collection-slider2",
+    "featured-collection",
+    "featured_collection_8KwEC7",
+    "text_and_image_TmnPDw",
+    "featured_collection_slider_Xgd3px",
+    "rich-text",
+    "text-and-image",
+    "newsletter_memorabil",
+    "scrolling-text",
+    "slideshow",
+    "text-and-image-2"
+  ]
+}

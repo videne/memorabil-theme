@@ -1,0 +1,178 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slideshow-0": {
+          "type": "image",
+          "settings": {
+            "title": "Despre noi",
+            "title_size": 80,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify://shop_images/De_Silva_Exclusiv_5.png"
+          }
+        }
+      },
+      "block_order": [
+        "slideshow-0"
+      ],
+      "settings": {
+        "style": "arrows",
+        "desktop_size": 0,
+        "mobile_size": 0,
+        "autoplay": false,
+        "autoplay_speed": 7,
+        "lazyload_images": true
+      }
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "title": "La Memorabil.ro, ne preocupăm nu doar de designul produselor noastre, ci și de materialele din care sunt realizate. "
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p></p><p><strong>Ambalaje 100% sustenabile</strong>,<strong>refolosibile</strong>,<strong>impermeabile</strong>,<strong>semitransparente</strong>,<strong>reciclabile</strong>, hârtie confecționată cu responsabilitate pentru mediu conform standardului <strong>FSC (Forest Stewardship Council®)</strong>.</p><p><a href=\"https://www.vela.eco/environment\" target=\"_blank\" title=\"https://www.vela.eco/environment\"><em>https://www.vela.eco/environment</em></a></p><p><strong>Adio plicuri de curier din plastic!</strong> La <strong>Memorabil</strong>, am făcut o schimbare importantă. Acum folosim <strong>plicuri din hârtie reciclată</strong>, certificate <strong>FSC</strong> (Forest Stewardship Council) și <strong>Etichal pack</strong>. Aceste produse sunt sub atenta supraveghere germană, respectând cele mai înalte standarde.</p><p>Plicurile noastre sunt <strong>impermeabile</strong> și <strong>groase</strong>, asigurând o <strong>livrare în siguranță garantată</strong>. Astfel, contribuim la protejarea mediului și oferim servicii de calitate clienților noștri. </p><p>Știm că <strong>ambalajul vinde produsul</strong>. Prima experiență este importantă și poate avea un impact semnificativ asupra modului în care oamenii percep brandul tău. Acordăm mare atenție ambalării produselor, astfel încât clientul să trăiască o experiență de shopping deosebită și să revină cu plăcere pentru alte cumpărături.</p><p>Ambalajul încoronează produsul și atrage atenția clientului, aprecierea lui și îl determină să împărtășească experiența trăită pe rețelele de socializare. Problema apare totuși acolo unde ambalarea, pe lângă aspect și reclamă, aduce un impact major asupra mediului prin folosirea materialelor poluante și prin supraambalare. În majoritatea cazurilor, ambalajele ajung direct la coșul de gunoi, afectând astfel viața ta, a noastră, a tuturor.</p><p>Începând cu anul 2023, împreună cu voi, am făcut o schimbare. Acordăm mai multă atenție protejării mediului înconjurător și dăm șansa generațiilor viitoare să trăiască pe o planetă mai curată. Pentru aceasta, am renunțat la plastic și la ambalarea excesivă și folosim doar plicuri de hârtie reciclată, plicuri de curier din materiale reciclate sau biodegradabile și ambalare bulk, fără rabat la imagine.</p><p>Poți atrage admirația și respectul clienților, promovând implicarea ta în protecția mediului și respectul față de natură. Alege un ambalaj mai puțin poluant și renunță la supraambalarea care nu face altceva decât să susțină risipa. Ambalarea bulk nu înseamnă că aruncăm într-un plic o grămadă de haine. Produsele se împăturesc frumos și elegant, ca și până acum, se etichetează și se introduc împreună cu alte produse în același plic.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "alt": false
+      }
+    },
+    "slideshow_GYYVBG": {
+      "type": "slideshow",
+      "blocks": {
+        "image_8PQnYf": {
+          "type": "image",
+          "settings": {
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "",
+            "link_text": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-center",
+            "image": "shopify://shop_images/memorabil_ro_222.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "image_8PQnYf"
+      ],
+      "settings": {
+        "style": "arrows",
+        "desktop_size": -10,
+        "mobile_size": 0,
+        "autoplay": false,
+        "autoplay_speed": 7,
+        "lazyload_images": true
+      }
+    },
+    "rich_text_Yczt4z": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_LGNTmQ": {
+          "type": "heading",
+          "settings": {
+            "title": "Ambalaje 100% sustenabile"
+          }
+        },
+        "text_b9rK3D": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p><strong>La Memorabil.ro, ne preocupăm nu doar de designul produselor noastre, ci și de materialele din care sunt realizate. Iată mai multe detalii despre materialele noastre și certificările pe care le respectăm:</strong></p><p><strong>Certificări Importante</strong>:</p><ul><li><strong>Organic Blended Content Standard</strong>: Acest standard certifică prezența bumbacului organic în produsele noastre. Ne asigurăm că respectăm criteriile stricte pentru a oferi produse autentice și sustenabile.</li><li><strong>Global Organic Textile Standard (GOTS)</strong>: Această certificare atestă că produsele noastre sunt realizate din materiale organice și că întregul proces de producție respectă standardele ecologice și sociale.</li><li><strong>Fair Wear</strong>: Suntem mândri să facem parte din inițiativa Fair Wear, care promovează condiții de muncă corecte și sigure în industria textilă.</li><li><strong>PETA</strong>: Suntem certificați de PETA ca fiind cruelty-free, ceea ce înseamnă că nu folosim materiale de origine animală și nu testăm produsele pe animale.</li></ul><p></p><p>Alegând produsele noastre, nu doar te bucuri de designul personalizat, ci și contribui la protejarea mediului și a drepturilor omului. Mulțumim că ești alături de noi în această călătorie responsabilă!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_LGNTmQ",
+        "text_b9rK3D"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "alt": false
+      }
+    },
+    "text-columns": {
+      "type": "text-columns",
+      "blocks": {
+        "column1": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Direct_din_inima_naturii_3.jpg",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Bumbac Organic 100% Ringspun",
+            "text": "<p>Tricourile și hanoracele noastre sunt confecționate din bumbac organic 100% ringspun. Acest tip de bumbac este cultivat fără utilizarea pesticidelor sau a altor substanțe chimice dăunătoare mediului. Este moale, respirabil și confortabil pentru piele.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "column2": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/Direct_din_inima_naturii_2.jpg",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Cerneluri ecologice și bio",
+            "text": "<p>Imprimările de pe produsele noastre sunt realizate cu cerneluri ecologice și bio. Aceste cerneluri nu conțin substanțe toxice și nu poluează mediul înconjurător. Astfel, poți purta cu mândrie produsele noastre, știind că nu afectezi negativ natura.</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column1",
+        "column2"
+      ],
+      "settings": {
+        "title": "",
+        "align_text": "center",
+        "alt": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "slideshow",
+    "rich-text",
+    "slideshow_GYYVBG",
+    "rich_text_Yczt4z",
+    "text-columns"
+  ]
+}

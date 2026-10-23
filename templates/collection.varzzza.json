@@ -1,0 +1,141 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "scrolling_text_bGCPEw": {
+      "type": "scrolling-text",
+      "settings": {
+        "text": "Colecție nouă",
+        "link": "",
+        "text_size": 30,
+        "text_spacing": true,
+        "color_scheme": "button",
+        "direction": "left",
+        "speed": 200
+      }
+    },
+    "rich_text_h8qkMm": {
+      "type": "rich-text",
+      "blocks": {
+        "text_9UfKKn": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<h1><strong>Colecția @ Memorabil x Varzzza</strong></h1>"
+          }
+        }
+      },
+      "block_order": [
+        "text_9UfKKn"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "alt": false
+      }
+    },
+    "advanced_content_N6pGWL": {
+      "type": "advanced-content",
+      "blocks": {
+        "image_99KTJh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/PMAX_1200_x_628_7.jpg",
+            "link": "",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_99KTJh"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": false,
+        "alt": false,
+        "lazyload_images": true
+      }
+    },
+    "rich_text_6UcEbm": {
+      "type": "rich-text",
+      "blocks": {
+        "text_b86f8A": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p>Stefan Ciobotaru a.k.a. <strong>Varzzza </strong>is a talented illustrator and graphic designer from Cluj Napoca. You can follow and appreciate his work on his Instagram account.</p>"
+          }
+        },
+        "button_UgLjkB": {
+          "type": "button",
+          "settings": {
+            "link": "",
+            "link_text": "Varzzza"
+          }
+        }
+      },
+      "block_order": [
+        "text_b86f8A",
+        "button_UgLjkB"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "alt": false
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "collection_description": {
+          "type": "collection_description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "collection_description"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "featured_collection_TNwNqM": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "",
+        "description": "",
+        "home_featured_products": "varzzza",
+        "rows": 4,
+        "per_row_desktop": 3,
+        "per_row_mobile": "2",
+        "view_all": false,
+        "alt": false
+      }
+    },
+    "collection-filters": {
+      "type": "collection-filters",
+      "settings": {}
+    },
+    "collection-header": {
+      "type": "collection-header",
+      "settings": {}
+    }
+  },
+  "order": [
+    "collection-header",
+    "scrolling_text_bGCPEw",
+    "collection-filters",
+    "rich_text_h8qkMm",
+    "advanced_content_N6pGWL",
+    "rich_text_6UcEbm",
+    "main-collection",
+    "featured_collection_TNwNqM"
+  ]
+}

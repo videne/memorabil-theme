@@ -1,0 +1,73 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "collection-header": {
+      "type": "collection-header",
+      "disabled": true,
+      "settings": {
+        "collection_image_enable": true,
+        "description_enable": false
+      }
+    },
+    "text_and_image_Fkf9hm": {
+      "type": "text-and-image",
+      "settings": {
+        "image": "shopify://shop_images/cana-cafeluta-cu-scandal-cana-memorabil-399284.jpg",
+        "image_mask": "none",
+        "image2": "shopify://shop_images/cana-more-time-more-coffee-cana-memorabil-100966.jpg",
+        "image2_mask": "none",
+        "subtitle": "",
+        "title": "Căni personalizate",
+        "text": "<p>Cani din ceramică de cea mai bună calitate, cu capacitate de 350 ml. Se pot folosi la cuptorul cu microunde. Personalizarea se face prin transfer termic. Se recomandă spălarea manuală cu un burete (lavetă) moale.</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_style": "primary",
+        "align_text": "center",
+        "image_width": "50",
+        "layout": "right",
+        "alt": false,
+        "top_padding": false,
+        "bottom_padding": true,
+        "lazyload_images": true
+      }
+    },
+    "collection-filters": {
+      "type": "collection-filters",
+      "settings": {
+        "enable_color_swatches": false,
+        "enable_swatch_labels": true,
+        "collection_sort_enable": true
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "product_grid": {
+          "type": "product_grid",
+          "settings": {
+            "per_row_desktop": 3,
+            "per_row_mobile": "1"
+          }
+        }
+      },
+      "block_order": [
+        "product_grid"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "collection-header",
+    "text_and_image_Fkf9hm",
+    "collection-filters",
+    "main-collection"
+  ]
+}

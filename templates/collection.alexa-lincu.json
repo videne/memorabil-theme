@@ -1,0 +1,166 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "scrolling_text_bGCPEw": {
+      "type": "scrolling-text",
+      "settings": {
+        "text": "Colecție nouă",
+        "link": "",
+        "text_size": 30,
+        "text_spacing": true,
+        "color_scheme": "button",
+        "direction": "left",
+        "speed": 200
+      }
+    },
+    "rich_text_h8qkMm": {
+      "type": "rich-text",
+      "blocks": {
+        "text_9UfKKn": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<h1><strong>Colecția @ Alexa Lincu</strong></h1>"
+          }
+        }
+      },
+      "block_order": [
+        "text_9UfKKn"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "alt": false
+      }
+    },
+    "advanced_content_N6pGWL": {
+      "type": "advanced-content",
+      "blocks": {
+        "image_99KTJh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/banner_alexa_lincu.jpg",
+            "link": "",
+            "width": "100%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_99KTJh"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": false,
+        "alt": false,
+        "lazyload_images": true
+      }
+    },
+    "rich_text_6UcEbm": {
+      "type": "rich-text",
+      "blocks": {
+        "text_b86f8A": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": true,
+            "text": "<p><a href=\"https://alexalincu.com\" target=\"_blank\" title=\"https://alexalincu.com\">Website</a> / <a href=\"https://www.instagram.com/alexalincu/\" target=\"_blank\" title=\"https://www.instagram.com/alexalincu/\">Instagram</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_b86f8A"
+      ],
+      "settings": {
+        "align_text": "center",
+        "narrow_column": true,
+        "alt": false
+      }
+    },
+    "advanced_content_mAJKcd": {
+      "type": "advanced-content",
+      "blocks": {
+        "image_hywL6F": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/420067958_18413174011002222_7895791497196302792_n.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "liquid_Ci6nc3": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>Cine e Alexa Lincu?</h2><p>Alexa Lincu este o artistă vizuală care trăiește și lucrează în prezent în București, România. Desenează de când se știe, deși abia în ultimul an de liceu i-a trecut prin minte că ar putea transforma această pasiune într-o carieră. Absolventă a departamentului de Artă Murală al Universității Naționale de Arte din București, Alexa este dornică să experimenteze cu medii tradiționale și digitale, dorind să aprofundeze înțelegerea practicii artistice în contextul artei contemporane. Lucrările ei reflectă o călătorie de introspecție profundă, folosind ca sursă de inspirație sentimentele legate de evenimentele curente sau amintirile din copilărie, dezvoltând astfel contextul vizual al unei lumi noi de posibilități.</p>",
+            "width": "50%",
+            "alignment": "top-middle"
+          }
+        }
+      },
+      "block_order": [
+        "image_hywL6F",
+        "liquid_Ci6nc3"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": true,
+        "alt": false,
+        "lazyload_images": true
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "collection_description": {
+          "type": "collection_description",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "collection_description"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "featured_collection_TNwNqM": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "",
+        "description": "",
+        "home_featured_products": "alexa-lincu",
+        "rows": 4,
+        "per_row_desktop": 3,
+        "per_row_mobile": "2",
+        "view_all": false,
+        "alt": false
+      }
+    },
+    "collection-filters": {
+      "type": "collection-filters",
+      "settings": {}
+    },
+    "collection-header": {
+      "type": "collection-header",
+      "settings": {}
+    }
+  },
+  "order": [
+    "collection-header",
+    "scrolling_text_bGCPEw",
+    "collection-filters",
+    "rich_text_h8qkMm",
+    "advanced_content_N6pGWL",
+    "rich_text_6UcEbm",
+    "advanced_content_mAJKcd",
+    "main-collection",
+    "featured_collection_TNwNqM"
+  ]
+}
