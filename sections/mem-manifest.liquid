@@ -1,0 +1,16 @@
+{%- comment -%}
+  Memorabil: pagina Manifest (șablonul page.manifest).
+  Textul stă în conținutul paginii din admin (Online Store → Pages → Manifest), cu clase mm-* pentru aranjare.
+  Stilurile sunt în assets/mem-manifest.css și se încarcă doar pe această pagină.
+{%- endcomment -%}
+{{ 'mem-manifest.css' | asset_url | stylesheet_tag }}
+<article class="mem-manifest">
+  {{ page.content }}
+</article>
+
+{% schema %}
+{
+  "name": "Memorabil: manifest",
+  "settings": []
+}
+{% endschema %}

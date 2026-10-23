@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "mem-manifest",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

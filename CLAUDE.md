@@ -16,6 +16,7 @@ finalul Manifestului și Organization din snippets/structured-data.liquid (datel
 - snippets/mem-free-shipping.liquid: bara de livrare gratuită în coșul lateral și pe pagina coșului (se actualizează din /cart.js)
 - snippets/structured-data.liquid (Streamline, modificat): Organization cu sloganul + WebSite pe prima pagină, BreadcrumbList pe colecții și produse.
   Nu adăuga alt Organization în altă parte, ar fi dublat.
+- sections/mem-manifest.liquid + templates/page.manifest.json + assets/mem-manifest.css: pagina Manifest (textul e în conținutul paginii, cu clase mm-*)
 - snippets/mem-product-jsonld.liquid: datele structurate pentru Google (randat din product-template-variables.liquid)
 - Blocurile noi sunt declarate în sections/main-product.liquid și randate în snippets/product-template.liquid
 - Setări: Theme settings → Memorabil (prag livrare gratuită, zile de producție/livrare, ora limită, zile libere)
