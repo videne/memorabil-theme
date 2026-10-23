@@ -15,9 +15,9 @@
         "image_wm79jE": {
           "type": "image",
           "settings": {
-            "title": "Ușor de purtat.\nGreu de uitat.",
+            "title": "Replici care\nse poartă.",
             "title_size": 64,
-            "subheading": "Tricouri, hanorace, căni și tote bags cu replici pe care le știe toată lumea.",
+            "subheading": "Pentru că nu ne stă bine să tăcem.",
             "link": "shopify://collections/all",
             "link_text": "Vezi toate modelele",
             "color_accent": "rgba(0,0,0,0)",
@@ -57,9 +57,9 @@
       "disabled": true,
       "settings": {
         "style": "fading",
-        "title": "Ușor de purtat. Greu de uitat.",
+        "title": "Replici care se poartă.",
         "title_size": 40,
-        "subheading": "Tricouri, căni, hanorace și tote bags cu mesaje care rămân în minte. Din bumbac organic, cu umor 100% românesc.",
+        "subheading": "Pentru că nu ne stă bine să tăcem.",
         "link": "shopify://collections/all",
         "link_text": "Vezi toate modelele",
         "color_accent": "#ffffff",
@@ -110,7 +110,7 @@
     "scrolling_text_VeJP3P": {
       "type": "scrolling-text",
       "settings": {
-        "text": "Ușor de purtat ★ Greu de uitat ★ Imprimat în București ★ Livrare gratuită peste 300 de lei ★",
+        "text": "Replici care se poartă ★ Imprimate la comandă în București ★ Livrare gratuită peste 300 de lei ★",
         "link": "",
         "text_size": 26,
         "text_spacing": true,
@@ -213,7 +213,7 @@
         "image2_mask": "none",
         "subtitle": "De ce Memorabil",
         "title": "",
-        "text": "<h2>Glume bune, pe materiale serioase.</h2><p>Tricourile și hanoracele sunt Stanley/Stella, din bumbac organic certificat GOTS. Le imprimăm la comandă, în București, abia după ce comanzi, așa că nu stau în depozit. Mesajul te face memorabil, materialele te țin confortabil.</p>",
+        "text": "<h2>Pentru că nu ne stă bine să tăcem.</h2><p>Replicile pe care le știe toată lumea merită purtate, nu doar citate. Le punem pe tricouri și hanorace Stanley/Stella, din bumbac organic certificat GOTS, și le imprimăm la comandă, în București, abia după ce comanzi.</p>",
         "button_label": "Despre noi",
         "button_link": "shopify://pages/despre-noi",
         "button_style": "secondary",
