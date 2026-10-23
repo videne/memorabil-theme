@@ -123,3 +123,27 @@
     transition: none;
   }
 }
+
+/* ---------------------------------------------------------------- categorii pe prima pagină */
+/* Numele categoriei stă pe o etichetă albă, jos, ca să se citească și pe pozele deschise la culoare. */
+.skrim__overlay:before {
+  opacity: 0;
+}
+.skrim__title {
+  align-items: flex-end;
+  padding-bottom: 16px;
+}
+.skrim__title:before {
+  display: none;
+}
+.skrim__underline-me {
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: var(--colorBody, #fff);
+  color: var(--colorTextBody, #111);
+  font-size: 0.85em;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+}
+[data-animate_underlines=true] .skrim__underline-me:after {
+  display: none;
+}
