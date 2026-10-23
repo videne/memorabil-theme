@@ -1,4 +1,17 @@
-<div class="variant-wrapper small--text-center variant-wrapper--dropdown js" data-type="dropdown">
+{%- liquid
+  comment
+    Memorabil: o opțiune cu o singură valoare (de ex. „Design”) nu are ce alege, așa că se ascunde.
+    Culoarea rămâne vizibilă, ca să se vadă că produsul e alb sau negru.
+  endcomment
+  assign mem_option_name = option.name | downcase
+  assign mem_hide_option = false
+  if option.values.size == 1
+    unless mem_option_name contains 'culoare' or mem_option_name contains 'color'
+      assign mem_hide_option = true
+    endunless
+  endif
+-%}
+<div class="variant-wrapper small--text-center variant-wrapper--dropdown js{% if mem_hide_option %} mem-variant--hidden{% endif %}" data-type="dropdown">
   <label class="variant__label{% if option.name == 'Default' or option.name == 'Title' %} hidden-label{% endif %}{% unless variant_labels %} hidden-label{% endunless %}"
     for="SingleOptionSelector-{{ section_id }}-{{ product.id }}-option-{{ forloop.index0 }}">
     {{ option.name }}

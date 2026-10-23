@@ -44,7 +44,7 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "surface_pickup_enable": false,
             "show_gift_card_recipient": false
           }
@@ -52,7 +52,7 @@
         "text_9HMpCh": {
           "type": "text",
           "settings": {
-            "text": "tricou unisex cu maneca scurta, medium fit (180g/m2), din bumbac organic 100%, printat DTG"
+            "text": "Tricou unisex cu mânecă scurtă, medium fit, 180 g/m², din bumbac 100% organic, imprimat DTG."
           }
         },
         "size_chart_m9zcBj": {
@@ -72,7 +72,7 @@
           "type": "tab",
           "settings": {
             "title": "Povestea tricoului",
-            "content": "<p>Creator 2.0 de la Stanley/Stella este tricoul nostru premium unisex, emblematic și de înaltă calitate. Cu un design atemporal și proporții actualizate, inclusiv un guler mai lat și mâneci mai lungi, Creator 2.0 este definiția unui tricou clasic modern. Fabricat din bumbac 100% organic, compact și ringspun, acest tricou oferă un confort deosebit și o potrivire excelentă, alături de o suprafață ideală pentru imprimare. Creator 2.0 nu doar că arată și se simte minunat, dar este și prietenos cu mediul. Alege Creator 2.0 pentru un tricou unisex versatil și de calitate superioară. </p>",
+            "content": "<p>Creator 2.0 de la Stanley/Stella e tricoul nostru unisex premium. Are guler puțin mai lat și mâneci puțin mai lungi decât un tricou obișnuit, iar bumbacul 100% organic, compact și ring-spun, e moale la purtat și ține bine imprimarea.</p>",
             "page": ""
           }
         },
@@ -173,7 +173,7 @@
         "liquid_barCRM": {
           "type": "liquid",
           "settings": {
-            "code": "<h2>Textile premium din materiale sustenabile - Stanley / Stella\n</h2><p>Stanley/Stella este unul dintre cei mai renumiti producători de textile premium din lume pentru calitate și folosirea exclusiv a materialelor sustenabile confecționate din bumbac organic și polyester reciclat. Produsele lor sunt certificate GOTS, FairWear, PETA și se supun standardului Global Recycled.</p>",
+            "code": "<h2>Tricouri și hanorace Stanley/Stella</h2><p>Stanley/Stella e un producător belgian de textile premium. Tricourile noastre sunt din bumbac 100% organic certificat GOTS, iar hanoracele din bumbac organic și poliester reciclat. Mai multe despre materiale găsești în articolul de pe blog.</p>",
             "width": "50%",
             "alignment": "center"
           }
@@ -190,42 +190,10 @@
         "lazyload_images": true
       }
     },
-    "advanced_content_KDeyC4": {
-      "type": "advanced-content",
-      "blocks": {
-        "liquid_g9LPXY": {
-          "type": "liquid",
-          "settings": {
-            "code": "<h2>La Memorabil.ro, ne preocupăm nu doar de designul produselor noastre, ci și de materialele din care sunt realizate.</h2>",
-            "width": "50%",
-            "alignment": "center"
-          }
-        },
-        "image_atpfhp": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Direct_din_inima_naturii_1.jpg",
-            "link": "",
-            "width": "50%",
-            "alignment": "center"
-          }
-        }
-      },
-      "block_order": [
-        "liquid_g9LPXY",
-        "image_atpfhp"
-      ],
-      "settings": {
-        "full_width": false,
-        "space_around": false,
-        "alt": false,
-        "lazyload_images": true
-      }
-    },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
-        "product_recommendations_heading": "Alți clienți au mai adăugat în cos și:",
+        "product_recommendations_heading": "S-ar putea să-ți placă și",
         "related_count": 4
       }
     },
@@ -239,7 +207,6 @@
     "main",
     "sub",
     "advanced_content_bCqW4C",
-    "advanced_content_KDeyC4",
     "product-recommendations",
     "collection-return"
   ]

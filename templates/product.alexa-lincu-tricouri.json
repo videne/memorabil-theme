@@ -37,7 +37,7 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "surface_pickup_enable": false,
             "show_gift_card_recipient": false
           }
@@ -45,7 +45,7 @@
         "text_9HMpCh": {
           "type": "text",
           "settings": {
-            "text": "tricou cu maneca scurta, medium fit (180g/m2), din bumbac organic 100%, printat DTG"
+            "text": "Tricou unisex cu mânecă scurtă, medium fit, 180 g/m², din bumbac 100% organic, imprimat DTG."
           }
         },
         "size_chart_m9zcBj": {
@@ -64,7 +64,7 @@
           "type": "tab",
           "settings": {
             "title": "Descrierea tricoului",
-            "content": "<p>Creator 2.0 de la Stanley/Stella este tricoul nostru premium unisex, emblematic și de înaltă calitate. Cu un design atemporal și proporții actualizate, inclusiv un guler mai lat și mâneci mai lungi, Creator 2.0 este definiția unui tricou clasic modern. Fabricat din bumbac 100% organic, compact și ringspun, acest tricou oferă un confort deosebit și o potrivire excelentă, alături de o suprafață ideală pentru imprimare. Creator 2.0 nu doar că arată și se simte minunat, dar este și prietenos cu mediul. Alege Creator 2.0 pentru un tricou unisex versatil și de calitate superioară. </p>",
+            "content": "<p>Creator 2.0 de la Stanley/Stella e tricoul nostru unisex premium. Are guler puțin mai lat și mâneci puțin mai lungi decât un tricou obișnuit, iar bumbacul 100% organic, compact și ring-spun, e moale la purtat și ține bine imprimarea.</p>",
             "page": ""
           }
         },
@@ -206,7 +206,7 @@
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
-        "product_recommendations_heading": "Alți clienți au mai adăugat în cos și:",
+        "product_recommendations_heading": "S-ar putea să-ți placă și",
         "related_count": 4
       }
     },

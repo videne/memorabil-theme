@@ -54,6 +54,12 @@
         endif
       endif
     endfor
+  elsif settings.mem_bestseller_tag != blank and product.tags contains settings.mem_bestseller_tag
+    comment
+      Memorabil: eticheta „Bestseller” pe cardul produsului, după tag-ul din Theme settings → Memorabil.
+    endcomment
+    assign has_custom_label = true
+    assign custom_label = 'Bestseller'
   endif
 -%}
 
