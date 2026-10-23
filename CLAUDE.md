@@ -9,7 +9,7 @@ Slogan: „Ușor de purtat. Greu de uitat.”
 - snippets/mem-badges.liquid: Nou / Bestseller (tag) / Reducere
 - snippets/mem-details-tabs.liquid: tab-urile Detalii și materiale, Îngrijire, Siguranța produsului.
   Valoarea de pe produs (metafield custom.*) are prioritate; altfel se folosește valoarea comună din setările blocului
-  „Memorabil: tab-uri din câmpuri” din fiecare șablon de produs.
+  „Memorabil: tab-uri” din fiecare șablon de produs.
 - snippets/mem-free-shipping.liquid: bara de livrare gratuită în coșul lateral și pe pagina coșului (se actualizează din /cart.js)
 - snippets/mem-product-jsonld.liquid: datele structurate pentru Google (randat din product-template-variables.liquid)
 - Blocurile noi sunt declarate în sections/main-product.liquid și randate în snippets/product-template.liquid
@@ -26,5 +26,6 @@ Nu traduce în engleză. Atenție: în română first name = Prenume, last name 
 ## Reguli
 - Nu modifica fișierele Streamline decât dacă e necesar; preferă fișiere mem-.
 - ID-urile blocurilor trebuie să fie unice în fiecare șablon JSON. „unit” la range: maximum 3 caractere.
+- „name” la blocuri și secțiuni: maximum 25 de caractere (altfel Shopify respinge secțiunea și toate șabloanele care o folosesc).
 - Shopify reîncearcă un fișier respins la sincronizare doar când acel fișier se schimbă.
 - Pull request cu rezumat în română, pe înțelesul cuiva care nu e programator.

@@ -6,6 +6,7 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
+ * Memorabil: folosește blocurile mem_badges, mem_delivery, mem_details din sections/main-product.liquid.
  */
 {
   "sections": {
