@@ -43,6 +43,7 @@
   gap: clamp(32px, 6vw, 88px);
 }
 .mp-toc { position: sticky; top: 110px; align-self: start; }
+.mp-toc[hidden] { display: none; }
 .mp-toc-label {
   margin: 0 0 14px;
   font-size: 12px;
