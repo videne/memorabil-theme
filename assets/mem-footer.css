@@ -10,8 +10,16 @@
   color: #fff;
   font-size: 16px;
   line-height: 1.5;
+  /* sub subsol, tema lasă spațiu pentru butonul plutitor „Meniu”: îl colorăm tot albastru */
+  box-shadow: 0 320px 0 0 var(--mf-blue);
 }
 .template-index .mem-footer { margin-top: 0; }
+
+/* butonul plutitor „Meniu” (și coșul de lângă el) primește un contur alb, ca să se vadă și peste subsolul albastru */
+.site-nav__thumb-menu {
+  filter: drop-shadow(1.5px 0 0 #fff) drop-shadow(-1.5px 0 0 #fff) drop-shadow(0 1.5px 0 #fff) drop-shadow(0 -1.5px 0 #fff)
+    drop-shadow(0 8px 20px rgba(0, 0, 0, 0.18));
+}
 
 .mf-inner {
   position: relative;
