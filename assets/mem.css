@@ -147,3 +147,27 @@
 [data-animate_underlines=true] .skrim__underline-me:after {
   display: none;
 }
+
+/* ---------------------------------------------------------------- pagina de produs și colecții */
+/* Opțiunile cu o singură valoare (de ex. „Design”) rămân în formular, dar nu se mai văd. */
+.mem-variant--hidden {
+  display: none !important;
+}
+/* Eticheta de pe cardul produsului (Bestseller, reducere, stoc epuizat), ca o pastilă, la fel ca pe pagina de produs. */
+.grid-product__tag {
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+/* Bulinele de culoare: valorile sunt în română („Alb”, „Negru”), pe care browserul nu le recunoaște ca culori. */
+.color-swatch[style*="background-color: alb;"] {
+  background-color: #fff;
+}
+.color-swatch[style*="background-color: negru;"] {
+  background-color: #111;
+}

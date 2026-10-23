@@ -36,7 +36,7 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "surface_pickup_enable": false,
             "show_gift_card_recipient": false
           }
@@ -44,7 +44,7 @@
         "text_9HMpCh": {
           "type": "text",
           "settings": {
-            "text": "Cană din ceramică de cea mai bună calitate, cu capacitate de 300 ml. Se poate folosi la cuptorul cu microunde. Personalizarea se face prin transfer termic. Se recomandă spălarea manuală cu un burete (lavetă) moale."
+            "text": "Cană din ceramică albă, de 300 ml, imprimată prin transfer termic. Merge la cuptorul cu microunde."
           }
         },
         "tab": {
@@ -121,7 +121,7 @@
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
-        "product_recommendations_heading": "Alți clienți au mai adăugat în cos și:",
+        "product_recommendations_heading": "S-ar putea să-ți placă și",
         "related_count": 4
       }
     },

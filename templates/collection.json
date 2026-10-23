@@ -12,8 +12,8 @@
     "collection-header": {
       "type": "collection-header",
       "settings": {
-        "collection_image_enable": true,
-        "description_enable": false
+        "collection_image_enable": false,
+        "description_enable": true
       }
     },
     "collection-filters": {
@@ -30,8 +30,8 @@
         "product_grid": {
           "type": "product_grid",
           "settings": {
-            "per_row_desktop": 3,
-            "per_row_mobile": "1"
+            "per_row_desktop": 4,
+            "per_row_mobile": "2"
           }
         }
       },

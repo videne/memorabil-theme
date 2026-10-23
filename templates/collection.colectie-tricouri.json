@@ -18,7 +18,7 @@
         "image2_mask": "none",
         "subtitle": "Creator 2.0 @ Stanley/Stella",
         "title": "Tricouri unisex din bumbac 100% organic",
-        "text": "<p>Creator 2.0 de la Stanley/Stella este tricoul nostru premium unisex, emblematic și de înaltă calitate. Cu un design atemporal și proporții actualizate, inclusiv un guler mai lat și mâneci mai lungi, Creator 2.0 este definiția unui tricou clasic modern. Fabricat din <strong>bumbac 100% organic</strong>, compact și ringspun, acest tricou oferă un confort deosebit și o potrivire excelentă, alături de o suprafață ideală pentru imprimare. Creator 2.0 nu doar că arată și se simte minunat, dar este și prietenos cu mediul. Alege Creator 2.0 pentru un tricou unisex versatil și de calitate superioară.</p>",
+        "text": "<p>Creator 2.0 de la Stanley/Stella e tricoul nostru unisex de bază: bumbac 100% organic ring-spun, 180 g/m², cu guler puțin mai lat și mâneci puțin mai lungi. Țesătura compactă ține bine imprimarea și rămâne plăcută la purtat.</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -26,8 +26,8 @@
         "image_width": "50",
         "layout": "right",
         "alt": false,
-        "top_padding": false,
-        "bottom_padding": false,
+        "top_padding": true,
+        "bottom_padding": true,
         "lazyload_images": true
       }
     },
@@ -38,8 +38,8 @@
         "image_mask": "none",
         "image2_mask": "none",
         "subtitle": "",
-        "title": "Imprimare direct in tesatura tricoului",
-        "text": "<p><strong>Tehnologia DTG </strong>(direct to garment) se refera la <strong>imprimarea direct in tesatura</strong> a produsului. Folosim echipamente si cerneluri DTG de ultima generatie, care permit realizarea unui print de inalta calitate, rezistent in timp.</p>",
+        "title": "Imprimare direct în țesătura tricoului",
+        "text": "<p>Folosim imprimarea <strong>DTG</strong> (direct to garment): cerneala intră direct în țesătură, nu stă deasupra ca o folie. Imprimeul e moale la atingere și rezistă la spălare, dacă tricoul e spălat pe dos, la maximum 30 °C.</p>",
         "button_label": "",
         "button_link": "",
         "button_style": "primary",
@@ -54,9 +54,8 @@
     },
     "collection-header": {
       "type": "collection-header",
-      "disabled": true,
       "settings": {
-        "collection_image_enable": true,
+        "collection_image_enable": false,
         "description_enable": false
       }
     },
@@ -74,8 +73,8 @@
         "product_grid": {
           "type": "product_grid",
           "settings": {
-            "per_row_desktop": 3,
-            "per_row_mobile": "1"
+            "per_row_desktop": 4,
+            "per_row_mobile": "2"
           }
         }
       },
@@ -86,10 +85,10 @@
     }
   },
   "order": [
-    "text_and_image_9g79JA",
-    "text_and_image_m3X9tc",
     "collection-header",
     "collection-filters",
-    "main-collection"
+    "main-collection",
+    "text_and_image_9g79JA",
+    "text_and_image_m3X9tc"
   ]
 }
