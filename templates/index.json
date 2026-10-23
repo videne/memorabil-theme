@@ -40,32 +40,56 @@
         "lazyload_images": true
       }
     },
-    "hero-animated": {
-      "type": "hero-animated",
+    "mem_avantaje": {
+      "type": "text-with-icons",
       "blocks": {
-        "hero-animated-0": {
-          "type": "image",
+        "av_livrare": {
+          "type": "text_block",
           "settings": {
-            "image": "shopify://shop_images/hero_memorabil_ro.jpg",
-            "image_mobile": "shopify://shop_images/hero_memorabil_ro.jpg"
+            "icon": "truck",
+            "title": "Ajunge în maximum 5 zile lucrătoare",
+            "text": "<p>Imprimăm comanda în cel mult 3 zile, iar curierul o aduce în 1–2 zile.</p>"
+          }
+        },
+        "av_bucuresti": {
+          "type": "text_block",
+          "settings": {
+            "icon": "store",
+            "title": "Imprimat la comandă, în București",
+            "text": "<p>Fiecare produs e imprimat abia după ce comanzi, special pentru tine.</p>"
+          }
+        },
+        "av_bumbac": {
+          "type": "text_block",
+          "settings": {
+            "icon": "plant",
+            "title": "Bumbac organic Stanley/Stella",
+            "text": "<p>Tricourile și hanoracele sunt Stanley/Stella, din bumbac organic certificat GOTS.</p>"
+          }
+        },
+        "av_gratuit": {
+          "type": "text_block",
+          "settings": {
+            "icon": "package",
+            "title": "Livrare gratuită peste 300 de lei",
+            "text": "<p>Sub 300 de lei, livrarea costă 20 de lei.</p>"
           }
         }
       },
       "block_order": [
-        "hero-animated-0"
+        "av_livrare",
+        "av_bucuresti",
+        "av_bumbac",
+        "av_gratuit"
       ],
-      "disabled": true,
       "settings": {
-        "style": "fading",
-        "title": "Replici care se poartă.",
-        "title_size": 40,
-        "subheading": "Pentru că nu ne stă bine să tăcem.",
-        "link": "shopify://collections/all",
-        "link_text": "Vezi toate modelele",
-        "color_accent": "#ffffff",
-        "text_align": "vertical-center horizontal-center",
-        "desktop_size": -10,
-        "mobile_size": 0
+        "title": "",
+        "align_text": "center",
+        "desktop_columns_per_row": 4,
+        "icon_color": "#0064fa",
+        "button_label": "",
+        "button_link": "",
+        "alt": false
       }
     },
     "featured-collections": {
@@ -107,18 +131,6 @@
         "alt": false
       }
     },
-    "scrolling_text_VeJP3P": {
-      "type": "scrolling-text",
-      "settings": {
-        "text": "Replici care se poartă ★ Imprimate la comandă în București ★ Livrare gratuită peste 300 de lei ★",
-        "link": "",
-        "text_size": 26,
-        "text_spacing": true,
-        "color_scheme": "button",
-        "direction": "left",
-        "speed": 300
-      }
-    },
     "featured-collection-slider": {
       "type": "featured-collection-slider",
       "settings": {
@@ -129,14 +141,16 @@
         "alt": false
       }
     },
-    "featured_collection_slider_HkXaDR": {
-      "type": "featured-collection-slider",
+    "scrolling_text_VeJP3P": {
+      "type": "scrolling-text",
       "settings": {
-        "title": "Cele mai noi produse",
-        "description": "Proaspăt ieșite din capul nostru. Tu decizi dacă au haz.",
-        "home_featured_products": "cele-mai-noi-produse",
-        "per_row": "small",
-        "alt": false
+        "text": "Replici care se poartă ★ Imprimate la comandă în București ★ Livrare gratuită peste 300 de lei ★",
+        "link": "",
+        "text_size": 26,
+        "text_spacing": true,
+        "color_scheme": "button",
+        "direction": "left",
+        "speed": 300
       }
     },
     "featured-collection-slider2": {
@@ -156,19 +170,6 @@
         "description": "Mai mult material, aceleași mesaje. Pentru zilele comode cu ceva de zis.",
         "home_featured_products": "hanorace-cumpara-online-memorabil",
         "per_row": "small",
-        "alt": false
-      }
-    },
-    "featured_collection_8KwEC7": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Memorabil x Varzzza",
-        "description": "",
-        "home_featured_products": "varzzza",
-        "rows": 1,
-        "per_row_desktop": 4,
-        "per_row_mobile": "2",
-        "view_all": true,
         "alt": false
       }
     },
@@ -193,14 +194,16 @@
         "lazyload_images": true
       }
     },
-    "featured_collection_slider_Xgd3px": {
-      "type": "featured-collection-slider",
-      "disabled": true,
+    "featured_collection_8KwEC7": {
+      "type": "featured-collection",
       "settings": {
-        "title": "",
+        "title": "Memorabil x Varzzza",
         "description": "",
-        "home_featured_products": "alexa-lincu",
-        "per_row": "medium",
+        "home_featured_products": "varzzza",
+        "rows": 1,
+        "per_row_desktop": 4,
+        "per_row_mobile": "2",
+        "view_all": true,
         "alt": false
       }
     },
@@ -263,6 +266,45 @@
         "bottom_padding": true
       }
     },
+    "hero-animated": {
+      "type": "hero-animated",
+      "blocks": {
+        "hero-animated-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hero_memorabil_ro.jpg",
+            "image_mobile": "shopify://shop_images/hero_memorabil_ro.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "hero-animated-0"
+      ],
+      "disabled": true,
+      "settings": {
+        "style": "fading",
+        "title": "Replici care se poartă.",
+        "title_size": 40,
+        "subheading": "Pentru că nu ne stă bine să tăcem.",
+        "link": "shopify://collections/all",
+        "link_text": "Vezi toate modelele",
+        "color_accent": "#ffffff",
+        "text_align": "vertical-center horizontal-center",
+        "desktop_size": -10,
+        "mobile_size": 0
+      }
+    },
+    "featured_collection_slider_Xgd3px": {
+      "type": "featured-collection-slider",
+      "disabled": true,
+      "settings": {
+        "title": "",
+        "description": "",
+        "home_featured_products": "alexa-lincu",
+        "per_row": "medium",
+        "alt": false
+      }
+    },
     "slideshow": {
       "type": "slideshow",
       "blocks": {
@@ -312,58 +354,6 @@
         "bottom_padding": true,
         "lazyload_images": true
       }
-    },
-    "mem_avantaje": {
-      "type": "text-with-icons",
-      "blocks": {
-        "av_livrare": {
-          "type": "text_block",
-          "settings": {
-            "icon": "truck",
-            "title": "Ajunge în maximum 5 zile lucrătoare",
-            "text": "<p>Imprimăm comanda în cel mult 3 zile, iar curierul o aduce în 1–2 zile.</p>"
-          }
-        },
-        "av_bucuresti": {
-          "type": "text_block",
-          "settings": {
-            "icon": "store",
-            "title": "Imprimat la comandă, în București",
-            "text": "<p>Fiecare produs e imprimat abia după ce comanzi, special pentru tine.</p>"
-          }
-        },
-        "av_bumbac": {
-          "type": "text_block",
-          "settings": {
-            "icon": "plant",
-            "title": "Bumbac organic Stanley/Stella",
-            "text": "<p>Tricourile și hanoracele sunt Stanley/Stella, din bumbac organic certificat GOTS.</p>"
-          }
-        },
-        "av_gratuit": {
-          "type": "text_block",
-          "settings": {
-            "icon": "package",
-            "title": "Livrare gratuită peste 300 de lei",
-            "text": "<p>Sub 300 de lei, livrarea costă 20 de lei.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "av_livrare",
-        "av_bucuresti",
-        "av_bumbac",
-        "av_gratuit"
-      ],
-      "settings": {
-        "title": "",
-        "align_text": "center",
-        "desktop_columns_per_row": 4,
-        "icon_color": "#0064FA",
-        "button_label": "",
-        "button_link": "",
-        "alt": false
-      }
     }
   },
   "order": [
@@ -372,7 +362,6 @@
     "featured-collections",
     "featured-collection-slider",
     "scrolling_text_VeJP3P",
-    "featured_collection_slider_HkXaDR",
     "featured-collection-slider2",
     "featured-collection",
     "text_and_image_TmnPDw",
