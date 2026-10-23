@@ -1,0 +1,135 @@
+/* Memorabil: subsolul site-ului (sections/mem-footer.liquid). Același limbaj vizual ca Despre noi, Contact și paginile info. */
+.mem-footer {
+  --mf-blue: var(--colorBtnPrimary, #0064fa);
+  --mf-head: var(--typeHeaderPrimary), var(--typeHeaderFallback, sans-serif);
+  --mf-line: rgba(255, 255, 255, 0.22);
+  position: relative;
+  overflow: hidden;
+  margin-top: clamp(56px, 8vw, 104px);
+  background: var(--mf-blue);
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.template-index .mem-footer { margin-top: 0; }
+
+.mf-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(56px, 8vw, 104px) 20px 0;
+}
+
+/* ---------- mesajul de sus */
+.mf-top {
+  padding-bottom: clamp(40px, 6vw, 72px);
+  border-bottom: 1px solid var(--mf-line);
+}
+.mf-eyebrow {
+  margin: 0 0 18px;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+.mf-big {
+  margin: 0;
+  max-width: 16ch;
+  font-family: var(--mf-head);
+  font-weight: 700;
+  font-size: clamp(36px, 6.2vw, 84px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+.mf-btn {
+  display: inline-block;
+  margin-top: clamp(28px, 4vw, 40px);
+  padding: 16px 34px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--mf-blue) !important;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  transition: transform 0.2s ease;
+}
+.mf-btn:hover { transform: translateY(-2px); }
+
+/* ---------- coloane */
+.mf-cols {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px clamp(24px, 4vw, 56px);
+  padding: clamp(40px, 6vw, 64px) 0;
+}
+.mf-title {
+  margin: 0 0 16px;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0.7;
+}
+.mf-col ul { list-style: none; margin: 0; padding: 0; }
+.mf-col li { margin: 0 0 10px; }
+.mf-col a {
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+  transition: background-size 0.25s ease;
+}
+.mf-col a:hover,
+.mf-col a[aria-current] { background-size: 100% 1px; }
+.mf-email { margin: 0 0 8px; font-family: var(--mf-head); font-weight: 700; font-size: clamp(18px, 1.6vw, 21px); word-break: break-word; }
+.mf-note { margin: 0; font-size: 14px; opacity: 0.75; }
+
+/* ---------- partea de jos */
+.mf-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 28px;
+  padding: 24px 0;
+  border-top: 1px solid var(--mf-line);
+  font-size: 13px;
+}
+.mf-copy { margin: 0; opacity: 0.8; }
+.mf-legal { display: flex; flex-wrap: wrap; gap: 6px 18px; list-style: none; margin: 0; padding: 0; }
+.mf-legal li { margin: 0; }
+.mf-legal a { color: #fff; opacity: 0.8; text-decoration: none; }
+.mf-legal a:hover { opacity: 1; text-decoration: underline; text-underline-offset: 3px; }
+.mf-pay { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; margin: 0 0 0 auto; padding: 0; }
+.mf-pay li { margin: 0; display: flex; padding: 3px 5px; border-radius: 6px; background: #fff; }
+.mf-pay svg { display: block; width: 34px; height: 22px; }
+
+.mem-footer a:focus-visible { outline: 2px solid #fff; outline-offset: 3px; border-radius: 4px; }
+
+/* ---------- cuvântul mare de la final */
+.mf-word {
+  margin: 0;
+  padding: 0 0 0 2vw;
+  font-family: var(--mf-head);
+  font-weight: 700;
+  font-size: clamp(88px, 21vw, 300px);
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.1);
+  user-select: none;
+  transform: translateY(12%);
+}
+
+@media (max-width: 900px) {
+  .mf-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mf-pay { margin-left: 0; }
+}
+@media (max-width: 480px) {
+  .mf-bottom { flex-direction: column; align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mf-btn, .mf-col a { transition: none; }
+}

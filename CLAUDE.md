@@ -25,6 +25,8 @@ finalul Manifestului și Organization din snippets/structured-data.liquid (datel
   Paginile tabel-marimi-tricouri și tabel-marimi-hanorace apar și în fereastra „Tabel mărimi” de pe produs
   (blocul size_chart din șabloanele tricouri, alexa-lincu-tricouri, hanorac); stilurile pentru fereastră sunt în mem.css (.tool-tip__content).
   Politicile din Shopify admin (Settings → Policies, apar în checkout) trebuie ținute la zi manual, cu aceleași texte.
+- sections/mem-footer.liquid + assets/mem-footer.css: subsolul (în sections/footer-group.json; vechiul „footer” Streamline e dezactivat, nu șters).
+  Coloanele vin din meniurile subsol-magazin, subsol-ajutor, subsol-memorabil, subsol-legal (Online Store → Navigation).
 - snippets/mem-product-jsonld.liquid: datele structurate pentru Google (randat din product-template-variables.liquid)
 - Blocurile noi sunt declarate în sections/main-product.liquid și randate în snippets/product-template.liquid
 - Setări: Theme settings → Memorabil (prag livrare gratuită, zile de producție/livrare, ora limită, zile libere)
