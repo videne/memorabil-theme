@@ -87,15 +87,7 @@
           "type": "tab",
           "settings": {
             "title": "În cât timp se livrează",
-            "content": "<p>Dureaza intre 2 si 7 zile lucratoare ca sa producem textilele (tricouri, sacose, etc) sau sa le comandam in cazul ca nu sunt pe stoc. Peste acest termen trebuie sa adaugi timpul de livrare (prin firma de curierat) care este de obicei de maxim 2 zile lucratoare.</p>",
-            "page": ""
-          }
-        },
-        "tab_p6xKbR": {
-          "type": "tab",
-          "settings": {
-            "title": "Cum să ai grijă de tricoul tău",
-            "content": "<ul><li>Spalati pe dos, la o temperatura de max. 30 de grade.</li><li>Nu folositi inalbitor sau șervețele captatoare de culoare</li><li>Nu uscati prin centrifugare</li><li>Calcati pe dos, la temperaturi de cel mult 110 grade, fara abur</li><li>Nu curatati chimic</li><li>Spalați cu toate fermoarele inchise</li></ul>",
+            "content": "<p>Fiecare produs e imprimat special pentru tine. Producem comanda în <strong>maximum 3 zile lucrătoare</strong>, iar curierul o livrează în <strong>1–2 zile lucrătoare</strong>. Primești coletul în maximum 5 zile lucrătoare de la comandă.</p>",
             "page": ""
           }
         },
@@ -108,21 +100,35 @@
         "share": {
           "type": "share",
           "settings": {}
+        },
+        "mem_badges": {
+          "type": "mem_badges",
+          "settings": {}
+        },
+        "mem_delivery": {
+          "type": "mem_delivery",
+          "settings": {}
+        },
+        "mem_details": {
+          "type": "mem_details",
+          "settings": {}
         }
       },
       "block_order": [
         "sales_point_hdnETQ",
+        "mem_badges",
         "price",
         "variant_picker",
         "inventory_status",
         "buy_buttons",
+        "mem_delivery",
         "text_9HMpCh",
         "size_chart_m9zcBj",
         "description",
+        "mem_details",
         "tab_XYAxwp",
         "tab",
         "tab_pgdVtN",
-        "tab_p6xKbR",
         "trust_badge_4AM8mP",
         "share"
       ],

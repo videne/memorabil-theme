@@ -58,32 +58,38 @@
           "type": "tab",
           "settings": {
             "title": "În cât timp se livrează",
-            "content": "<p>Dureaza intre 2 si 7 zile lucratoare ca sa producem textilele (tricouri, sacose, etc) sau sa le comandam in cazul ca nu sunt pe stoc. Peste acest termen trebuie sa adaugi timpul de livrare (prin firma de curierat) care este de obicei de maxim 2 zile lucratoare.</p>",
-            "page": ""
-          }
-        },
-        "tab_p6xKbR": {
-          "type": "tab",
-          "settings": {
-            "title": "Cum să ai grijă de tote bag-ul tău",
-            "content": "<ol><li><strong>Spălare</strong>: Spălați la mașină la maxim 30°C cu culori similare. Evitați înălbitorii.</li><li><strong>Uscare</strong>: Uscați la aer, de preferat pe o suprafață plană. Evitați uscarea la mașină pentru a preveni micșorarea.</li><li><strong>Călcare</strong>: Călcați la temperatură scăzută și evitați călcatul direct pe imprimeuri.</li><li><strong>Depozitare</strong>: Păstrați într-un loc uscat și răcoros pentru a preveni formarea mucegaiului.</li></ol><p>Respectând aceste sfaturi, te vei asigura că tote bag-ul tău rămâne în stare excelentă pentru o perioadă îndelungată.</p>",
+            "content": "<p>Fiecare produs e imprimat special pentru tine. Producem comanda în <strong>maximum 3 zile lucrătoare</strong>, iar curierul o livrează în <strong>1–2 zile lucrătoare</strong>. Primești coletul în maximum 5 zile lucrătoare de la comandă.</p>",
             "page": ""
           }
         },
         "share": {
           "type": "share",
           "settings": {}
+        },
+        "mem_badges": {
+          "type": "mem_badges",
+          "settings": {}
+        },
+        "mem_delivery": {
+          "type": "mem_delivery",
+          "settings": {}
+        },
+        "mem_details": {
+          "type": "mem_details",
+          "settings": {}
         }
       },
       "block_order": [
+        "mem_badges",
         "price",
         "variant_picker",
         "inventory_status",
         "buy_buttons",
+        "mem_delivery",
         "text_9HMpCh",
+        "mem_details",
         "tab",
         "tab_pgdVtN",
-        "tab_p6xKbR",
         "share"
       ],
       "settings": {

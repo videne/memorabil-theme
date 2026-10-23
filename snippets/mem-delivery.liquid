@@ -1,0 +1,32 @@
+{%- comment -%}
+  Memorabil: livrare estimată pe pagina de produs.
+  Calculul: ziua de azi (dacă e zi lucrătoare și nu a trecut ora limită) + zile de producție + zile de curier,
+  toate în zile lucrătoare, fără weekend și fără zilele libere din Theme settings → Memorabil.
+  Fără JavaScript se afișează textul fix „Livrare în maximum X zile lucrătoare”.
+{%- endcomment -%}
+{%- liquid
+  assign production = settings.mem_production_days | default: 3
+  assign transit = settings.mem_transit_days | default: 2
+  assign total_days = production | plus: transit
+  assign holidays = settings.mem_holidays | strip_newlines | replace: ' ', ''
+-%}
+{%- if product.available -%}
+  <div class="product-block mem-delivery-block" {{ block.shopify_attributes }}>
+    <mem-delivery-estimate
+      class="mem-delivery"
+      data-production-days="{{ production }}"
+      data-transit-days="{{ transit }}"
+      data-cutoff-hour="{{ settings.mem_cutoff_hour | default: 14 }}"
+      data-holidays="{{ holidays | escape }}"
+    >
+      <svg class="mem-delivery__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5v-9Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M3 7.5 12 12l9-4.5M12 12v9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      <p class="mem-delivery__text">
+        <strong data-delivery-date>Livrare în maximum {{ total_days }} zile lucrătoare</strong>
+        <span class="mem-delivery__note" data-delivery-note hidden></span>
+      </p>
+    </mem-delivery-estimate>
+  </div>
+{%- endif -%}

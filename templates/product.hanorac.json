@@ -1,0 +1,221 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "sales_point_hdnETQ": {
+          "type": "sales_point",
+          "disabled": true,
+          "settings": {
+            "icon": "tag",
+            "text": "DISCOUNT -20% direct în coș"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": false
+          }
+        },
+        "inventory_status": {
+          "type": "inventory_status",
+          "settings": {
+            "inventory_threshold": 10,
+            "inventory_transfers_enable": true
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "surface_pickup_enable": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "text_9HMpCh": {
+          "type": "text",
+          "settings": {
+            "text": "hanorac unisex cu glugă, medium fit (280 g/m²), din bumbac organic și poliester reciclat, printat DTG"
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {
+            "is_tab": true
+          }
+        },
+        "tab": {
+          "type": "tab",
+          "settings": {
+            "title": "Cât costă livrarea",
+            "content": "<p>Pentru comenzile până în 300 de lei, transportul este 20 lei, iar pentru comenzile peste 300 lei, transportul este gratuit.</p>",
+            "page": ""
+          }
+        },
+        "tab_pgdVtN": {
+          "type": "tab",
+          "settings": {
+            "title": "În cât timp se livrează",
+            "content": "<p>Fiecare produs e imprimat special pentru tine. Producem comanda în <strong>maximum 3 zile lucrătoare</strong>, iar curierul o livrează în <strong>1–2 zile lucrătoare</strong>. Primești coletul în maximum 5 zile lucrătoare de la comandă.</p>",
+            "page": ""
+          }
+        },
+        "trust_badge_4AM8mP": {
+          "type": "trust_badge",
+          "settings": {
+            "trust_image": "shopify://shop_images/trust_badges_certificari.jpg"
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {}
+        },
+        "mem_badges": {
+          "type": "mem_badges",
+          "settings": {}
+        },
+        "mem_delivery": {
+          "type": "mem_delivery",
+          "settings": {}
+        },
+        "mem_details": {
+          "type": "mem_details",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "sales_point_hdnETQ",
+        "mem_badges",
+        "price",
+        "variant_picker",
+        "inventory_status",
+        "buy_buttons",
+        "mem_delivery",
+        "text_9HMpCh",
+        "description",
+        "mem_details",
+        "tab",
+        "tab_pgdVtN",
+        "trust_badge_4AM8mP",
+        "share"
+      ],
+      "settings": {
+        "product_image_size": "large",
+        "product_image_type": "stacked",
+        "thumbnail_height": "flexible",
+        "product_zoom_enable": true,
+        "enable_video_looping": true,
+        "product_video_style": "muted",
+        "sku_enable": false
+      }
+    },
+    "sub": {
+      "type": "product-full-width",
+      "disabled": true,
+      "settings": {
+        "max_width": true
+      }
+    },
+    "advanced_content_bCqW4C": {
+      "type": "advanced-content",
+      "blocks": {
+        "image_EMCniJ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_28.jpg",
+            "link": "shopify://blogs/blog/textile-premium-din-materiale-sustenabile-stanley-stella",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "liquid_barCRM": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>Textile premium din materiale sustenabile - Stanley / Stella\n</h2><p>Stanley/Stella este unul dintre cei mai renumiti producători de textile premium din lume pentru calitate și folosirea exclusiv a materialelor sustenabile confecționate din bumbac organic și polyester reciclat. Produsele lor sunt certificate GOTS, FairWear, PETA și se supun standardului Global Recycled.</p>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "image_EMCniJ",
+        "liquid_barCRM"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": false,
+        "alt": false,
+        "lazyload_images": true
+      }
+    },
+    "advanced_content_KDeyC4": {
+      "type": "advanced-content",
+      "blocks": {
+        "liquid_g9LPXY": {
+          "type": "liquid",
+          "settings": {
+            "code": "<h2>La Memorabil.ro, ne preocupăm nu doar de designul produselor noastre, ci și de materialele din care sunt realizate.</h2>",
+            "width": "50%",
+            "alignment": "center"
+          }
+        },
+        "image_atpfhp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Direct_din_inima_naturii_1.jpg",
+            "link": "",
+            "width": "50%",
+            "alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "liquid_g9LPXY",
+        "image_atpfhp"
+      ],
+      "settings": {
+        "full_width": false,
+        "space_around": false,
+        "alt": false,
+        "lazyload_images": true
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "product_recommendations_heading": "Alți clienți au mai adăugat în cos și:",
+        "related_count": 4
+      }
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "disabled": true,
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "sub",
+    "advanced_content_bCqW4C",
+    "advanced_content_KDeyC4",
+    "product-recommendations",
+    "collection-return"
+  ]
+}

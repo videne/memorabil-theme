@@ -43,6 +43,8 @@
           {% endif %}
         </div>
 
+        {%- render 'mem-free-shipping' -%}
+
         <div class="cart__item-sub cart__item-row">
           <div class="cart__subtotal">{{ 'cart.general.subtotal' | t }}</div>
           <div data-subtotal>{{ cart.total_price | money }}</div>
