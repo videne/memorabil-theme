@@ -5,7 +5,7 @@ imprimate la comandă (print on demand) de un partener din București, care le �
 Slogan: „Replici care se poartă.” Brand statement: „Pentru că nu ne stă bine să tăcem.”
 (Vechiul slogan „Ușor de purtat. Greu de uitat.” nu se mai folosește.)
 Unde apar: imaginea mare și „De ce Memorabil” de pe prima pagină, banda care se derulează, pagina Despre noi,
-finalul Manifestului și snippets/mem-organization-jsonld.liquid (datele pentru Google, doar pe prima pagină).
+finalul Manifestului și Organization din snippets/structured-data.liquid (datele pentru Google, doar pe prima pagină).
 
 ## Ce e custom (prefix mem-)
 - snippets/mem-delivery.liquid + assets/mem.js: „Ajunge cel târziu …” = zile de producție + zile de curier (zile lucrătoare)
@@ -14,7 +14,8 @@ finalul Manifestului și snippets/mem-organization-jsonld.liquid (datele pentru 
   Valoarea de pe produs (metafield custom.*) are prioritate; altfel se folosește valoarea comună din setările blocului
   „Memorabil: tab-uri” din fiecare șablon de produs.
 - snippets/mem-free-shipping.liquid: bara de livrare gratuită în coșul lateral și pe pagina coșului (se actualizează din /cart.js)
-- snippets/mem-organization-jsonld.liquid: Organization cu sloganul, randat din layout/theme.liquid pe prima pagină
+- snippets/structured-data.liquid (Streamline, modificat): Organization cu sloganul + WebSite pe prima pagină, BreadcrumbList pe colecții și produse.
+  Nu adăuga alt Organization în altă parte, ar fi dublat.
 - snippets/mem-product-jsonld.liquid: datele structurate pentru Google (randat din product-template-variables.liquid)
 - Blocurile noi sunt declarate în sections/main-product.liquid și randate în snippets/product-template.liquid
 - Setări: Theme settings → Memorabil (prag livrare gratuită, zile de producție/livrare, ora limită, zile libere)

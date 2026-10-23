@@ -10,10 +10,14 @@
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": {{ shop.name | json }},
+    "name": {{ shop.name | strip | json }},
+    "legalName": "MEMORABIL MEDIA S.R.L.",
     "url": {{ shop.url | json }},
-    {%- if settings.logo != blank -%}
-    "logo": {{ settings.logo | image_url: width: 600 | prepend: 'https:' | json }},
+    "slogan": "Replici care se poartă.",
+    "description": "Tricouri, hanorace, căni și tote bags cu replici în română, imprimate la comandă în București. Pentru că nu ne stă bine să tăcem.",
+    {%- assign org_logo = settings.logo | default: shop.brand.logo -%}
+    {%- if org_logo != blank -%}
+    "logo": {{ org_logo | image_url: width: 600 | prepend: 'https:' | json }},
     {%- endif -%}
     "sameAs": [
       {%- if settings.social_instagram_link != blank -%}{{ settings.social_instagram_link | json }}{%- endif -%}

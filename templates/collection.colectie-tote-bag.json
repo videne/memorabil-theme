@@ -13,7 +13,7 @@
       "type": "collection-header",
       "settings": {
         "collection_image_enable": false,
-        "description_enable": false
+        "description_enable": true
       }
     },
     "text_and_image_Fkf9hm": {
