@@ -51,14 +51,6 @@
             "text": "<p>Imprimăm comanda în cel mult 3 zile, iar curierul o aduce în 1–2 zile.</p>"
           }
         },
-        "av_bucuresti": {
-          "type": "text_block",
-          "settings": {
-            "icon": "store",
-            "title": "Imprimat la comandă, în București",
-            "text": "<p>Fiecare produs e imprimat abia după ce comanzi, special pentru tine.</p>"
-          }
-        },
         "av_bumbac": {
           "type": "text_block",
           "settings": {
@@ -67,20 +59,28 @@
             "text": "<p>Tricourile și hanoracele sunt Stanley/Stella, din bumbac organic certificat GOTS.</p>"
           }
         },
-        "av_gratuit": {
+        "av_retur": {
           "type": "text_block",
           "settings": {
-            "icon": "package",
-            "title": "Livrare gratuită peste 300 de lei",
-            "text": "<p>Sub 300 de lei, livrarea costă 20 de lei.</p>"
+            "icon": "calendar",
+            "title": "14 zile să te răzgândești",
+            "text": "<p>Nu ți-a venit sau nu e ce credeai? Ne scrii și îl returnezi, fără explicații.</p>"
+          }
+        },
+        "av_plata": {
+          "type": "text_block",
+          "settings": {
+            "icon": "shield",
+            "title": "Plată sigură, cum vrei",
+            "text": "<p>Card, Apple Pay sau Google Pay, prin plată securizată. Noi nu vedem datele cardului.</p>"
           }
         }
       },
       "block_order": [
         "av_livrare",
-        "av_bucuresti",
+        "av_retur",
         "av_bumbac",
-        "av_gratuit"
+        "av_plata"
       ],
       "settings": {
         "title": "",
@@ -487,22 +487,22 @@
         "cifra_2": {
           "type": "number",
           "settings": {
-            "number": "100%",
-            "label": "bumbac organic la tricouri"
+            "number": "4",
+            "label": "feluri de a purta o replică: tricou, hanorac, cană, tote bag"
           }
         },
         "cifra_3": {
           "type": "number",
           "settings": {
-            "number": "14 zile",
-            "label": "ca să te răzgândești"
+            "number": "180 g/m²",
+            "label": "bumbac organic ring-spun la tricouri"
           }
         },
         "cifra_4": {
           "type": "number",
           "settings": {
-            "number": "2 ani",
-            "label": "garanție legală"
+            "number": "0 lei",
+            "label": "livrare pentru comenzile de peste 300 de lei"
           }
         }
       },
