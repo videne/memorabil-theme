@@ -13,7 +13,11 @@
       </div>
       {%- if s.text != blank -%}<div class="mh-band__text">{{ s.text }}</div>{%- endif -%}
     </div>
-    <ul class="mh-quotes" role="list">
+    <div class="mh-carousel" data-mh-carousel>
+    <button type="button" class="mh-arrow mh-arrow--prev" data-mh-prev aria-label="Replicile anterioare" disabled>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <ul class="mh-quotes" role="list" data-mh-track>
       {%- for block in section.blocks -%}
         {%- assign p = block.settings.product -%}
         {%- if p != blank -%}
@@ -33,11 +37,43 @@
         {%- endif -%}
       {%- endfor -%}
     </ul>
+    <button type="button" class="mh-arrow mh-arrow--next" data-mh-next aria-label="Replicile următoare">
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    </div>
     {%- if s.button_label != blank and s.button_link != blank -%}
       <p class="mh-band__cta"><a class="mh-btn mh-btn--white" href="{{ s.button_link }}">{{ s.button_label | escape }}</a></p>
     {%- endif -%}
   </div>
 </div>
+<script>
+  (function () {
+    document.querySelectorAll('[data-mh-carousel]').forEach(function (box) {
+      if (box.dataset.ready) return;
+      box.dataset.ready = '1';
+      var track = box.querySelector('[data-mh-track]');
+      var prev = box.querySelector('[data-mh-prev]');
+      var next = box.querySelector('[data-mh-next]');
+      function step() {
+        var card = track.querySelector('li');
+        var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+        var per = card ? card.getBoundingClientRect().width + gap : track.clientWidth;
+        return Math.max(per, Math.floor(track.clientWidth / per) * per);
+      }
+      function update() {
+        var max = track.scrollWidth - track.clientWidth - 2;
+        prev.disabled = track.scrollLeft <= 2;
+        next.disabled = track.scrollLeft >= max;
+        box.classList.toggle('mh-carousel--static', max <= 0);
+      }
+      prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+      next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+      track.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    });
+  })();
+</script>
 
 {% schema %}
 {
