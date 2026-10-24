@@ -1,0 +1,186 @@
+/* Memorabil: prima pagină (secțiunile mem-spotlight, mem-quotes, mem-numbers + retușuri la secțiunile Streamline de pe prima pagină). */
+:root {
+  --mh-blue: var(--colorBtnPrimary, #0064fa);
+  --mh-soft: #eef4ff;
+  --mh-head: var(--typeHeaderPrimary), var(--typeHeaderFallback, sans-serif);
+}
+.mh-wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.mh-eyebrow {
+  margin: 0 0 16px;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+.mh-btn {
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 999px;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.mh-btn:hover { transform: translateY(-2px); }
+.mh-btn--white { background: #fff; color: var(--mh-blue) !important; }
+.mh-btn--ghost { border: 1.5px solid rgba(255, 255, 255, 0.7); color: #fff !important; }
+.mh-btn--ghost:hover { background: rgba(255, 255, 255, 0.12); }
+
+/* ---------- spotlight: card albastru cu un produs */
+.mh-spot {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(24px, 4vw, 56px);
+  margin: clamp(48px, 7vw, 96px) 0;
+  padding: clamp(28px, 4.5vw, 64px);
+  border-radius: 32px;
+  background: var(--mh-blue);
+  color: #fff;
+  overflow: hidden;
+}
+.mh-spot__quote {
+  margin: 0;
+  font-family: var(--mh-head);
+  font-weight: 700;
+  font-size: clamp(38px, 5.4vw, 76px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+.mh-spot__body { margin-top: 20px; max-width: 46ch; font-size: 17px; line-height: 1.6; opacity: 0.92; }
+.mh-spot__body p { margin: 0 0 0.8em; }
+.mh-spot__price { margin: 22px 0 0; font-size: 15px; letter-spacing: 0.04em; opacity: 0.85; }
+.mh-spot__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.mh-spot__media {
+  display: block;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #fff;
+  transform: rotate(2deg);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s ease;
+}
+.mh-spot__media:hover { transform: rotate(0deg) scale(1.01); }
+.mh-spot__media img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
+
+/* ---------- bandă albastră pe toată lățimea */
+.mh-band {
+  margin: clamp(48px, 7vw, 96px) 0;
+  padding: clamp(56px, 7vw, 96px) 0;
+  background: var(--mh-blue);
+  color: #fff;
+}
+.mh-band__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px 40px;
+  margin-bottom: clamp(28px, 4vw, 44px);
+}
+.mh-band__title {
+  margin: 0;
+  max-width: 18ch;
+  font-family: var(--mh-head);
+  font-weight: 700;
+  font-size: clamp(32px, 4.4vw, 60px);
+  line-height: 1.04;
+  letter-spacing: -0.025em;
+  color: #fff;
+  text-transform: none;
+}
+.mh-band__title--center { margin: 0 auto clamp(32px, 4vw, 48px); text-align: center; }
+.mh-band__text { max-width: 40ch; font-size: 17px; line-height: 1.6; opacity: 0.9; }
+.mh-band__text p { margin: 0; }
+.mh-band__cta { margin: clamp(28px, 4vw, 40px) 0 0; }
+.mh-band__cta--center { text-align: center; }
+
+/* carduri cu replici, derulare pe orizontală */
+.mh-quotes {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(240px, calc((100% - 3 * 18px) / 4));
+  gap: 18px;
+  margin: 0;
+  padding: 0 0 14px;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.5) transparent;
+}
+.mh-quote { margin: 0; scroll-snap-align: start; }
+.mh-quote a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 24px;
+  background: #fff;
+  color: var(--colorTextBody, #111);
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.25s ease;
+}
+.mh-quote a:hover { transform: translateY(-4px); }
+.mh-quote__img { display: block; background: #f4f4f4; }
+.mh-quote__img img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
+.mh-quote__text {
+  flex: 1;
+  padding: 18px 20px 8px;
+  font-family: var(--mh-head);
+  font-weight: 700;
+  font-size: clamp(19px, 1.6vw, 22px);
+  line-height: 1.2;
+  color: var(--mh-blue);
+}
+.mh-quote__meta { padding: 0 20px 20px; font-size: 13px; letter-spacing: 0.04em; opacity: 0.7; }
+
+/* cifre */
+.mh-numbers {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.mh-numbers li {
+  margin: 0;
+  padding: clamp(22px, 3vw, 32px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 24px;
+  text-align: center;
+}
+.mh-numbers__n {
+  display: block;
+  font-family: var(--mh-head);
+  font-weight: 700;
+  font-size: clamp(36px, 4.4vw, 60px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.mh-numbers__l { display: block; margin-top: 12px; font-size: 15px; line-height: 1.4; opacity: 0.9; }
+
+.mh-band a:focus-visible, .mh-spot a:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+
+/* ---------- retușuri la secțiunile Streamline de pe prima pagină */
+.template-index .section-header__title {
+  font-family: var(--mh-head);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--mh-blue);
+}
+/* avantajele: bandă albastru-deschis, ca să nu fie totul alb */
+.template-index [id$="__mem_avantaje"] { background: var(--mh-soft); padding: clamp(36px, 5vw, 56px) 0; }
+.template-index [id$="__mem_avantaje"] .index-section { margin: 0; }
+
+@media (max-width: 900px) {
+  .mh-spot { grid-template-columns: minmax(0, 1fr); }
+  .mh-spot__media { order: -1; transform: none; max-width: 520px; }
+  .mh-numbers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .mh-quotes { grid-auto-columns: 72%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mh-btn, .mh-quote a, .mh-spot__media { transition: none; }
+}

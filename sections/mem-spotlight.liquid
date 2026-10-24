@@ -1,0 +1,56 @@
+{%- comment -%}
+  Memorabil: un produs pus în evidență pe prima pagină, pe un card albastru cu replica mare.
+  Stilurile sunt în assets/mem-home.css.
+{%- endcomment -%}
+{{ 'mem-home.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign s = section.settings
+  assign p = s.product
+  if p != blank
+    assign quote = s.quote
+    if quote == blank
+      assign quote = p.title | split: ' — ' | last
+    endif
+  endif
+-%}
+{%- if p != blank -%}
+<div class="mh-wrap">
+  <div class="mh-spot">
+    <div class="mh-spot__text">
+      {%- if s.eyebrow != blank -%}<p class="mh-eyebrow">{{ s.eyebrow | escape }}</p>{%- endif -%}
+      <p class="mh-spot__quote">„{{ quote | escape }}”</p>
+      {%- if s.text != blank -%}<div class="mh-spot__body">{{ s.text }}</div>{%- endif -%}
+      <p class="mh-spot__price">{{ p.title | split: ' — ' | first | escape }} · {{ p.price | money }}</p>
+      <div class="mh-spot__actions">
+        <a class="mh-btn mh-btn--white" href="{{ p.url }}">{{ s.button_label | default: 'Vezi produsul' | escape }}</a>
+        {%- if s.link2_label != blank and s.link2 != blank -%}
+          <a class="mh-btn mh-btn--ghost" href="{{ s.link2 }}">{{ s.link2_label | escape }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+    <a class="mh-spot__media" href="{{ p.url }}" tabindex="-1" aria-hidden="true">
+      {%- assign img = s.image | default: p.featured_media -%}
+      {%- if img != blank -%}
+        {{ img | image_url: width: 1100 | image_tag: loading: 'lazy', widths: '400, 600, 800, 1100', sizes: '(min-width: 900px) 50vw, 100vw', alt: p.title }}
+      {%- endif -%}
+    </a>
+  </div>
+</div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Memorabil: spotlight",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Produs" },
+    { "type": "text", "id": "eyebrow", "label": "Text mic", "default": "Cea mai comandată replică" },
+    { "type": "text", "id": "quote", "label": "Replica", "info": "Gol = numele produsului, fără „Tricou —”." },
+    { "type": "richtext", "id": "text", "label": "Text" },
+    { "type": "image_picker", "id": "image", "label": "Imagine", "info": "Gol = prima poză a produsului." },
+    { "type": "text", "id": "button_label", "label": "Text buton", "default": "Vezi produsul" },
+    { "type": "text", "id": "link2_label", "label": "Al doilea link: text" },
+    { "type": "url", "id": "link2", "label": "Al doilea link: adresă" }
+  ],
+  "presets": [{ "name": "Memorabil: spotlight" }]
+}
+{% endschema %}

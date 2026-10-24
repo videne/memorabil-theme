@@ -261,7 +261,7 @@
         "image_width": "33",
         "image_mask": "none",
         "image_position": "right",
-        "color_background": "#f9f9f9",
+        "color_background": "#eef4ff",
         "color_text": "#1c1d1d",
         "top_padding": true,
         "bottom_padding": true
@@ -375,21 +375,166 @@
         "narrow_column": false,
         "alt": false
       }
+    },
+    "mem_spotlight": {
+      "type": "mem-spotlight",
+      "settings": {
+        "product": "tricou-n-ai-tu-dialog-cu-mine",
+        "eyebrow": "Cea mai comandată replică",
+        "quote": "N-ai tu dialog cu mine!",
+        "text": "<p>Pentru discuțiile care nu duc nicăieri și pentru oamenii care știu asta din prima. Cel mai comandat tricou Memorabil, pe bumbac organic Stanley/Stella.</p>",
+        "button_label": "Vezi tricoul",
+        "link2_label": "Vezi și hanoracul",
+        "link2": "shopify://products/hanorac-n-ai-tu-dialog-cu-mine"
+      }
+    },
+    "mem_quotes": {
+      "type": "mem-quotes",
+      "blocks": {
+        "replica_1": {
+          "type": "quote",
+          "settings": {
+            "product": "tricou-cu-sapun-ma-spal-pe-piele-și-pe-suflet-cu-manele",
+            "quote": ""
+          }
+        },
+        "replica_2": {
+          "type": "quote",
+          "settings": {
+            "product": "tricou-nu-faci-dumneata-ordine-la-mine-in-birou",
+            "quote": "Nu faci dumneata ordine la mine în birou!"
+          }
+        },
+        "replica_3": {
+          "type": "quote",
+          "settings": {
+            "product": "hanorac-cine-v-a-lucrat-aici",
+            "quote": ""
+          }
+        },
+        "replica_4": {
+          "type": "quote",
+          "settings": {
+            "product": "cana-cafeluța-cu-scandal",
+            "quote": ""
+          }
+        },
+        "replica_5": {
+          "type": "quote",
+          "settings": {
+            "product": "tricou-serviciul-nu-i-carciuma-sa-stai-toata-ziua-acolo",
+            "quote": ""
+          }
+        },
+        "replica_6": {
+          "type": "quote",
+          "settings": {
+            "product": "tote-bag-organic-bagaj-emoțional",
+            "quote": ""
+          }
+        },
+        "replica_7": {
+          "type": "quote",
+          "settings": {
+            "product": "tricou-ședința-asta-putea-fi-un-email",
+            "quote": ""
+          }
+        },
+        "replica_8": {
+          "type": "quote",
+          "settings": {
+            "product": "tricou-ai-barfa-stau-n-ai-barfa-ceau",
+            "quote": ""
+          }
+        },
+        "replica_9": {
+          "type": "quote",
+          "settings": {
+            "product": "hanorac-frumoasa-nedormita",
+            "quote": ""
+          }
+        }
+      },
+      "block_order": [
+        "replica_1",
+        "replica_2",
+        "replica_3",
+        "replica_4",
+        "replica_5",
+        "replica_6",
+        "replica_7",
+        "replica_8",
+        "replica_9"
+      ],
+      "settings": {
+        "eyebrow": "Replici care au rămas",
+        "title": "Le-ai auzit. Acum le poți purta.",
+        "text": "<p>Replicile pe care le comandă cel mai des oamenii care nu tac. Glisează și alege-o pe a ta.</p>",
+        "button_label": "Vezi toate modelele",
+        "button_link": "shopify://collections/all"
+      }
+    },
+    "mem_numbers": {
+      "type": "mem-numbers",
+      "blocks": {
+        "cifra_1": {
+          "type": "number",
+          "settings": {
+            "number": "190+",
+            "label": "de produse cu replici"
+          }
+        },
+        "cifra_2": {
+          "type": "number",
+          "settings": {
+            "number": "100%",
+            "label": "bumbac organic la tricouri"
+          }
+        },
+        "cifra_3": {
+          "type": "number",
+          "settings": {
+            "number": "14 zile",
+            "label": "ca să te răzgândești"
+          }
+        },
+        "cifra_4": {
+          "type": "number",
+          "settings": {
+            "number": "2 ani",
+            "label": "garanție legală"
+          }
+        }
+      },
+      "block_order": [
+        "cifra_1",
+        "cifra_2",
+        "cifra_3",
+        "cifra_4"
+      ],
+      "settings": {
+        "title": "Pe scurt, despre Memorabil",
+        "button_label": "",
+        "button_link": ""
+      }
     }
   },
   "order": [
     "slideshow_eg8B6N",
     "mem_avantaje",
     "featured-collections",
+    "mem_spotlight",
     "featured-collection-slider",
+    "mem_quotes",
     "mem_statement",
-    "scrolling_text_VeJP3P",
     "featured-collection-slider2",
+    "mem_numbers",
     "featured-collection",
     "text_and_image_TmnPDw",
     "featured_collection_8KwEC7",
     "text-and-image",
     "newsletter_memorabil",
+    "scrolling_text_VeJP3P",
     "hero-animated",
     "featured_collection_slider_Xgd3px",
     "slideshow",
