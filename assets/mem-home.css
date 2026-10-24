@@ -184,3 +184,37 @@
 @media (prefers-reduced-motion: reduce) {
   .mh-btn, .mh-quote a, .mh-spot__media { transition: none; }
 }
+
+/* săgeți pentru banda cu replici */
+.mh-carousel { position: relative; }
+.mh-arrow {
+  position: absolute;
+  top: calc(50% - 40px);
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--mh-blue);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.mh-arrow svg { width: 22px; height: 22px; }
+.mh-arrow:hover { transform: scale(1.08); }
+.mh-arrow:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.mh-arrow[disabled] { opacity: 0; pointer-events: none; }
+.mh-arrow--prev { left: -26px; }
+.mh-arrow--next { right: -26px; }
+.mh-carousel--static .mh-arrow { display: none; }
+@media (max-width: 1260px) {
+  .mh-arrow--prev { left: 8px; }
+  .mh-arrow--next { right: 8px; }
+}
+@media (max-width: 600px) {
+  .mh-arrow { width: 44px; height: 44px; }
+}
