@@ -1,0 +1,44 @@
+{%- comment -%}
+  Memorabil: bandă albastră cu cifre-cheie (câte modele, în cât timp, retur). Stilurile sunt în assets/mem-home.css.
+{%- endcomment -%}
+{{ 'mem-home.css' | asset_url | stylesheet_tag }}
+{%- assign s = section.settings -%}
+<div class="mh-band mh-band--numbers">
+  <div class="mh-wrap">
+    {%- if s.title != blank -%}<h2 class="mh-band__title mh-band__title--center">{{ s.title | escape }}</h2>{%- endif -%}
+    <ul class="mh-numbers" role="list">
+      {%- for block in section.blocks -%}
+        <li {{ block.shopify_attributes }}>
+          <span class="mh-numbers__n">{{ block.settings.number | escape }}</span>
+          <span class="mh-numbers__l">{{ block.settings.label | escape }}</span>
+        </li>
+      {%- endfor -%}
+    </ul>
+    {%- if s.button_label != blank and s.button_link != blank -%}
+      <p class="mh-band__cta mh-band__cta--center"><a class="mh-btn mh-btn--white" href="{{ s.button_link }}">{{ s.button_label | escape }}</a></p>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Memorabil: cifre",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "text", "id": "title", "label": "Titlu" },
+    { "type": "text", "id": "button_label", "label": "Text buton" },
+    { "type": "url", "id": "button_link", "label": "Link buton" }
+  ],
+  "blocks": [
+    {
+      "type": "number",
+      "name": "Cifră",
+      "settings": [
+        { "type": "text", "id": "number", "label": "Cifra", "default": "14 zile" },
+        { "type": "text", "id": "label", "label": "Text", "default": "ca să te răzgândești" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Memorabil: cifre" }]
+}
+{% endschema %}

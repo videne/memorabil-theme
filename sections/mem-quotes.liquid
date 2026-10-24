@@ -1,0 +1,65 @@
+{%- comment -%}
+  Memorabil: bandă albastră cu replici celebre, fiecare legată de produsul ei (carduri care se derulează pe orizontală).
+  Stilurile sunt în assets/mem-home.css.
+{%- endcomment -%}
+{{ 'mem-home.css' | asset_url | stylesheet_tag }}
+{%- assign s = section.settings -%}
+<div class="mh-band">
+  <div class="mh-wrap">
+    <div class="mh-band__head">
+      <div>
+        {%- if s.eyebrow != blank -%}<p class="mh-eyebrow">{{ s.eyebrow | escape }}</p>{%- endif -%}
+        {%- if s.title != blank -%}<h2 class="mh-band__title">{{ s.title | escape }}</h2>{%- endif -%}
+      </div>
+      {%- if s.text != blank -%}<div class="mh-band__text">{{ s.text }}</div>{%- endif -%}
+    </div>
+    <ul class="mh-quotes" role="list">
+      {%- for block in section.blocks -%}
+        {%- assign p = block.settings.product -%}
+        {%- if p != blank -%}
+          {%- assign quote = p.title | split: " — " | last -%}
+          {%- if block.settings.quote != blank -%}{%- assign quote = block.settings.quote -%}{%- endif -%}
+          <li class="mh-quote" {{ block.shopify_attributes }}>
+            <a href="{{ p.url }}">
+              <span class="mh-quote__img">
+                {%- if p.featured_media -%}
+                  {{ p.featured_media | image_url: width: 500 | image_tag: loading: 'lazy', widths: '250, 400, 500', sizes: '(min-width: 900px) 280px, 70vw', alt: '' }}
+                {%- endif -%}
+              </span>
+              <span class="mh-quote__text">„{{ quote | escape }}”</span>
+              <span class="mh-quote__meta">{{ p.title | split: ' — ' | first | escape }} · {{ p.price | money }} <span aria-hidden="true">→</span></span>
+            </a>
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+    {%- if s.button_label != blank and s.button_link != blank -%}
+      <p class="mh-band__cta"><a class="mh-btn mh-btn--white" href="{{ s.button_link }}">{{ s.button_label | escape }}</a></p>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Memorabil: replici",
+  "max_blocks": 12,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Text mic", "default": "Replici care au rămas" },
+    { "type": "text", "id": "title", "label": "Titlu", "default": "Le-ai auzit. Acum le poți purta." },
+    { "type": "richtext", "id": "text", "label": "Text" },
+    { "type": "text", "id": "button_label", "label": "Text buton" },
+    { "type": "url", "id": "button_link", "label": "Link buton" }
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "name": "Replică",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Produs" },
+        { "type": "text", "id": "quote", "label": "Replica", "info": "Gol = numele produsului, fără „Tricou —”." }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Memorabil: replici" }]
+}
+{% endschema %}

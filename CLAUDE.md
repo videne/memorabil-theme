@@ -27,6 +27,9 @@ finalul Manifestului și Organization din snippets/structured-data.liquid (datel
   Politicile din Shopify admin (Settings → Policies, apar în checkout) trebuie ținute la zi manual, cu aceleași texte.
 - sections/mem-footer.liquid + assets/mem-footer.css: subsolul (în sections/footer-group.json; vechiul „footer” Streamline e dezactivat, nu șters).
   Coloanele vin din meniurile subsol-magazin, subsol-ajutor, subsol-memorabil, subsol-legal (Online Store → Navigation).
+- Prima pagină: sections/mem-spotlight (un produs pe card albastru), mem-quotes (bandă albastră cu replici-produs),
+  mem-numbers (bandă albastră cu cifre) + assets/mem-home.css (și retușuri la titlurile și avantajele de pe prima pagină).
+  Nu publica recenzii sau citate de clienți inventate; doar recenzii reale, dintr-o aplicație de recenzii.
 - snippets/mem-product-jsonld.liquid: datele structurate pentru Google (randat din product-template-variables.liquid)
 - Blocurile noi sunt declarate în sections/main-product.liquid și randate în snippets/product-template.liquid
 - Setări: Theme settings → Memorabil (prag livrare gratuită, zile de producție/livrare, ora limită, zile libere)
