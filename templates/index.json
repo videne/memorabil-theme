@@ -22,8 +22,7 @@
             "link_text": "Vezi toate modelele",
             "color_accent": "rgba(0,0,0,0)",
             "text_align": "vertical-bottom horizontal-left",
-            "image": "shopify://shop_images/hero_memorabil_ro.jpg",
-            "image_mobile": ""
+            "image": "shopify://shop_images/hero_memorabil_ro.jpg"
           }
         }
       },
@@ -51,20 +50,20 @@
             "text": "<p>Imprimăm comanda în cel mult 3 zile, iar curierul o aduce în 1–2 zile.</p>"
           }
         },
-        "av_bumbac": {
-          "type": "text_block",
-          "settings": {
-            "icon": "plant",
-            "title": "Bumbac organic Stanley/Stella",
-            "text": "<p>Tricourile și hanoracele sunt Stanley/Stella, din bumbac organic certificat GOTS.</p>"
-          }
-        },
         "av_retur": {
           "type": "text_block",
           "settings": {
             "icon": "calendar",
             "title": "14 zile să te răzgândești",
             "text": "<p>Nu ți-a venit sau nu e ce credeai? Ne scrii și îl returnezi, fără explicații.</p>"
+          }
+        },
+        "av_bumbac": {
+          "type": "text_block",
+          "settings": {
+            "icon": "plant",
+            "title": "Bumbac organic Stanley/Stella",
+            "text": "<p>Tricourile și hanoracele sunt Stanley/Stella, din bumbac organic certificat GOTS.</p>"
           }
         },
         "av_plata": {
@@ -89,6 +88,57 @@
         "icon_color": "#0064fa",
         "button_label": "",
         "button_link": "",
+        "alt": false
+      }
+    },
+    "text_columns_UwMzUK": {
+      "type": "text-columns",
+      "blocks": {
+        "text_block_YmGVBJ": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/postcardfelicitarevadim20273.webp",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Felicitare - 2027 is calling",
+            "text": "<p>Revine în curând pe stoc!</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "text_block_MVFAHX": {
+          "type": "text_block",
+          "settings": {
+            "enable_image": true,
+            "image": "shopify://shop_images/postcardfelicitarevadimcraciun3.webp",
+            "image_mask": "none",
+            "image_width": 650,
+            "title": "Felicitare - Da un Crăciun fericit nu vrei tu?",
+            "text": "<p>Revine în curând pe stoc!</p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_YmGVBJ",
+        "text_block_MVFAHX"
+      ],
+      "name": "t:sections.text-columns.presets.text_columns_with_images.name",
+      "settings": {
+        "title": "",
+        "align_text": "center",
+        "alt": false
+      }
+    },
+    "featured-collection-slider": {
+      "type": "featured-collection-slider",
+      "settings": {
+        "title": "Cele mai populare",
+        "description": "Modelele pe care le comandă toată lumea. Există un motiv.",
+        "home_featured_products": "cele-mai-memorabile-modele",
+        "per_row": "medium",
         "alt": false
       }
     },
@@ -131,28 +181,124 @@
         "alt": false
       }
     },
-    "featured-collection-slider": {
-      "type": "featured-collection-slider",
+    "mem_spotlight": {
+      "type": "mem-spotlight",
+      "disabled": true,
       "settings": {
-        "title": "Cele mai populare",
-        "description": "Modelele pe care le comandă toată lumea. Există un motiv.",
-        "home_featured_products": "cele-mai-memorabile-modele",
-        "per_row": "medium",
-        "alt": false
+        "product": "tricou-n-ai-tu-dialog-cu-mine",
+        "eyebrow": "Cea mai comandată replică",
+        "quote": "N-ai tu dialog cu mine!",
+        "text": "<p>Pentru discuțiile care nu duc nicăieri și pentru oamenii care știu asta din prima. Cel mai comandat tricou Memorabil, pe bumbac organic Stanley/Stella.</p>",
+        "button_label": "Vezi tricoul",
+        "link2_label": "Vezi și hanoracul",
+        "link2": "shopify://products/hanorac-n-ai-tu-dialog-cu-mine"
       }
     },
-    "scrolling_text_VeJP3P": {
-      "type": "scrolling-text",
-      "settings": {
-        "text": "Replici care se poartă ★ Imprimate la comandă în București ★ Livrare gratuită peste 300 de lei ★",
-        "link": "",
-        "text_size": 26,
-        "text_spacing": true,
-        "color_scheme": "button",
-        "direction": "left",
-        "speed": 300
+    "mem_quotes": {
+      "type": "mem-quotes",
+      "blocks": {
+        "replica_1": {
+          "type": "quote",
+          "settings": {
+            "product": "tricou-cu-sapun-ma-spal-pe-piele-și-pe-suflet-cu-manele",
+            "quote": ""
+          }
+        },
+        "replica_2": {
+          "type": "quote",
+          "settings": {
+            "product": "tricou-nu-faci-dumneata-ordine-la-mine-in-birou",
+            "quote": "Nu faci dumneata ordine la mine în birou!"
+          }
+        },
+        "replica_3": {
+          "type": "quote",
+          "settings": {
+            "product": "hanorac-cine-v-a-lucrat-aici",
+            "quote": ""
+          }
+        },
+        "replica_4": {
+          "type": "quote",
+          "settings": {
+            "product": "cana-cafeluța-cu-scandal",
+            "quote": ""
+          }
+        },
+        "replica_5": {
+          "type": "quote",
+          "settings": {
+            "product": "tricou-serviciul-nu-i-carciuma-sa-stai-toata-ziua-acolo",
+            "quote": ""
+          }
+        },
+        "replica_6": {
+          "type": "quote",
+          "settings": {
+            "product": "tote-bag-organic-bagaj-emoțional",
+            "quote": ""
+          }
+        },
+        "replica_7": {
+          "type": "quote",
+          "settings": {
+            "product": "tricou-ședința-asta-putea-fi-un-email",
+            "quote": ""
+          }
+        },
+        "replica_8": {
+          "type": "quote",
+          "settings": {
+            "product": "tricou-ai-barfa-stau-n-ai-barfa-ceau",
+            "quote": ""
+          }
+        },
+        "replica_9": {
+          "type": "quote",
+          "settings": {
+            "product": "hanorac-frumoasa-nedormita",
+            "quote": ""
+          }
+        }
       },
-      "disabled": true
+      "block_order": [
+        "replica_1",
+        "replica_2",
+        "replica_3",
+        "replica_4",
+        "replica_5",
+        "replica_6",
+        "replica_7",
+        "replica_8",
+        "replica_9"
+      ],
+      "settings": {
+        "eyebrow": "Replici care au rămas",
+        "title": "Le-ai auzit. Acum le poți purta.",
+        "text": "<p>Replicile pe care le comandă cel mai des oamenii care nu tac. Glisează și alege-o pe a ta.</p>",
+        "button_label": "Vezi toate modelele",
+        "button_link": "shopify://collections/all"
+      }
+    },
+    "mem_statement": {
+      "type": "rich-text",
+      "blocks": {
+        "mem_statement_text": {
+          "type": "text",
+          "settings": {
+            "enlarge_text": false,
+            "text": "<p>Unele replici se pierd printre mesaje. Altele rămân ani la rând. Le repeți cu prietenii, la birou, la o cafea. Și râzi de fiecare dată ca prima oară.</p><p>Noi le ducem mai departe: pe tricouri și hanorace Stanley/Stella, din bumbac organic certificat GOTS. Moi, trainice, imprimate în București, doar când le alegi tu.</p><p>Pentru că unele vorbe merită mai mult decât să fie spuse. Merită purtate.<br>Și pentru că nu ne stă bine să tăcem.</p><p><a href=\"/pages/despre-noi\">Citește manifestul →</a></p>"
+          }
+        }
+      },
+      "block_order": [
+        "mem_statement_text"
+      ],
+      "settings": {
+        "align_text": "left",
+        "narrow_column": false,
+        "alt": false
+      }
     },
     "featured-collection-slider2": {
       "type": "featured-collection-slider",
@@ -162,6 +308,50 @@
         "home_featured_products": "cani-personalizate",
         "per_row": "small",
         "alt": false
+      }
+    },
+    "mem_numbers": {
+      "type": "mem-numbers",
+      "blocks": {
+        "cifra_1": {
+          "type": "number",
+          "settings": {
+            "number": "190+",
+            "label": "de produse cu replici"
+          }
+        },
+        "cifra_2": {
+          "type": "number",
+          "settings": {
+            "number": "4",
+            "label": "feluri de a purta o replică: tricou, hanorac, cană, tote bag"
+          }
+        },
+        "cifra_3": {
+          "type": "number",
+          "settings": {
+            "number": "180 g/m²",
+            "label": "bumbac organic ring-spun la tricouri"
+          }
+        },
+        "cifra_4": {
+          "type": "number",
+          "settings": {
+            "number": "0 lei",
+            "label": "livrare pentru comenzile de peste 300 de lei"
+          }
+        }
+      },
+      "block_order": [
+        "cifra_1",
+        "cifra_2",
+        "cifra_3",
+        "cifra_4"
+      ],
+      "settings": {
+        "title": "Pe scurt, despre Memorabil",
+        "button_label": "",
+        "button_link": ""
       }
     },
     "featured-collection": {
@@ -267,6 +457,19 @@
         "bottom_padding": true
       }
     },
+    "scrolling_text_VeJP3P": {
+      "type": "scrolling-text",
+      "disabled": true,
+      "settings": {
+        "text": "Replici care se poartă ★ Imprimate la comandă în București ★ Livrare gratuită peste 300 de lei ★",
+        "link": "",
+        "text_size": 26,
+        "text_spacing": true,
+        "color_scheme": "button",
+        "direction": "left",
+        "speed": 300
+      }
+    },
     "hero-animated": {
       "type": "hero-animated",
       "blocks": {
@@ -355,176 +558,15 @@
         "bottom_padding": true,
         "lazyload_images": true
       }
-    },
-    "mem_statement": {
-      "type": "rich-text",
-      "blocks": {
-        "mem_statement_text": {
-          "type": "text",
-          "settings": {
-            "enlarge_text": false,
-            "text": "<p>Unele replici se pierd printre mesaje. Altele rămân ani la rând. Le repeți cu prietenii, la birou, la o cafea. Și râzi de fiecare dată ca prima oară.</p><p>Noi le ducem mai departe: pe tricouri și hanorace Stanley/Stella, din bumbac organic certificat GOTS. Moi, trainice, imprimate în București, doar când le alegi tu.</p><p>Pentru că unele vorbe merită mai mult decât să fie spuse. Merită purtate.<br>Și pentru că nu ne stă bine să tăcem.</p><p><a href=\"/pages/despre-noi\">Citește manifestul →</a></p>"
-          }
-        }
-      },
-      "block_order": [
-        "mem_statement_text"
-      ],
-      "settings": {
-        "align_text": "left",
-        "narrow_column": false,
-        "alt": false
-      }
-    },
-    "mem_spotlight": {
-      "type": "mem-spotlight",
-      "settings": {
-        "product": "tricou-n-ai-tu-dialog-cu-mine",
-        "eyebrow": "Cea mai comandată replică",
-        "quote": "N-ai tu dialog cu mine!",
-        "text": "<p>Pentru discuțiile care nu duc nicăieri și pentru oamenii care știu asta din prima. Cel mai comandat tricou Memorabil, pe bumbac organic Stanley/Stella.</p>",
-        "button_label": "Vezi tricoul",
-        "link2_label": "Vezi și hanoracul",
-        "link2": "shopify://products/hanorac-n-ai-tu-dialog-cu-mine"
-      }
-    },
-    "mem_quotes": {
-      "type": "mem-quotes",
-      "blocks": {
-        "replica_1": {
-          "type": "quote",
-          "settings": {
-            "product": "tricou-cu-sapun-ma-spal-pe-piele-și-pe-suflet-cu-manele",
-            "quote": ""
-          }
-        },
-        "replica_2": {
-          "type": "quote",
-          "settings": {
-            "product": "tricou-nu-faci-dumneata-ordine-la-mine-in-birou",
-            "quote": "Nu faci dumneata ordine la mine în birou!"
-          }
-        },
-        "replica_3": {
-          "type": "quote",
-          "settings": {
-            "product": "hanorac-cine-v-a-lucrat-aici",
-            "quote": ""
-          }
-        },
-        "replica_4": {
-          "type": "quote",
-          "settings": {
-            "product": "cana-cafeluța-cu-scandal",
-            "quote": ""
-          }
-        },
-        "replica_5": {
-          "type": "quote",
-          "settings": {
-            "product": "tricou-serviciul-nu-i-carciuma-sa-stai-toata-ziua-acolo",
-            "quote": ""
-          }
-        },
-        "replica_6": {
-          "type": "quote",
-          "settings": {
-            "product": "tote-bag-organic-bagaj-emoțional",
-            "quote": ""
-          }
-        },
-        "replica_7": {
-          "type": "quote",
-          "settings": {
-            "product": "tricou-ședința-asta-putea-fi-un-email",
-            "quote": ""
-          }
-        },
-        "replica_8": {
-          "type": "quote",
-          "settings": {
-            "product": "tricou-ai-barfa-stau-n-ai-barfa-ceau",
-            "quote": ""
-          }
-        },
-        "replica_9": {
-          "type": "quote",
-          "settings": {
-            "product": "hanorac-frumoasa-nedormita",
-            "quote": ""
-          }
-        }
-      },
-      "block_order": [
-        "replica_1",
-        "replica_2",
-        "replica_3",
-        "replica_4",
-        "replica_5",
-        "replica_6",
-        "replica_7",
-        "replica_8",
-        "replica_9"
-      ],
-      "settings": {
-        "eyebrow": "Replici care au rămas",
-        "title": "Le-ai auzit. Acum le poți purta.",
-        "text": "<p>Replicile pe care le comandă cel mai des oamenii care nu tac. Glisează și alege-o pe a ta.</p>",
-        "button_label": "Vezi toate modelele",
-        "button_link": "shopify://collections/all"
-      }
-    },
-    "mem_numbers": {
-      "type": "mem-numbers",
-      "blocks": {
-        "cifra_1": {
-          "type": "number",
-          "settings": {
-            "number": "190+",
-            "label": "de produse cu replici"
-          }
-        },
-        "cifra_2": {
-          "type": "number",
-          "settings": {
-            "number": "4",
-            "label": "feluri de a purta o replică: tricou, hanorac, cană, tote bag"
-          }
-        },
-        "cifra_3": {
-          "type": "number",
-          "settings": {
-            "number": "180 g/m²",
-            "label": "bumbac organic ring-spun la tricouri"
-          }
-        },
-        "cifra_4": {
-          "type": "number",
-          "settings": {
-            "number": "0 lei",
-            "label": "livrare pentru comenzile de peste 300 de lei"
-          }
-        }
-      },
-      "block_order": [
-        "cifra_1",
-        "cifra_2",
-        "cifra_3",
-        "cifra_4"
-      ],
-      "settings": {
-        "title": "Pe scurt, despre Memorabil",
-        "button_label": "",
-        "button_link": ""
-      }
     }
   },
   "order": [
     "slideshow_eg8B6N",
     "mem_avantaje",
+    "text_columns_UwMzUK",
+    "featured-collection-slider",
     "featured-collections",
     "mem_spotlight",
-    "featured-collection-slider",
     "mem_quotes",
     "mem_statement",
     "featured-collection-slider2",
