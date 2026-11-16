@@ -1,0 +1,59 @@
+/* Memorabil: antetul colecțiilor (sections/mem-collection-header.liquid). */
+.mch {
+  --mch-blue: var(--colorBtnPrimary, #0064fa);
+  --mch-head: var(--typeHeaderPrimary), var(--typeHeaderFallback, sans-serif);
+  padding: clamp(16px, 2.4vw, 32px) 0 clamp(8px, 1.6vw, 20px);
+}
+.mch__card {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(32px, 5.5vw, 72px) clamp(24px, 6vw, 96px);
+  border-radius: clamp(20px, 2.4vw, 32px);
+  background: #eef4ff;
+  color: #1c1d1d;
+}
+.mch__quote {
+  position: absolute;
+  top: clamp(-40px, -3vw, -20px);
+  right: clamp(16px, 4vw, 64px);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: clamp(160px, 20vw, 300px);
+  line-height: 1;
+  letter-spacing: -0.08em;
+  color: var(--mch-blue);
+  opacity: 0.12;
+  pointer-events: none;
+  user-select: none;
+}
+.mch__content {
+  position: relative;
+  max-width: 760px;
+}
+.mch__eyebrow {
+  margin: 0 0 14px;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mch-blue);
+}
+.mch__title {
+  margin: 0;
+  font-family: var(--mch-head);
+  font-weight: 700;
+  font-size: clamp(36px, 5.4vw, 68px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: var(--mch-blue);
+}
+.mch__text {
+  margin-top: clamp(14px, 1.6vw, 20px);
+  font-size: clamp(16px, 1.2vw, 18px);
+  line-height: 1.6;
+}
+.mch__text p { margin: 0; }
+.mch__text p + p { margin-top: 0.7em; }
+
+@media (max-width: 589px) {
+  .mch__quote { top: auto; bottom: -70px; right: 12px; font-size: 180px; }
+}

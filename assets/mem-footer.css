@@ -29,6 +29,54 @@
   padding: clamp(56px, 8vw, 104px) 20px 0;
 }
 
+/* ---------- cadranele albe cu avantaje (blocurile „Avantaj”), deasupra mesajului mare */
+.mf-perks {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 1.6vw, 20px);
+  margin: 0 0 clamp(48px, 7vw, 88px);
+  padding: 0;
+  list-style: none;
+}
+.mf-perk {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: clamp(20px, 2.2vw, 26px);
+  border-radius: 20px;
+  background: #fff;
+  color: var(--mf-blue);
+}
+.mf-perk__icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #eef4ff;
+}
+.mf-perk__body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.mf-perk__title {
+  font-family: var(--mf-head);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.mf-perk__text {
+  font-size: 15px;
+  line-height: 1.45;
+  color: #1c1d1d;
+}
+@media (max-width: 1100px) {
+  .mf-perks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .mf-perks { grid-template-columns: minmax(0, 1fr); }
+  .mf-perk__text { font-size: 16px; }
+}
+
 /* ---------- mesajul de sus */
 .mf-top {
   padding-bottom: clamp(40px, 6vw, 72px);

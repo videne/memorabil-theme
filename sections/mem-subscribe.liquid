@@ -1,0 +1,88 @@
+{%- comment -%}
+  Memorabil: abonarea la newsletter, pe un card albastru-deschis cu două „valuri” decorative (assets/mem-val-1.svg, mem-val-2.svg).
+  Stânga: eticheta mică, titlul mare (un cuvânt subliniat ondulat) și textul. Dreapta: emailul, butonul, acordul și o notă despre date.
+  Formularul e cel de client Shopify (tag-urile „prospect,newsletter”, ca formularul vechi).
+  Înlocuiește pe prima pagină secțiunea „newsletter” Streamline, dezactivată, nu ștearsă. Stilurile sunt în assets/mem-subscribe.css.
+{%- endcomment -%}
+{{ 'mem-subscribe.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign s = section.settings
+  assign form_id = 'MemSubscribe-' | append: section.id
+  assign privacy_url = shop.privacy_policy.url | default: '/pages/politica-de-confidentialitate'
+-%}
+<div class="page-width">
+  <div class="msub">
+    <div class="msub__card">
+      <img class="msub__val msub__val--1" src="{{ 'mem-val-1.svg' | asset_url }}" alt="" width="700" height="240" loading="lazy" aria-hidden="true">
+      <img class="msub__val msub__val--2" src="{{ 'mem-val-2.svg' | asset_url }}" alt="" width="300" height="560" loading="lazy" aria-hidden="true">
+
+      <div class="msub__intro">
+        {%- if s.eyebrow != blank -%}<p class="msub__eyebrow">{{ s.eyebrow | escape }}</p>{%- endif -%}
+        <h2 class="msub__title">
+          {{- s.title_before | escape -}}
+          {%- if s.title_mark != blank %} <span class="msub__mark">{{ s.title_mark | escape }}</span>{% endif -%}
+          {{- s.title_after | escape -}}
+        </h2>
+        {%- if s.text != blank -%}<div class="msub__text">{{ s.text }}</div>{%- endif -%}
+      </div>
+
+      <div class="msub__form-wrap">
+        {%- form 'customer', id: form_id, class: 'msub__form' -%}
+          {%- if form.posted_successfully? -%}
+            <div class="msub__done" role="status">
+              <p class="msub__done-title">{{ s.success_title | escape }}</p>
+              {%- if s.success_text != blank -%}<p class="msub__done-text">{{ s.success_text | escape }}</p>{%- endif -%}
+            </div>
+          {%- else -%}
+            <input type="hidden" name="contact[tags]" value="{{ s.tags | default: 'prospect,newsletter' | escape }}">
+            <div class="msub__row">
+              <label class="msub__sr" for="{{ form_id }}-email">{{ s.email_label | escape }}</label>
+              <input
+                id="{{ form_id }}-email"
+                class="msub__input"
+                type="email"
+                name="contact[email]"
+                autocomplete="email"
+                autocapitalize="off"
+                spellcheck="false"
+                placeholder="{{ s.email_label | escape }}"
+                required
+                {% if form.errors %}aria-invalid="true" aria-describedby="{{ form_id }}-error"{% endif %}
+              >
+              <button class="msub__button" type="submit">{{ s.button_label | escape }}</button>
+            </div>
+            {%- if form.errors -%}
+              <p class="msub__error" id="{{ form_id }}-error" role="alert">{{ s.error_text | escape }}</p>
+            {%- endif -%}
+            <label class="msub__consent" for="{{ form_id }}-consent">
+              <input id="{{ form_id }}-consent" type="checkbox" required>
+              <span>Sunt de acord cu <a href="{{ privacy_url }}">Politica de confidențialitate</a></span>
+            </label>
+            {%- if s.legal != blank -%}<div class="msub__legal">{{ s.legal }}</div>{%- endif -%}
+          {%- endif -%}
+        {%- endform -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Memorabil: newsletter",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Text mic (sus)", "default": "Newsletter" },
+    { "type": "text", "id": "title_before", "label": "Titlu: început", "default": "Modele noi, glume noi. Le primești" },
+    { "type": "text", "id": "title_mark", "label": "Titlu: cuvântul subliniat", "default": "primul" },
+    { "type": "text", "id": "title_after", "label": "Titlu: final", "default": "." },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Abonează-te și afli înaintea tuturor când lansăm mesaje noi. Fără spam: avem și noi inbox.</p>" },
+    { "type": "text", "id": "email_label", "label": "Text în câmpul de email", "default": "Adresa ta de email" },
+    { "type": "text", "id": "button_label", "label": "Text buton", "default": "Abonează-mă" },
+    { "type": "richtext", "id": "legal", "label": "Text mic sub formular", "default": "<p>Datele tale sunt prelucrate de MEMORABIL MEDIA S.R.L. Te poți dezabona oricând, din orice email.</p>" },
+    { "type": "text", "id": "success_title", "label": "Titlu după abonare", "default": "Mulțumim! Ești pe listă." },
+    { "type": "text", "id": "success_text", "label": "Text după abonare", "default": "Îți scriem când avem replici noi." },
+    { "type": "text", "id": "error_text", "label": "Mesaj de eroare", "default": "Adresa de email nu pare corectă. Verifică-o și încearcă din nou." },
+    { "type": "text", "id": "tags", "label": "Tag-uri client", "default": "prospect,newsletter" }
+  ],
+  "presets": [{ "name": "Memorabil: newsletter" }]
+}
+{% endschema %}

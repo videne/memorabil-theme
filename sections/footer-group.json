@@ -42,6 +42,46 @@
     },
     "mem_footer": {
       "type": "mem-footer",
+      "blocks": {
+        "perk_livrare": {
+          "type": "perk",
+          "settings": {
+            "icon": "livrare",
+            "title": "Ajunge în max. 5 zile lucrătoare",
+            "text": "Transportul costă 20 de lei și e gratuit la comenzile de peste 300 de lei."
+          }
+        },
+        "perk_imprimat": {
+          "type": "perk",
+          "settings": {
+            "icon": "bumbac",
+            "title": "Imprimat în București, la comandă",
+            "text": "Tricouri și hanorace Stanley/Stella, din bumbac organic, imprimate doar când le alegi tu."
+          }
+        },
+        "perk_retur": {
+          "type": "perk",
+          "settings": {
+            "icon": "retur",
+            "title": "14 zile să te răzgândești",
+            "text": "Nu ți-a venit sau nu e ce credeai? Ne scrii și îl returnezi."
+          }
+        },
+        "perk_plata": {
+          "type": "perk",
+          "settings": {
+            "icon": "plata",
+            "title": "Plată sigură, cum vrei",
+            "text": "Card, Apple Pay sau Google Pay. Noi nu vedem datele cardului."
+          }
+        }
+      },
+      "block_order": [
+        "perk_livrare",
+        "perk_imprimat",
+        "perk_retur",
+        "perk_plata"
+      ],
       "settings": {
         "eyebrow": "Replici care se poartă.",
         "headline": "Ai ceva de zis? Poartă-l.",

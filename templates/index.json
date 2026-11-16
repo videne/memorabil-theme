@@ -455,7 +455,8 @@
         "color_text": "#1c1d1d",
         "top_padding": true,
         "bottom_padding": true
-      }
+      },
+      "disabled": true
     },
     "scrolling_text_VeJP3P": {
       "type": "scrolling-text",
@@ -558,6 +559,23 @@
         "bottom_padding": true,
         "lazyload_images": true
       }
+    },
+    "mem_subscribe": {
+      "type": "mem-subscribe",
+      "settings": {
+        "eyebrow": "Newsletter",
+        "title_before": "Modele noi, glume noi. Le primești",
+        "title_mark": "primul",
+        "title_after": ".",
+        "text": "<p>Abonează-te și afli înaintea tuturor când lansăm mesaje noi. Fără spam: avem și noi inbox.</p>",
+        "email_label": "Adresa ta de email",
+        "button_label": "Abonează-mă",
+        "legal": "<p>Datele tale sunt prelucrate de MEMORABIL MEDIA S.R.L. Te poți dezabona oricând, din orice email.</p>",
+        "success_title": "Mulțumim! Ești pe listă.",
+        "success_text": "Îți scriem când avem replici noi.",
+        "error_text": "Adresa de email nu pare corectă. Verifică-o și încearcă din nou.",
+        "tags": "prospect,newsletter"
+      }
     }
   },
   "order": [
@@ -575,6 +593,7 @@
     "text_and_image_TmnPDw",
     "featured_collection_8KwEC7",
     "text-and-image",
+    "mem_subscribe",
     "newsletter_memorabil",
     "scrolling_text_VeJP3P",
     "hero-animated",

@@ -149,11 +149,21 @@
     },
     "collection-header": {
       "type": "collection-header",
-      "settings": {}
+      "settings": {},
+      "disabled": true
+    },
+    "mem_header": {
+      "type": "mem-collection-header",
+      "settings": {
+        "eyebrow": "",
+        "title": "",
+        "text": ""
+      }
     }
   },
   "order": [
     "collection-header",
+    "mem_header",
     "scrolling_text_bGCPEw",
     "collection-filters",
     "rich_text_h8qkMm",
