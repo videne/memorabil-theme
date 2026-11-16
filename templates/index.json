@@ -99,7 +99,7 @@
           "settings": {
             "enable_image": true,
             "image": "shopify://shop_images/postcardfelicitarevadim20273.webp",
-            "image_mask": "none",
+            "image_mask": "rounded-top",
             "image_width": 650,
             "title": "Felicitare - 2027 is calling",
             "text": "<p>Revine în curând pe stoc!</p>",
@@ -112,7 +112,7 @@
           "settings": {
             "enable_image": true,
             "image": "shopify://shop_images/postcardfelicitarevadimcraciun3.webp",
-            "image_mask": "none",
+            "image_mask": "star",
             "image_width": 650,
             "title": "Felicitare - Da un Crăciun fericit nu vrei tu?",
             "text": "<p>Revine în curând pe stoc!</p>",
