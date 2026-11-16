@@ -14,7 +14,8 @@
       "settings": {
         "collection_image_enable": false,
         "description_enable": true
-      }
+      },
+      "disabled": true
     },
     "text_and_image_Fkf9hm": {
       "type": "text-and-image",
@@ -61,10 +62,19 @@
         "product_grid"
       ],
       "settings": {}
+    },
+    "mem_header": {
+      "type": "mem-collection-header",
+      "settings": {
+        "eyebrow": "",
+        "title": "",
+        "text": ""
+      }
     }
   },
   "order": [
     "collection-header",
+    "mem_header",
     "collection-filters",
     "main-collection",
     "text_and_image_Fkf9hm"

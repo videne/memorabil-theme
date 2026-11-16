@@ -1,0 +1,40 @@
+{%- comment -%}
+  Memorabil: antetul colecțiilor, un card albastru-deschis cu numele colecției mare și descrierea ei,
+  sub meniu, înainte de produse. Ghilimelele mari „ ” din colț sunt doar decor (replicile sunt ideea Memorabil).
+  Înlocuiește „collection-header” Streamline, dezactivat, nu șters. Stilurile sunt în assets/mem-collection.css.
+{%- endcomment -%}
+{{ 'mem-collection.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign s = section.settings
+  assign heading = s.title | default: collection.title
+  if s.text != blank
+    assign body = s.text
+  else
+    assign body = collection.description
+  endif
+-%}
+<div class="page-width">
+  <div class="mch">
+    <div class="mch__card">
+      <span class="mch__quote" aria-hidden="true">„”</span>
+      <div class="mch__content">
+        {%- if s.eyebrow != blank -%}<p class="mch__eyebrow">{{ s.eyebrow | escape }}</p>{%- endif -%}
+        <h1 class="mch__title">{{ heading | escape }}</h1>
+        {%- if body != blank -%}<div class="mch__text rte">{{ body }}</div>{%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Memorabil: antet colecție",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Text mic (sus)", "info": "Opțional, de ex. „Replici care se poartă.”" },
+    { "type": "text", "id": "title", "label": "Titlu", "info": "Gol = numele colecției." },
+    { "type": "richtext", "id": "text", "label": "Text", "info": "Gol = descrierea colecției." }
+  ],
+  "enabled_on": { "templates": ["collection"] },
+  "presets": [{ "name": "Memorabil: antet colecție" }]
+}
+{% endschema %}

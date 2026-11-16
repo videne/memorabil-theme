@@ -10,6 +10,33 @@
 -%}
 <footer class="mem-footer" data-section-id="{{ section.id }}">
   <div class="mf-inner">
+    {%- if section.blocks.size > 0 -%}
+      <ul class="mf-perks" role="list">
+        {%- for block in section.blocks -%}
+          <li class="mf-perk" {{ block.shopify_attributes }}>
+            <span class="mf-perk__icon" aria-hidden="true">
+              {%- case block.settings.icon -%}
+                {%- when 'livrare' -%}
+                  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg>
+                {%- when 'retur' -%}
+                  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg>
+                {%- when 'plata' -%}
+                  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3 10h18"/><path d="M7 15h3"/></svg>
+                {%- when 'bumbac' -%}
+                  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 5.5l1.5 4L8 9v12h8V9l2.5.5 1.5-4L16 3c-.6 1.6-2.1 2.5-4 2.5S8.6 4.6 8 3z"/></svg>
+                {%- else -%}
+                  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5h14v10H9l-4 4z"/><path d="M9 9h6M9 12h4"/></svg>
+              {%- endcase -%}
+            </span>
+            <span class="mf-perk__body">
+              {%- if block.settings.title != blank -%}<span class="mf-perk__title">{{ block.settings.title | escape }}</span>{%- endif -%}
+              {%- if block.settings.text != blank -%}<span class="mf-perk__text">{{ block.settings.text | escape }}</span>{%- endif -%}
+            </span>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+
     <div class="mf-top">
       {%- if s.eyebrow != blank -%}<p class="mf-eyebrow">{{ s.eyebrow | escape }}</p>{%- endif -%}
       {%- if s.headline != blank -%}<p class="mf-big">{{ s.headline | escape }}</p>{%- endif -%}
@@ -89,6 +116,30 @@
 {
   "name": "Memorabil: subsol",
   "class": "mem-footer-section",
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "perk",
+      "name": "Avantaj",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Iconiță",
+          "options": [
+            { "value": "livrare", "label": "Livrare" },
+            { "value": "retur", "label": "Retur" },
+            { "value": "plata", "label": "Plată" },
+            { "value": "bumbac", "label": "Tricou / bumbac" },
+            { "value": "replica", "label": "Replică" }
+          ],
+          "default": "livrare"
+        },
+        { "type": "text", "id": "title", "label": "Titlu" },
+        { "type": "textarea", "id": "text", "label": "Text" }
+      ]
+    }
+  ],
   "settings": [
     {
       "type": "header",
