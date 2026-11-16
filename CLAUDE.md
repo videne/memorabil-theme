@@ -32,7 +32,7 @@ finalul Manifestului și Organization din snippets/structured-data.liquid (datel
   Nu publica recenzii sau citate de clienți inventate; doar recenzii reale, dintr-o aplicație de recenzii.
 - snippets/mem-product-jsonld.liquid: datele structurate pentru Google (randat din product-template-variables.liquid)
 - Blocurile noi sunt declarate în sections/main-product.liquid și randate în snippets/product-template.liquid
-- sections/mem-collection-header.liquid + assets/mem-collection.css: antetul colecțiilor, un card albastru-deschis cu numele și descrierea colecției (ghilimele mari „” ca decor), în toate șabloanele de colecție (secțiunea mem_header); „collection-header” Streamline e dezactivat, nu șters.
+- sections/mem-collection-header.liquid + assets/mem-collection.css: antetul colecțiilor, un card albastru-deschis cu numele și descrierea colecției (ghilimele mari ” ca decor), în toate șabloanele de colecție (secțiunea mem_header); „collection-header” Streamline e dezactivat, nu șters.
 - Cadranele albe din subsol (blocurile „Avantaj” din „Memorabil: subsol”, max 4): livrare, imprimare, retur, plată. Textele trebuie să rămână adevărate (prag și cost livrare ca în Theme settings → Memorabil).
 - sections/mem-subscribe.liquid + assets/mem-subscribe.css + assets/mem-val-1.svg / mem-val-2.svg: newsletterul de pe prima pagină (card albastru-deschis cu două valuri, formular de client cu tag-urile prospect,newsletter și bifă pentru Politica de confidențialitate). Înlocuiește secțiunea „newsletter” Streamline, dezactivată, nu ștearsă.
 - Setări: Theme settings → Memorabil (prag livrare gratuită, zile de producție/livrare, ora limită, zile libere)
