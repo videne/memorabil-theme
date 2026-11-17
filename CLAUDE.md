@@ -10,6 +10,7 @@ finalul Manifestului și Organization din snippets/structured-data.liquid (datel
 ## Ce e custom (prefix mem-)
 - snippets/mem-delivery.liquid + assets/mem.js: „Ajunge cel târziu …” = zile de producție + zile de curier (zile lucrătoare)
 - snippets/mem-badges.liquid: Nou / Bestseller (tag) / Reducere
+- snippets/mem-sale-pill.liquid: stickerul roșu „−X%” (#e1251b) din colțul stânga sus al pozei, pe cardurile de produs (product-grid-item.liquid, în locul etichetei „Reducere” Streamline) și pe prima poză din pagina produsului (product-images.liquid). Stilurile în mem.css (.mem-sale-pill).
 - snippets/mem-details-tabs.liquid: tab-urile Detalii și materiale, Îngrijire, Siguranța produsului.
   Valoarea de pe produs (metafield custom.*) are prioritate; altfel se folosește valoarea comună din setările blocului
   „Memorabil: tab-uri” din fiecare șablon de produs.

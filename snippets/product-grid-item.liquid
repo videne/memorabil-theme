@@ -79,20 +79,10 @@
           {{ 'products.product.sold_out' | t }}
         </div>
       {%- endif -%}
-      {%- if on_sale and sold_out == false -%}
-        <div class="grid-product__tag grid-product__tag--sale">
-          {%- if settings.product_save_amount -%}
-            {%- if settings.product_save_type == 'dollar' -%}
-              {%- capture saved_amount -%}{{ product.compare_at_price | minus: product.price | money }}{%- endcapture -%}
-            {%- else -%}
-              {%- capture saved_amount -%}{{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}%{%- endcapture -%}
-            {%- endif -%}
-            {{ 'products.general.save_html' | t: saved_amount: saved_amount }}
-          {%- else -%}
-            {{ 'products.general.sale' | t }}
-          {%- endif -%}
-        </div>
-      {%- endif -%}
+    {%- endif -%}
+    {%- if on_sale and sold_out == false -%}
+      {%- comment -%}Memorabil: stickerul roșu „−X%” din stânga sus (snippets/mem-sale-pill.liquid), în locul etichetei Streamline „Reducere”; apare și lângă o etichetă personalizată.{%- endcomment -%}
+      {%- render 'mem-sale-pill', compare: product.compare_at_price, price: product.price, modifier: 'card' -%}
     {%- endif -%}
 
     {%- liquid

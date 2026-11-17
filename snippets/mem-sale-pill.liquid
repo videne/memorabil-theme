@@ -1,0 +1,16 @@
+{%- comment -%}
+  Memorabil: stickerul roșu cu procentul de reducere („−30%”), în colțul din stânga sus al pozei.
+  Apare pe cardurile de produs (product-grid-item.liquid) și pe prima poză din pagina produsului (product-images.liquid).
+  Procentul = (preț vechi − preț) / preț vechi, rotunjit. Nu apare dacă produsul nu are reducere.
+  Stilurile sunt în assets/mem.css (.mem-sale-pill).
+
+  @param compare - prețul vechi (compare_at_price)
+  @param price - prețul actual
+  @param [modifier] - 'card' sau 'product'
+{%- endcomment -%}
+{%- if compare > price -%}
+  {%- assign mem_saved = compare | minus: price | times: 100.0 | divided_by: compare | round -%}
+  {%- if mem_saved > 0 -%}
+    <span class="mem-sale-pill mem-sale-pill--{{ modifier | default: 'card' }}">−{{ mem_saved }}%</span>
+  {%- endif -%}
+{%- endif -%}
