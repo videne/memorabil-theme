@@ -40,6 +40,8 @@
     <div class="product__photos product__photos-{{ section_id }} product__photos--{{ thumbnail_position }}">
 
       <div class="product__main-photos{% if product_image_type == 'slider' %} product__main-photos--slider{% endif %}" data-aos data-product-single-media-group>
+        {%- assign mem_pill_variant = product.selected_or_first_available_variant -%}
+        {%- render 'mem-sale-pill', compare: mem_pill_variant.compare_at_price, price: mem_pill_variant.price, modifier: 'product' -%}
         <div class="product__main-photos-wrapper">
           <div
             id="ProductPhotos-{{ section_id }}"

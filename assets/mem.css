@@ -230,3 +230,32 @@
 }
 .tool-tip__content .mp-note { margin: 0 0 1em; padding: 14px 16px; border-left: 3px solid var(--colorBtnPrimary, #0064fa); background: rgba(0, 100, 250, 0.06); }
 .tool-tip__content .mp-note p:last-child { margin-bottom: 0; }
+
+/* ---------------------------------------------------------------- stickerul de reducere (snippets/mem-sale-pill.liquid) */
+.mem-sale-pill {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 3;
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #e1251b;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.mem-sale-pill--product {
+  top: 16px;
+  left: 16px;
+  padding: 6px 14px;
+  font-size: 16px;
+}
+@media only screen and (max-width: 768px) {
+  .mem-sale-pill { top: 8px; left: 8px; padding: 4px 10px; font-size: 13px; }
+  .mem-sale-pill--product { top: 12px; left: 12px; font-size: 15px; }
+}
