@@ -31,6 +31,9 @@ finalul Manifestului și Organization din snippets/structured-data.liquid (datel
 - Prima pagină: sections/mem-spotlight (un produs pe card albastru), mem-quotes (bandă albastră cu replici-produs),
   mem-numbers (bandă albastră cu cifre) + assets/mem-home.css (și retușuri la titlurile și avantajele de pe prima pagină).
   Nu publica recenzii sau citate de clienți inventate; doar recenzii reale, dintr-o aplicație de recenzii.
+- sections/mem-noutati.liquid: caruselul „Noutăți” de pe prima pagină (înainte de felicitări): cele mai noi 20 de produse, după data
+  adăugării, fără nimic de setat în admin (ia până la 250 de produse și le ordonează în temă). Ascunde produsele epuizate.
+  Opțional se poate alege o colecție (atunci se păstrează ordinea ei). Cardurile și caruselul sunt cele din Streamline.
 - snippets/mem-product-jsonld.liquid: datele structurate pentru Google (randat din product-template-variables.liquid)
 - Blocurile noi sunt declarate în sections/main-product.liquid și randate în snippets/product-template.liquid
 - sections/mem-collection-header.liquid + assets/mem-collection.css: antetul colecțiilor, un card albastru-deschis cu numele și descrierea colecției (ghilimele mari ” ca decor), în toate șabloanele de colecție (secțiunea mem_header); „collection-header” Streamline e dezactivat, nu șters.

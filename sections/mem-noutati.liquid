@@ -1,0 +1,144 @@
+{%- comment -%}
+  Memorabil: caruselul „Noutăți” de pe prima pagină. Arată cele mai noi produse (după data adăugării în magazin),
+  cele mai recente primele, maximum câte spune setarea „Număr de produse” (implicit 20).
+  Fără colecție aleasă: ia toate produsele din magazin (până la 250, ordonate aici, în temă), deci nu cere nimic din admin.
+  Cu o colecție aleasă: păstrează ordinea colecției (de exemplu una sortată „Newest” din admin).
+  Folosește același carusel și aceleași carduri ca „Featured collection slider” din Streamline, dar fără încărcarea
+  automată a altor produse la derulare, ca să rămână exact numărul ales.
+{%- endcomment -%}
+{{ 'mem-home.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign s = section.settings
+  assign limit = s.limit
+  assign source = collections[s.collection]
+
+  assign grid_item_width = 'grid-product--small'
+  assign sizeVariable = '27vw'
+  assign fallback = '63vw'
+  case s.per_row
+    when 'medium'
+      assign grid_item_width = 'grid-product--medium'
+      assign sizeVariable = '21vw'
+      assign fallback = '53vw'
+    when 'large'
+      assign grid_item_width = 'grid-product--large'
+      assign sizeVariable = '17vw'
+      assign fallback = '37vw'
+  endcase
+
+  assign shown = 0
+-%}
+
+{%- capture items -%}
+  {%- if source != blank -%}
+    {%- for product in source.products -%}
+      {%- if s.hide_sold_out and product.available == false -%}{%- continue -%}{%- endif -%}
+      {%- render 'product-grid-item', product: product, collection: source, grid_item_width: grid_item_width, sizeVariable: sizeVariable, fallback: fallback -%}
+      {%- assign shown = shown | plus: 1 -%}
+      {%- if shown >= limit -%}{%- break -%}{%- endif -%}
+    {%- endfor -%}
+  {%- else -%}
+    {%- paginate collections.all.products by 250 -%}
+      {%- assign newest = collections.all.products | sort: 'created_at' | reverse -%}
+      {%- for product in newest -%}
+        {%- if s.hide_sold_out and product.available == false -%}{%- continue -%}{%- endif -%}
+        {%- render 'product-grid-item', product: product, collection: collections.all, grid_item_width: grid_item_width, sizeVariable: sizeVariable, fallback: fallback -%}
+        {%- assign shown = shown | plus: 1 -%}
+        {%- if shown >= limit -%}{%- break -%}{%- endif -%}
+      {%- endfor -%}
+    {%- endpaginate -%}
+  {%- endif -%}
+{%- endcapture -%}
+
+{%- if shown > 0 -%}
+<div class="index-section index-section--overflow-scroller{% if s.alt %} index-section--alt{% endif %}">
+  <div
+    id="CollectionSection-{{ section.id }}"
+    data-section-id="{{ section.id }}"
+    data-section-type="featured-collection"
+    data-scrollable="true"
+    data-product-sliders-mobile="false"
+    data-grid-item-width="{{ grid_item_width }}"
+    data-aos>
+    {%- if s.title != blank -%}
+      <div class="page-width">
+        <header class="section-header" data-aos>
+          <h2 class="section-header__title appear-delay">{{ s.title | escape }}</h2>
+          {%- if s.description != blank -%}
+            <div class="rte section-header__description section-header__description--large appear-delay-1">
+              {{ s.description }}
+            </div>
+          {%- endif -%}
+        </header>
+      </div>
+    {%- endif -%}
+
+    <div class="overflow-scroll-wrap">
+      <button
+        type="button"
+        class="btn btn--tertiary overflow-scroller__arrow overflow-scroller__arrow--left overflow-scroller--disable-left small--hide"
+        aria-hidden="true"
+        aria-label="{{ 'general.pagination.previous' | t }}"
+        data-arrow>
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-left" viewBox="0 0 284.49 498.98"><path d="M249.49 0a35 35 0 0 1 24.75 59.75L84.49 249.49l189.75 189.74a35.002 35.002 0 1 1-49.5 49.5L10.25 274.24a35 35 0 0 1 0-49.5L224.74 10.25A34.89 34.89 0 0 1 249.49 0Z"/></svg>
+      </button>
+      <button
+        type="button"
+        class="btn btn--tertiary overflow-scroller__arrow overflow-scroller__arrow--right small--hide"
+        aria-hidden="true"
+        aria-label="{{ 'general.pagination.next' | t }}"
+        data-arrow>
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-chevron-right" viewBox="0 0 284.49 498.98"><path d="M35 498.98a35 35 0 0 1-24.75-59.75l189.74-189.74L10.25 59.75a35.002 35.002 0 0 1 49.5-49.5l214.49 214.49a35 35 0 0 1 0 49.5L59.75 488.73A34.89 34.89 0 0 1 35 498.98Z"/></svg>
+      </button>
+      <div class="overflow-scroller" data-pagination-wrapper>
+        <div
+          class="grid grid--uniform grid--scattered-large-2 grid--scattered-small-2"
+          data-aos="overflow__animation"
+          data-product-container>
+          {{ items }}
+        </div>
+      </div>
+    </div>
+
+    {%- if s.button_label != blank and s.button_link != blank -%}
+      <div class="page-width text-center mem-noutati__more">
+        <a href="{{ s.button_link }}" class="btn btn--secondary">{{ s.button_label | escape }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Memorabil: noutăți",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Titlu", "default": "Noutăți" },
+    { "type": "richtext", "id": "description", "label": "Text sub titlu" },
+    { "type": "range", "id": "limit", "label": "Număr de produse", "min": 4, "max": 24, "step": 1, "default": 20 },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Colecție (opțional)",
+      "info": "Gol = toate produsele din magazin, cele mai noi primele. Cu o colecție aleasă, se păstrează ordinea colecției."
+    },
+    { "type": "checkbox", "id": "hide_sold_out", "label": "Ascunde produsele epuizate", "default": true },
+    {
+      "type": "select",
+      "id": "per_row",
+      "label": "Mărimea cardurilor",
+      "default": "medium",
+      "options": [
+        { "value": "small", "label": "3 pe rând" },
+        { "value": "medium", "label": "4 pe rând" },
+        { "value": "large", "label": "5 pe rând" }
+      ]
+    },
+    { "type": "text", "id": "button_label", "label": "Text buton (opțional)" },
+    { "type": "url", "id": "button_link", "label": "Link buton" },
+    { "type": "checkbox", "id": "alt", "label": "Fundal alternativ", "default": false }
+  ],
+  "presets": [{ "name": "Memorabil: noutăți" }],
+  "disabled_on": { "groups": ["footer", "header", "custom.popups"] }
+}
+{% endschema %}
