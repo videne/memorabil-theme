@@ -98,8 +98,8 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/postcardfelicitarevadim20273.webp",
-            "image_mask": "rounded-top",
+            "image": "shopify://shop_images/felicitare-2027-is-calling-felicitare-memorabil-2493933.webp",
+            "image_mask": "none",
             "image_width": 650,
             "title": "Felicitare - 2027 is calling",
             "text": "<p>Revine în curând pe stoc!</p>",
@@ -111,8 +111,8 @@
           "type": "text_block",
           "settings": {
             "enable_image": true,
-            "image": "shopify://shop_images/postcardfelicitarevadimcraciun3.webp",
-            "image_mask": "star",
+            "image": "shopify://shop_images/felicitare-da-un-craciun-fericit-nu-vrei-tu-felicitare-memorabil-4525121.webp",
+            "image_mask": "none",
             "image_width": 650,
             "title": "Felicitare - Da un Crăciun fericit nu vrei tu?",
             "text": "<p>Revine în curând pe stoc!</p>",
@@ -420,6 +420,23 @@
         "lazyload_images": true
       }
     },
+    "mem_subscribe": {
+      "type": "mem-subscribe",
+      "settings": {
+        "eyebrow": "Newsletter",
+        "title_before": "Modele noi, glume noi. Le primești",
+        "title_mark": "primul",
+        "title_after": ".",
+        "text": "<p>Abonează-te și afli înaintea tuturor când lansăm mesaje noi. Fără spam: avem și noi inbox.</p>",
+        "email_label": "Adresa ta de email",
+        "button_label": "Abonează-mă",
+        "legal": "<p>Datele tale sunt prelucrate de MEMORABIL MEDIA S.R.L. Te poți dezabona oricând, din orice email.</p>",
+        "success_title": "Mulțumim! Ești pe listă.",
+        "success_text": "Îți scriem când avem replici noi.",
+        "error_text": "Adresa de email nu pare corectă. Verifică-o și încearcă din nou.",
+        "tags": "prospect,newsletter"
+      }
+    },
     "newsletter_memorabil": {
       "type": "newsletter",
       "blocks": {
@@ -446,6 +463,7 @@
         "nl-text",
         "nl-form"
       ],
+      "disabled": true,
       "settings": {
         "align_text": "center",
         "image_width": "33",
@@ -455,8 +473,7 @@
         "color_text": "#1c1d1d",
         "top_padding": true,
         "bottom_padding": true
-      },
-      "disabled": true
+      }
     },
     "scrolling_text_VeJP3P": {
       "type": "scrolling-text",
@@ -558,23 +575,6 @@
         "top_padding": true,
         "bottom_padding": true,
         "lazyload_images": true
-      }
-    },
-    "mem_subscribe": {
-      "type": "mem-subscribe",
-      "settings": {
-        "eyebrow": "Newsletter",
-        "title_before": "Modele noi, glume noi. Le primești",
-        "title_mark": "primul",
-        "title_after": ".",
-        "text": "<p>Abonează-te și afli înaintea tuturor când lansăm mesaje noi. Fără spam: avem și noi inbox.</p>",
-        "email_label": "Adresa ta de email",
-        "button_label": "Abonează-mă",
-        "legal": "<p>Datele tale sunt prelucrate de MEMORABIL MEDIA S.R.L. Te poți dezabona oricând, din orice email.</p>",
-        "success_title": "Mulțumim! Ești pe listă.",
-        "success_text": "Îți scriem când avem replici noi.",
-        "error_text": "Adresa de email nu pare corectă. Verifică-o și încearcă din nou.",
-        "tags": "prospect,newsletter"
       }
     }
   },
