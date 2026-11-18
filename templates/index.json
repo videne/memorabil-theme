@@ -576,11 +576,26 @@
         "bottom_padding": true,
         "lazyload_images": true
       }
+    },
+    "mem_noutati": {
+      "type": "mem-noutati",
+      "settings": {
+        "title": "Noutăți",
+        "description": "",
+        "limit": 20,
+        "collection": "",
+        "hide_sold_out": true,
+        "per_row": "medium",
+        "button_label": "",
+        "button_link": "",
+        "alt": false
+      }
     }
   },
   "order": [
     "slideshow_eg8B6N",
     "mem_avantaje",
+    "mem_noutati",
     "text_columns_UwMzUK",
     "featured-collection-slider",
     "featured-collections",

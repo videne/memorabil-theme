@@ -218,3 +218,6 @@
 @media (max-width: 600px) {
   .mh-arrow { width: 44px; height: 44px; }
 }
+
+/* Memorabil: caruselul „Noutăți” de pe prima pagină (sections/mem-noutati.liquid) */
+.mem-noutati__more { margin-top: 24px; }
