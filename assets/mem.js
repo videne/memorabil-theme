@@ -189,7 +189,8 @@ function memLei(cents) {
     if (ship && shipValue) {
       const threshold = Number(ship.dataset.threshold || 0) * 100;
       const free = threshold > 0 && cart.total_price >= threshold;
-      shipValue.textContent = free ? 'Gratuită' : 'Se calculează la finalizare';
+      const cost = Number(ship.dataset.cost || 0) * 100;
+      shipValue.textContent = free ? 'Gratuită' : cost > 0 ? memLei(cost) : 'Se calculează la finalizare';
       shipValue.classList.toggle('is-free', free);
     }
   }

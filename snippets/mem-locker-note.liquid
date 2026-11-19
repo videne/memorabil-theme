@@ -1,0 +1,40 @@
+{%- comment -%}
+  Memorabil: cardul „Preferi lockerul?” din coș (coșul lateral și pagina coșului).
+  Clientul scrie în notă orașul, curierul și lockerul; nota ajunge în comandă (Orders → comanda → Notes).
+  Textarea are name="note": Streamline o salvează singur în coș (assets/theme.js, CartForm → updateNote).
+  Prețul vine din Theme settings → Memorabil (cost livrare sub prag și prag livrare gratuită).
+  @param id - id-ul câmpului (unic pe pagină)
+{%- endcomment -%}
+{%- liquid
+  assign cost_cents = settings.mem_shipping_cost | default: 0 | times: 100
+  assign cost_label = cost_cents | money_without_trailing_zeros
+  assign free_label = ''
+  if settings.mem_free_shipping_enable and settings.mem_free_shipping_threshold > 0
+    assign free_cents = settings.mem_free_shipping_threshold | times: 100
+    assign free_label = free_cents | money_without_trailing_zeros
+  endif
+-%}
+<div class="mem-locker" data-cart-note-container>
+  <div class="mem-locker__head">
+    <span class="mem-locker__icon" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M12 3v18M3 9h9M3 15h9M12 12h9"/><path d="M8.5 6h1M8.5 12h1M8.5 18h1M15.5 7.5h1M15.5 16.5h1"/></svg>
+    </span>
+    <div class="mem-locker__copy">
+      <p class="mem-locker__title">Preferi lockerul?</p>
+      <p class="mem-locker__text">
+        Îți trimitem coletul la un locker al curierului tău preferat, tot cu {{ cost_label }}
+        {%- if free_label != '' %} (gratuit peste {{ free_label }}){% endif %}. Scrie-ne mai jos orașul, curierul și lockerul ales.
+      </p>
+    </div>
+  </div>
+  <label for="{{ id }}" class="mem-locker__label">Lockerul ales (opțional)</label>
+  <textarea
+    name="note"
+    id="{{ id }}"
+    class="mem-locker__field"
+    rows="2"
+    placeholder="Ex: Cluj-Napoca, curierul preferat, adresa sau numele lockerului"
+    data-cart-note
+  >{{ cart.note }}</textarea>
+  <p class="mem-locker__fine">Dacă lași gol, livrăm la adresa din comandă.</p>
+</div>

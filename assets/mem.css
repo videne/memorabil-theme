@@ -351,58 +351,75 @@
   height: 16px;
 }
 
-/* nota la comandă */
-.mem-cart-note {
-  margin: 8px 0 0;
+/* cardul „Preferi lockerul?” (snippets/mem-locker-note.liquid), în coșul lateral și pe pagina coșului */
+.mem-locker {
+  margin: 16px 0 0;
+  padding: 16px;
+  border-radius: 18px;
+  background: #eaf2ff;
+  color: #231f1d;
+  text-align: left;
 }
-.mem-cart-note__toggle {
+.mem-locker__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.mem-locker__icon {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  min-height: 44px;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--colorBtnPrimary, #0064fa);
+}
+.mem-locker__copy {
+  min-width: 0;
+}
+.mem-locker__title {
+  margin: 0 0 3px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #0b3d91;
+}
+.mem-locker__text {
+  margin: 0;
   font-size: 14px;
-  font-weight: 500;
-  color: #3b3431;
-  cursor: pointer;
-  list-style: none;
+  line-height: 1.4;
+  color: #3a4a66;
 }
-.mem-cart-note__toggle::-webkit-details-marker {
-  display: none;
-}
-.mem-cart-note__label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.mem-cart-note__chevron {
-  transition: transform 0.2s ease;
-}
-.mem-cart-note[open] .mem-cart-note__chevron {
-  transform: rotate(180deg);
-}
-.mem-cart-note__field-label {
+.mem-locker__label {
   display: block;
-  margin: 4px 0 6px;
+  margin: 14px 0 6px;
   font-size: 12px;
   font-weight: 600;
-  color: #5e5550;
+  color: #3a4a66;
 }
-.mem-cart-note__field {
+.mem-locker__field {
+  display: block;
   box-sizing: border-box;
   width: 100%;
   min-height: 0;
   padding: 12px;
-  border: 1.5px solid #e3dad5;
+  border: 1.5px solid #c9d8f2;
   border-radius: 12px;
   background: #fff;
-  font-size: 14px;
+  font-size: 16px;
   color: #231f1d;
-  resize: none;
+  resize: vertical;
 }
-@media (prefers-reduced-motion: reduce) {
-  .mem-cart-note__chevron {
-    transition: none;
-  }
+.mem-locker__field:focus-visible {
+  outline: 2px solid var(--colorBtnPrimary, #0064fa);
+  outline-offset: 1px;
+}
+.mem-locker__fine {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: #3a4a66;
 }
 
 /* subsolul coșului */

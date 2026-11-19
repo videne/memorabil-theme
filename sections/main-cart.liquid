@@ -30,9 +30,9 @@
       <div class="cart__footer text-center">
         <div class="cart__footer-page">
           {%- if settings.cart_notes_enable -%}
+            {%- comment -%} Memorabil: cardul „Preferi lockerul?” în locul notei simple {%- endcomment -%}
             <div class="cart__item-row">
-              <label for="CartNote">{{ 'cart.general.note' | t }}</label>
-              <textarea name="note" class="input-full cart-notes" id="CartNote">{{ cart.note }}</textarea>
+              {%- render 'mem-locker-note', id: 'CartNote' -%}
             </div>
           {%- endif -%}
 
