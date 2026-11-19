@@ -1,6 +1,7 @@
 {%- comment -%}
-  Memorabil: „Mai ai X lei până la livrare gratuită”, în coșul lateral și pe pagina coșului.
-  Pragul și costul se setează în Theme settings → Memorabil. Se actualizează singură din /cart.js (vezi assets/mem.js).
+  Memorabil: cardul „Mai ai X lei până la livrare gratuită”, sus în coșul lateral și pe pagina coșului.
+  Pragul se setează în Theme settings → Memorabil. Se actualizează singur din /cart.js (vezi assets/mem.js).
+  Sub prag: card coral, cu camion. Peste prag: card albastru deschis, cu bifă.
 {%- endcomment -%}
 {%- if settings.mem_free_shipping_enable and settings.mem_free_shipping_threshold > 0 -%}
   {%- liquid
@@ -10,20 +11,53 @@
     if progress > 100
       assign progress = 100
     endif
+    assign reached = false
+    if left <= 0
+      assign reached = true
+    endif
   -%}
   <mem-free-shipping
-    class="mem-fs"
+    class="mem-fs{% if reached %} mem-fs--done{% endif %}"
     data-threshold="{{ settings.mem_free_shipping_threshold }}"
     data-total="{{ cart.total_price }}"
     {% if cart.item_count == 0 %}hidden{% endif %}
   >
-    <p class="mem-fs__text" data-fs-text>
-      {%- if left > 0 -%}
-        Mai ai <strong>{{ left | money_without_trailing_zeros }}</strong> până la livrare gratuită.
-      {%- else -%}
-        <strong>Livrarea e gratuită.</strong>
-      {%- endif -%}
-    </p>
-    <div class="mem-fs__track" aria-hidden="true"><div class="mem-fs__fill" data-fs-fill style="width: {{ progress }}%;"></div></div>
+    <div class="mem-fs__head">
+      <span class="mem-fs__icon" aria-hidden="true">
+        <svg class="mem-fs__truck" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" focusable="false"><path d="M2.5 6.5h11.5v10H2.5z"/><path d="M14 9.5h4.2l3.3 3.4v3.6H14z"/><circle cx="6.5" cy="17.5" r="1.9" fill="#fff"/><circle cx="17.5" cy="17.5" r="1.9" fill="#fff"/></svg>
+        <svg class="mem-fs__check" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" focusable="false"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+      </span>
+      <div class="mem-fs__copy" aria-live="polite">
+        <p class="mem-fs__text" data-fs-text>
+          {%- if reached -%}
+            Felicitări, ai livrare gratuită!
+          {%- else -%}
+            Mai ai <strong>{{ left | money_without_trailing_zeros }}</strong> până la <strong class="mem-fs__goal">livrare gratuită</strong>
+          {%- endif -%}
+        </p>
+        <p class="mem-fs__sub" data-fs-sub>
+          {%- if reached -%}
+            Transportul e pe noi la comanda asta.
+          {%- else -%}
+            Mai adaugă ceva și transportul e pe noi.
+          {%- endif -%}
+        </p>
+      </div>
+    </div>
+    <div
+      class="mem-fs__track"
+      role="progressbar"
+      aria-label="Progres către livrarea gratuită"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      aria-valuenow="{{ progress }}"
+      data-fs-track
+    >
+      <div class="mem-fs__fill" data-fs-fill style="width: {{ progress }}%;"></div>
+    </div>
+    <div class="mem-fs__labels">
+      <span data-fs-cart>{{ cart.total_price | money_without_trailing_zeros }} în coș</span>
+      <span>Gratuit de la {{ threshold_cents | money_without_trailing_zeros }}</span>
+    </div>
   </mem-free-shipping>
 {%- endif -%}

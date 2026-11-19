@@ -14,7 +14,8 @@ finalul Manifestului și Organization din snippets/structured-data.liquid (datel
 - snippets/mem-details-tabs.liquid: tab-urile Detalii și materiale, Îngrijire, Siguranța produsului.
   Valoarea de pe produs (metafield custom.*) are prioritate; altfel se folosește valoarea comună din setările blocului
   „Memorabil: tab-uri” din fiecare șablon de produs.
-- snippets/mem-free-shipping.liquid: bara de livrare gratuită în coșul lateral și pe pagina coșului (se actualizează din /cart.js)
+- snippets/mem-free-shipping.liquid: cardul de livrare gratuită (coral sub prag, albastru deschis peste prag, cu bară de progres), sus în coșul lateral și pe pagina coșului (se actualizează din /cart.js)
+- Coșul lateral (snippets/cart-drawer.liquid și cart-item.liquid, Streamline modificat; stiluri în mem.css, #CartDrawer; JS în mem.js): titlul „Coșul tău (N)”, butoane +/− mari, link „Șterge”, nota la comandă care se deschide la cerere, rândul „Livrare” (Gratuită / Se calculează la finalizare) și butonul „Finalizează comanda · X lei” cu lacăt. Design: https://claude.ai/artifact/9g4QnBsAwY9xu2amaV7Wem
 - snippets/structured-data.liquid (Streamline, modificat): Organization cu sloganul + WebSite pe prima pagină, BreadcrumbList pe colecții și produse.
   Nu adăuga alt Organization în altă parte, ar fi dublat.
 - sections/mem-manifest.liquid + templates/page.manifest.json + assets/mem-manifest.css: pagina Despre noi (manifestul).

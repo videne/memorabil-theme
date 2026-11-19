@@ -135,17 +135,89 @@ class MemFreeShipping extends HTMLElement {
     if (!this.threshold) return;
     const left = Math.max(0, this.threshold - totalCents);
     const progress = Math.min(100, Math.round((totalCents / this.threshold) * 100));
+    const reached = left === 0;
     this.hidden = totalCents === 0;
+    this.classList.toggle('mem-fs--done', reached);
     if (this.fillEl) this.fillEl.style.width = `${progress}%`;
-    if (!this.textEl) return;
-    if (left === 0) {
-      this.textEl.innerHTML = '<strong>Livrarea e gratuită.</strong>';
-    } else {
-      const lei = (left / 100).toLocaleString('ro-RO', { minimumFractionDigits: left % 100 ? 2 : 0, maximumFractionDigits: 2 });
-      this.textEl.innerHTML = `Mai ai <strong>${lei} lei</strong> până la livrare gratuită.`;
+    const track = this.querySelector('[data-fs-track]');
+    if (track) track.setAttribute('aria-valuenow', String(progress));
+    const cartEl = this.querySelector('[data-fs-cart]');
+    if (cartEl) cartEl.textContent = `${memLei(totalCents)} în coș`;
+    const subEl = this.querySelector('[data-fs-sub]');
+    if (subEl) {
+      subEl.textContent = reached ? 'Transportul e pe noi la comanda asta.' : 'Mai adaugă ceva și transportul e pe noi.';
     }
+    if (!this.textEl) return;
+    this.textEl.innerHTML = reached
+      ? 'Felicitări, ai livrare gratuită!'
+      : `Mai ai <strong>${memLei(left)}</strong> până la <strong class="mem-fs__goal">livrare gratuită</strong>`;
   }
 }
+
+/* Sumă în lei, fără zecimale când nu e nevoie: 150 lei, 149,90 lei. */
+function memLei(cents) {
+  return (cents / 100).toLocaleString('ro-RO', {
+    minimumFractionDigits: cents % 100 ? 2 : 0,
+    maximumFractionDigits: 2,
+  }) + ' lei';
+}
+
+/* ------------------------------------------------------------------ coșul lateral */
+/* Numărul de produse din titlu, rândul „Livrare” și suma de pe butonul de finalizare
+   se refac din /cart.js după orice schimbare în coș. „Șterge” pune cantitatea pe 0. */
+(function memCartDrawer() {
+  let timer;
+  function refresh() {
+    const drawer = document.getElementById('CartDrawer');
+    if (!drawer) return;
+    window.clearTimeout(timer);
+    timer = window.setTimeout(() => {
+      fetch(`${window.Shopify?.routes?.root || '/'}cart.js`, { headers: { Accept: 'application/json' } })
+        .then((r) => r.json())
+        .then((cart) => paint(drawer, cart))
+        .catch(() => {});
+    }, 150);
+  }
+
+  function paint(drawer, cart) {
+    const count = drawer.querySelector('[data-mem-cart-count]');
+    if (count) count.textContent = `(${cart.item_count})`;
+    const total = drawer.querySelector('[data-mem-checkout-total]');
+    if (total) total.textContent = cart.item_count > 0 ? ` · ${memLei(cart.total_price)}` : '';
+    const ship = drawer.querySelector('[data-mem-ship]');
+    const shipValue = drawer.querySelector('[data-mem-ship-value]');
+    if (ship && shipValue) {
+      const threshold = Number(ship.dataset.threshold || 0) * 100;
+      const free = threshold > 0 && cart.total_price >= threshold;
+      shipValue.textContent = free ? 'Gratuită' : 'Se calculează la finalizare';
+      shipValue.classList.toggle('is-free', free);
+    }
+  }
+
+  function init() {
+    const drawer = document.getElementById('CartDrawer');
+    if (!drawer) return;
+    const subtotal = drawer.querySelector('[data-subtotal]');
+    if (subtotal) {
+      new MutationObserver(refresh).observe(subtotal, { childList: true, characterData: true, subtree: true });
+    }
+    ['cart:updated', 'ajaxProduct:added', 'cart:change'].forEach((name) => document.addEventListener(name, refresh));
+  }
+
+  document.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-mem-remove]');
+    if (!button) return;
+    const item = button.closest('.cart__item');
+    const input = item && item.querySelector('.js-qty__num');
+    if (!input) return;
+    event.preventDefault();
+    input.value = 0;
+    input.dispatchEvent(new Event('change', { bubbles: true }));
+  });
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
 
 if (!customElements.get('mem-delivery-estimate')) customElements.define('mem-delivery-estimate', MemDeliveryEstimate);
 if (!customElements.get('mem-free-shipping')) customElements.define('mem-free-shipping', MemFreeShipping);

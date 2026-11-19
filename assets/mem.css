@@ -94,34 +94,360 @@
 }
 
 /* ---------------------------------------------------------------- bara de livrare gratuită */
+/* Card coral sub prag, albastru deschis peste prag. Culorile textului trec de 4,5:1. */
 .mem-fs {
-  display: block;
-  margin: 0 0 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 4px 0 18px;
+  padding: 16px;
+  border-radius: 18px;
+  background: #fff1ee;
+  color: #231f1d;
   text-align: left;
 }
 .mem-fs[hidden] {
   display: none;
 }
+.mem-fs--done {
+  background: #eaf2ff;
+}
+.mem-fs__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.mem-fs__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fff;
+  color: #ff5a40;
+}
+.mem-fs__check,
+.mem-fs--done .mem-fs__truck {
+  display: none;
+}
+.mem-fs--done .mem-fs__check {
+  display: block;
+}
+.mem-fs--done .mem-fs__icon {
+  color: var(--colorBtnPrimary, #0064fa);
+}
+.mem-fs__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
 .mem-fs__text {
-  margin: 0 0 6px;
-  font-size: 0.9em;
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.3;
+  font-weight: 500;
+}
+.mem-fs__text strong {
+  font-weight: 700;
+  color: #c93a24;
+}
+.mem-fs__text .mem-fs__goal {
+  color: inherit;
+}
+.mem-fs--done .mem-fs__text {
+  font-weight: 700;
+  color: #0b3d91;
+}
+.mem-fs__sub {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.35;
+  color: #5e5550;
+}
+.mem-fs--done .mem-fs__sub {
+  color: #3a4a66;
 }
 .mem-fs__track {
-  height: 6px;
+  height: 12px;
   border-radius: 999px;
-  background: var(--colorBodyMediumDim, #eee);
+  background: #fff;
+  box-shadow: inset 0 0 0 1px rgba(35, 31, 29, 0.08);
   overflow: hidden;
 }
 .mem-fs__fill {
   height: 100%;
   border-radius: inherit;
-  background: var(--colorBtnPrimary, #0064fa);
+  background: #ff5a40;
   transition: width 0.4s ease;
+}
+.mem-fs--done .mem-fs__fill {
+  background: var(--colorBtnPrimary, #0064fa);
+}
+.mem-fs__labels {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: -8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #5e5550;
+}
+.mem-fs--done .mem-fs__labels {
+  color: #3a4a66;
 }
 @media (prefers-reduced-motion: reduce) {
   .mem-fs__fill {
     transition: none;
   }
+}
+
+/* ---------------------------------------------------------------- coșul lateral */
+/* Titlu cu numărul de produse, produse cu butoane +/− mari, notă la cerere,
+   „Livrare” sub subtotal și butonul de finalizare cu suma și lacăt. */
+#CartDrawer {
+  color: #231f1d;
+}
+#CartDrawer .mem-cart__header {
+  gap: 12px;
+}
+#CartDrawer .mem-cart__title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #231f1d;
+  text-transform: none;
+}
+#CartDrawer .mem-cart__count {
+  color: #c93a24;
+}
+#CartDrawer .mem-cart__header .drawer__close {
+  flex: 0 0 auto;
+}
+#CartDrawer .mem-cart__header .drawer__close-button {
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  background: #f6f3f1;
+  color: #231f1d;
+}
+#CartDrawer .mem-cart__header .drawer__close-button .icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* produsele */
+#CartDrawer .cart__item {
+  grid-template-columns: 96px 1fr;
+  gap: 14px;
+  padding: 16px 0;
+  border-top: 1px solid #eee7e3;
+  margin-bottom: 0;
+}
+#CartDrawer .cart__item:last-child {
+  border-bottom: 1px solid #eee7e3;
+}
+#CartDrawer .cart__item--image .image-wrap {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f6f3f1;
+}
+#CartDrawer .cart__item--details {
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  row-gap: 10px;
+}
+#CartDrawer .cart__item--details .cart__item--name {
+  grid-column: 1 / -1;
+  align-self: start;
+}
+#CartDrawer .cart__item--details .cart__item--qty {
+  grid-column: 1;
+}
+#CartDrawer .cart__item--details .cart__item--price {
+  grid-column: 2;
+  margin-left: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #231f1d;
+}
+#CartDrawer .cart__product-name {
+  display: block;
+  font-size: 15px;
+  line-height: 1.35;
+  font-weight: 600;
+  color: #231f1d;
+}
+#CartDrawer .cart__item--variants {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+#CartDrawer .cart__item--variants > div {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #f6f3f1;
+  font-size: 12px;
+  font-weight: 600;
+  color: #3b3431;
+}
+.mem-cart__remove {
+  display: inline-block;
+  margin: 8px 0 0;
+  padding: 4px 0;
+  border: 0;
+  background: none;
+  font-size: 12px;
+  font-weight: 500;
+  color: #5e5550;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.mem-cart__remove:hover {
+  color: #231f1d;
+}
+#CartDrawer .cart__item--variants + .mem-cart__remove {
+  margin-left: 10px;
+}
+#CartDrawer .js-qty__wrapper {
+  display: flex;
+  align-items: center;
+  width: 132px;
+  max-width: none;
+  height: 44px;
+  border: 1.5px solid #e3dad5;
+  border-radius: 999px;
+}
+#CartDrawer .js-qty__num {
+  height: 100%;
+  padding: 0 44px;
+  border: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #231f1d;
+}
+#CartDrawer .js-qty__adjust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  fill: #231f1d;
+  color: #231f1d;
+}
+#CartDrawer .js-qty__adjust .icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* nota la comandă */
+.mem-cart-note {
+  margin: 8px 0 0;
+}
+.mem-cart-note__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 44px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #3b3431;
+  cursor: pointer;
+  list-style: none;
+}
+.mem-cart-note__toggle::-webkit-details-marker {
+  display: none;
+}
+.mem-cart-note__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.mem-cart-note__chevron {
+  transition: transform 0.2s ease;
+}
+.mem-cart-note[open] .mem-cart-note__chevron {
+  transform: rotate(180deg);
+}
+.mem-cart-note__field-label {
+  display: block;
+  margin: 4px 0 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #5e5550;
+}
+.mem-cart-note__field {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 0;
+  padding: 12px;
+  border: 1.5px solid #e3dad5;
+  border-radius: 12px;
+  background: #fff;
+  font-size: 14px;
+  color: #231f1d;
+  resize: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .mem-cart-note__chevron {
+    transition: none;
+  }
+}
+
+/* subsolul coșului */
+#CartDrawer .cart__footer {
+  border-top: 1px solid #eee7e3;
+  background: #fff;
+}
+#CartDrawer .mem-cart__row {
+  align-items: baseline;
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #5e5550;
+}
+#CartDrawer .mem-cart__subtotal {
+  font-size: 17px;
+  font-weight: 700;
+  color: #231f1d;
+}
+#CartDrawer .mem-cart__ship-value {
+  font-size: 14px;
+  color: #5e5550;
+}
+#CartDrawer .mem-cart__ship-value.is-free {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0052cc;
+}
+#CartDrawer .mem-cart__checkout {
+  min-height: 58px;
+  margin-top: 6px;
+  border-radius: 999px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.mem-cart__checkout-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.mem-cart__fine {
+  margin: 10px 0 0;
+  text-align: center;
+  font-size: 12px;
+  color: #5e5550;
 }
 
 /* ---------------------------------------------------------------- categorii pe prima pagină */
