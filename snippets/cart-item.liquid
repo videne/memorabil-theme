@@ -27,6 +27,8 @@
           {%- endfor -%}
         </div>
       {%- endunless -%}
+      {%- comment -%} Memorabil: link „Șterge” (pune cantitatea pe 0; vezi assets/mem.js) {%- endcomment -%}
+      <button type="button" class="mem-cart__remove" data-mem-remove="{{ product.key }}" aria-label="Șterge {{ product.product.title | escape }} din coș">Șterge</button>
       <div class="{% if product.selling_plan_allocation == empty %}hide {% endif %}">
         {{ product.selling_plan_allocation.selling_plan.name }}
       </div>

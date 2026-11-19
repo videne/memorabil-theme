@@ -7,7 +7,9 @@
 {%- endif -%}
 <div id="CartDrawer" class="drawer drawer--cart{% if static_cart %} drawer--cart--static{% endif %}" data-drawer="true">
   <form id="CartDrawerForm" action="{{ routes.cart_url }}" method="post" novalidate class="drawer__contents{% if cart.items.size == 0 %} cart--empty{% endif %}" data-location="cart-drawer">
-    <div class="drawer__header">
+    <div class="drawer__header mem-cart__header">
+      {%- comment -%} Memorabil: titlul coșului cu numărul de produse (actualizat de assets/mem.js) {%- endcomment -%}
+      <h2 class="drawer__title mem-cart__title">{{ 'cart.general.title' | t }} <span class="mem-cart__count" data-mem-cart-count>({{ cart.item_count }})</span></h2>
       <div class="drawer__close text-right">
         <button type="button" class="drawer__close-button js-drawer-close">
           <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><title>icon-X</title><path d="m19 17.61 27.12 27.13m0-27.12L19 44.74"/></svg>
@@ -17,13 +19,24 @@
     </div>
     <div class="drawer__inner">
       <div class="drawer__scrollable">
+        {%- comment -%} Memorabil: bara de livrare gratuită stă sus, deasupra produselor {%- endcomment -%}
+        {%- render 'mem-free-shipping' -%}
+
         <div data-products></div>
 
         {%- if settings.cart_notes_enable -%}
-          <div class="cart__note" data-cart-note-container>
-            <label for="CartDrawerSpecialInstructions">{{ 'cart.general.note' | t }}</label>
-            <textarea name="note" class="input-full" id="CartDrawerSpecialInstructions" data-cart-note>{{ cart.note }}</textarea>
-          </div>
+          {%- comment -%} Memorabil: nota la comandă se deschide doar la cerere {%- endcomment -%}
+          <details class="mem-cart-note" data-cart-note-container{% if cart.note != blank %} open{% endif %}>
+            <summary class="mem-cart-note__toggle">
+              <span class="mem-cart-note__label">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg>
+                Adaugă o notă la comandă
+              </span>
+              <svg class="mem-cart-note__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg>
+            </summary>
+            <label for="CartDrawerSpecialInstructions" class="mem-cart-note__field-label">Notă pentru noi (opțional)</label>
+            <textarea name="note" class="input-full mem-cart-note__field" id="CartDrawerSpecialInstructions" rows="3" placeholder="Ex: indicații pentru curier" data-cart-note>{{ cart.note }}</textarea>
+          </details>
         {%- endif -%}
       </div>
 
@@ -43,15 +56,28 @@
           {% endif %}
         </div>
 
-        {%- render 'mem-free-shipping' -%}
-
-        <div class="cart__item-sub cart__item-row">
+        <div class="cart__item-sub cart__item-row mem-cart__row">
           <div class="cart__subtotal">{{ 'cart.general.subtotal' | t }}</div>
-          <div data-subtotal>{{ cart.total_price | money }}</div>
+          <div class="mem-cart__subtotal" data-subtotal>{{ cart.total_price | money }}</div>
         </div>
 
-        <div class="cart__item-row cart__note text-center">
-          {{ 'cart.general.shipping_at_checkout' | t }}
+        {%- comment -%} Memorabil: rândul „Livrare” (gratuită peste prag, altfel se calculează la finalizare) {%- endcomment -%}
+        {%- liquid
+          assign mem_ship_free = false
+          if settings.mem_free_shipping_enable and settings.mem_free_shipping_threshold > 0
+            assign mem_threshold_cents = settings.mem_free_shipping_threshold | times: 100
+            if cart.total_price >= mem_threshold_cents
+              assign mem_ship_free = true
+            endif
+          endif
+        -%}
+        <div class="cart__item-sub cart__item-row mem-cart__row mem-cart__ship"
+          data-mem-ship
+          data-threshold="{% if settings.mem_free_shipping_enable %}{{ settings.mem_free_shipping_threshold }}{% else %}0{% endif %}">
+          <div>Livrare</div>
+          <div class="mem-cart__ship-value{% if mem_ship_free %} is-free{% endif %}" data-mem-ship-value>
+            {%- if mem_ship_free -%}Gratuită{%- else -%}Se calculează la finalizare{%- endif -%}
+          </div>
         </div>
 
         {%- if settings.cart_terms_conditions_enable -%}
@@ -67,9 +93,14 @@
           </p>
         {%- endif -%}
 
-        <button type="submit" class="btn btn--full cart__checkout cart__checkout--drawer" name="checkout" data-terms-required="{{ settings.cart_terms_conditions_enable }}">
-          <span>{{ 'cart.general.checkout' | t }}</span>
+        <button type="submit" class="btn btn--full cart__checkout cart__checkout--drawer mem-cart__checkout" name="checkout" data-terms-required="{{ settings.cart_terms_conditions_enable }}">
+          <span class="mem-cart__checkout-label">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+            {{ 'cart.general.checkout' | t }}<span class="mem-cart__checkout-total" data-mem-checkout-total>{% if cart.item_count > 0 %} · {{ cart.total_price | money_without_trailing_zeros }}{% endif %}</span>
+          </span>
         </button>
+
+        <p class="mem-cart__fine">Reducerile se aplică la finalizarea comenzii.</p>
 
         {%- if additional_checkout_buttons and settings.cart_additional_buttons -%}
           <div class="additional-checkout-buttons additional-checkout-buttons--vertical">{{ content_for_additional_checkout_buttons }}</div>
