@@ -399,7 +399,8 @@
   font-weight: 600;
   color: #3a4a66;
 }
-.mem-locker__field {
+.mem-locker__field,
+#CartDrawer .mem-locker__field {
   display: block;
   box-sizing: border-box;
   width: 100%;
@@ -411,6 +412,9 @@
   font-size: 16px;
   color: #231f1d;
   resize: vertical;
+}
+#CartDrawer .mem-locker__field {
+  border-color: #c9d8f2;
 }
 .mem-locker__field:focus-visible {
   outline: 2px solid var(--colorBtnPrimary, #0064fa);
