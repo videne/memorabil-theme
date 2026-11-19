@@ -781,7 +781,8 @@
         "type": "number",
         "id": "mem_shipping_cost",
         "label": "Cost livrare sub prag (lei)",
-        "default": 20
+        "info": "Apare în coș (rândul „Livrare” și cardul „Preferi lockerul?”) și în datele pentru Google. Ține-l egal cu tariful din Settings → Shipping and delivery.",
+        "default": 19
       },
       {
         "type": "header",

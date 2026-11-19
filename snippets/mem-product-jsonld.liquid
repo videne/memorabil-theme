@@ -8,7 +8,7 @@
   assign brand_name = product.vendor | default: shop.name
   assign production = settings.mem_production_days | default: 3
   assign transit = settings.mem_transit_days | default: 2
-  assign ship_cost = settings.mem_shipping_cost | default: 20
+  assign ship_cost = settings.mem_shipping_cost | default: 19
   assign return_days = settings.mem_return_days | default: 14
   assign rating = product.metafields.reviews.rating.value
   assign rating_count = product.metafields.reviews.rating_count.value

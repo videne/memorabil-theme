@@ -15,7 +15,7 @@ finalul Manifestului și Organization din snippets/structured-data.liquid (datel
   Valoarea de pe produs (metafield custom.*) are prioritate; altfel se folosește valoarea comună din setările blocului
   „Memorabil: tab-uri” din fiecare șablon de produs.
 - snippets/mem-free-shipping.liquid: cardul de livrare gratuită (coral sub prag, albastru deschis peste prag, cu bară de progres), sus în coșul lateral și pe pagina coșului (se actualizează din /cart.js)
-- Coșul lateral (snippets/cart-drawer.liquid și cart-item.liquid, Streamline modificat; stiluri în mem.css, #CartDrawer; JS în mem.js): titlul „Coșul tău (N)”, butoane +/− mari, link „Șterge”, nota la comandă care se deschide la cerere, rândul „Livrare” (Gratuită / Se calculează la finalizare) și butonul „Finalizează comanda · X lei” cu lacăt. Design: https://claude.ai/artifact/9g4QnBsAwY9xu2amaV7Wem
+- Coșul lateral (snippets/cart-drawer.liquid și cart-item.liquid, Streamline modificat; stiluri în mem.css, #CartDrawer; JS în mem.js): titlul „Coșul tău (N)”, butoane +/− mari, link „Șterge”, cardul „Preferi lockerul?” (snippets/mem-locker-note.liquid, și pe pagina coșului) cu nota mereu deschisă, rândul „Livrare” (Gratuită / 19 lei) și butonul „Finalizează comanda · X lei” cu lacăt. Design: https://claude.ai/artifact/9g4QnBsAwY9xu2amaV7Wem
 - snippets/structured-data.liquid (Streamline, modificat): Organization cu sloganul + WebSite pe prima pagină, BreadcrumbList pe colecții și produse.
   Nu adăuga alt Organization în altă parte, ar fi dublat.
 - sections/mem-manifest.liquid + templates/page.manifest.json + assets/mem-manifest.css: pagina Despre noi (manifestul).
@@ -40,7 +40,14 @@ finalul Manifestului și Organization din snippets/structured-data.liquid (datel
 - sections/mem-collection-header.liquid + assets/mem-collection.css: antetul colecțiilor, un card albastru-deschis cu numele și descrierea colecției (ghilimele mari ” ca decor), în toate șabloanele de colecție (secțiunea mem_header); „collection-header” Streamline e dezactivat, nu șters.
 - Cadranele albe din subsol (blocurile „Avantaj” din „Memorabil: subsol”, max 4): livrare, imprimare, retur, plată. Textele trebuie să rămână adevărate (prag și cost livrare ca în Theme settings → Memorabil).
 - sections/mem-subscribe.liquid + assets/mem-subscribe.css + assets/mem-val-1.svg / mem-val-2.svg: newsletterul de pe prima pagină (card albastru-deschis cu două valuri, formular de client cu tag-urile prospect,newsletter și bifă pentru Politica de confidențialitate). Înlocuiește secțiunea „newsletter” Streamline, dezactivată, nu ștearsă.
-- Setări: Theme settings → Memorabil (prag livrare gratuită, zile de producție/livrare, ora limită, zile libere)
+- Setări: Theme settings → Memorabil (prag livrare gratuită, cost livrare, zile de producție/livrare, ora limită, zile libere)
+
+## Livrare (din 19 noiembrie 2026)
+O singură metodă: 19 lei, acasă sau la un locker al curierului preferat, gratuit peste 300 de lei. Nu numi brandurile de
+lockere. AWB-urile le face George (el alege unde și cum se livrează); partenerul doar predă coletul curierului.
+Pentru locker, clientul scrie în coș, în cardul „Preferi lockerul?”, orașul, curierul și lockerul; textul ajunge ca notă
+în comandă. În checkout nu se poate adăuga un câmp (ar cere Shopify Plus): descrierea metodei de livrare și emailul de
+confirmare spun și ele asta. mem_shipping_cost (19) și pragul trebuie să fie egale cu tarifele din admin.
 
 ## Șabloane de produs
 tricouri, alexa-lincu-tricouri, hanorac, cani, tote-bag și product.json (implicit).

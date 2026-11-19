@@ -25,18 +25,8 @@
         <div data-products></div>
 
         {%- if settings.cart_notes_enable -%}
-          {%- comment -%} Memorabil: nota la comandă se deschide doar la cerere {%- endcomment -%}
-          <details class="mem-cart-note" data-cart-note-container{% if cart.note != blank %} open{% endif %}>
-            <summary class="mem-cart-note__toggle">
-              <span class="mem-cart-note__label">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13.5 6.5l4 4"/></svg>
-                Adaugă o notă la comandă
-              </span>
-              <svg class="mem-cart-note__chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 9l6 6 6-6"/></svg>
-            </summary>
-            <label for="CartDrawerSpecialInstructions" class="mem-cart-note__field-label">Notă pentru noi (opțional)</label>
-            <textarea name="note" class="input-full mem-cart-note__field" id="CartDrawerSpecialInstructions" rows="3" placeholder="Ex: indicații pentru curier" data-cart-note>{{ cart.note }}</textarea>
-          </details>
+          {%- comment -%} Memorabil: cardul „Preferi lockerul?”, cu nota mereu deschisă {%- endcomment -%}
+          {%- render 'mem-locker-note', id: 'CartDrawerSpecialInstructions' -%}
         {%- endif -%}
       </div>
 
@@ -61,7 +51,7 @@
           <div class="mem-cart__subtotal" data-subtotal>{{ cart.total_price | money }}</div>
         </div>
 
-        {%- comment -%} Memorabil: rândul „Livrare” (gratuită peste prag, altfel se calculează la finalizare) {%- endcomment -%}
+        {%- comment -%} Memorabil: rândul „Livrare” (gratuită peste prag, altfel costul din Theme settings → Memorabil) {%- endcomment -%}
         {%- liquid
           assign mem_ship_free = false
           if settings.mem_free_shipping_enable and settings.mem_free_shipping_threshold > 0
@@ -73,10 +63,11 @@
         -%}
         <div class="cart__item-sub cart__item-row mem-cart__row mem-cart__ship"
           data-mem-ship
-          data-threshold="{% if settings.mem_free_shipping_enable %}{{ settings.mem_free_shipping_threshold }}{% else %}0{% endif %}">
+          data-threshold="{% if settings.mem_free_shipping_enable %}{{ settings.mem_free_shipping_threshold }}{% else %}0{% endif %}"
+          data-cost="{{ settings.mem_shipping_cost }}">
           <div>Livrare</div>
           <div class="mem-cart__ship-value{% if mem_ship_free %} is-free{% endif %}" data-mem-ship-value>
-            {%- if mem_ship_free -%}Gratuită{%- else -%}Se calculează la finalizare{%- endif -%}
+            {%- if mem_ship_free -%}Gratuită{%- else -%}{{ settings.mem_shipping_cost | times: 100 | money_without_trailing_zeros }}{%- endif -%}
           </div>
         </div>
 
