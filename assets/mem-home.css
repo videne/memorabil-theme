@@ -301,7 +301,8 @@
   .mh-show__gallery::-webkit-scrollbar { display: none; }
   .mh-show__item, .mh-show__item:nth-child(n + 6) { display: block; flex: 0 0 72%; scroll-snap-align: start; }
   .mh-show__item img { height: auto; }
-  .mh-show__actions .mh-btn { flex: 1 1 auto; text-align: center; }
+  .mh-show__actions > .mh-btn, .mh-show__form { flex: 1 1 100%; text-align: center; }
+  .mh-show__form .mh-btn { width: 100%; }
 }
 @media (prefers-reduced-motion: reduce) {
   .mh-show__item a, .mh-show__item a:hover { transition: none; transform: none; }
