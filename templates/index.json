@@ -39,6 +39,19 @@
         "lazyload_images": false
       }
     },
+    "mem_showcase": {
+      "type": "mem-showcase",
+      "settings": {
+        "product": "stickerele-tribunului",
+        "eyebrow": "Nou: stickere",
+        "title": "Stickerele Tribunului",
+        "text": "<p>9 replici celebre ale lui Vadim pe o singură foaie A5. Vinil laminat, cu culori vii, rezistent la apă și în exterior. Gata de scandal pe laptop, telefon sau frigider.</p>",
+        "images_count": 8,
+        "button_label": "Vezi stickerele",
+        "show_add": true,
+        "add_label": "Adaugă în coș"
+      }
+    },
     "mem_avantaje": {
       "type": "text-with-icons",
       "blocks": {
@@ -595,6 +608,7 @@
   "order": [
     "slideshow_eg8B6N",
     "mem_avantaje",
+    "mem_showcase",
     "mem_noutati",
     "text_columns_UwMzUK",
     "featured-collection-slider",
