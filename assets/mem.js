@@ -86,9 +86,9 @@ class MemDeliveryEstimate extends HTMLElement {
       const h = Math.floor(left / 60);
       const m = left % 60;
       const time = h > 0 ? `${h} h ${m} min` : `${m} min`;
-      this.noteEl.innerHTML = `dacă plasezi comanda în următoarele <b>${time}</b>. Imprimăm produsul special pentru tine.`;
+      this.noteEl.innerHTML = `dacă plasezi comanda în următoarele <b>${time}</b>.`;
     } else {
-      this.noteEl.textContent = 'dacă plasezi comanda acum. Imprimăm produsul special pentru tine.';
+      this.noteEl.textContent = 'dacă plasezi comanda acum.';
     }
     this.noteEl.hidden = false;
   }
