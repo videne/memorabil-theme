@@ -72,12 +72,13 @@ class MemDeliveryEstimate extends HTMLElement {
       } while (!this.isWorkingDay(start));
     }
 
-    // Termenul maxim: producția plus livrarea, numărate în zile lucrătoare de la ziua de start.
-    const latest = this.addWorkingDays(start, production + transit);
+    // Data estimată: ziua de start e prima zi de producție, deci se adaugă (producție + curier − 1) zile lucrătoare.
+    // Ex.: comandă vineri seara → start luni → 3 + 2 zile = vineri.
+    const latest = this.addWorkingDays(start, Math.max(production + transit - 1, 0));
     const fmt = new Intl.DateTimeFormat('ro-RO', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' });
 
     if (this.dateEl) {
-      this.dateEl.textContent = `Ajunge cel târziu ${fmt.format(latest)}`;
+      this.dateEl.textContent = `Ajunge estimativ ${fmt.format(latest)}`;
     }
 
     if (!this.noteEl) return;
