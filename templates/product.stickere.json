@@ -1,0 +1,142 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ * Memorabil: folosește blocurile mem_badges, mem_delivery, mem_details din sections/main-product.liquid.
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "variant_labels": true,
+            "picker_type": "button",
+            "product_dynamic_variants_enable": true,
+            "color_swatches": false
+          }
+        },
+        "inventory_status": {
+          "type": "inventory_status",
+          "settings": {
+            "inventory_threshold": 10,
+            "inventory_transfers_enable": true
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "surface_pickup_enable": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "text_9HMpCh": {
+          "type": "text",
+          "settings": {
+            "text": "Foaie A5 cu 9 stickere din vinil laminat, rezistente la apă și în exterior."
+          }
+        },
+        "tab": {
+          "type": "tab",
+          "settings": {
+            "title": "Cât costă livrarea",
+            "content": "<p>Livrăm acasă sau la un locker al curierului tău preferat. Pentru comenzile până în 300 de lei, transportul costă 19 lei, iar peste 300 de lei e gratuit. Pentru locker, scrie-ne în coș, la „Preferi lockerul?”, orașul, curierul și lockerul ales.</p>",
+            "page": ""
+          }
+        },
+        "tab_pgdVtN": {
+          "type": "tab",
+          "settings": {
+            "title": "În cât timp se livrează",
+            "content": "<p>Stickerele sunt deja tipărite și pleacă din stoc. Primești coletul în <strong>maximum 5 zile lucrătoare</strong> de la comandă.</p>",
+            "page": ""
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {}
+        },
+        "mem_badges": {
+          "type": "mem_badges",
+          "settings": {}
+        },
+        "mem_delivery": {
+          "type": "mem_delivery",
+          "settings": {}
+        },
+        "mem_details": {
+          "type": "mem_details",
+          "settings": {
+            "material": "Vinil polimeric cu laminare UV, tipărit cu 11 cerneluri",
+            "marime": "Coală A5, 148 × 210 mm",
+            "imprimare": "Tipar digital cu 11 cerneluri; verdele, roșul și portocaliul se tipăresc direct, nu din amestec",
+            "continut": "1 coală cu 9 stickere",
+            "detalii": "Rezistă la apă, la exterior și la spălat\nLaminare UV",
+            "ingrijire": "Se aplică pe o suprafață curată, uscată și netedă\nSe apasă bine, din centru spre margini",
+            "gpsr_producator": "MEMORABIL MEDIA S.R.L.\nStrada Salubrității 42A, bl. B, sc. B, et. 1, ap. 13\n013996 București, România",
+            "gpsr_contact": "george@memorabil.ro",
+            "gpsr_avertismente": "Nu este o jucărie. A nu se lăsa la îndemâna copiilor mici."
+          }
+        }
+      },
+      "block_order": [
+        "mem_badges",
+        "price",
+        "variant_picker",
+        "inventory_status",
+        "buy_buttons",
+        "mem_delivery",
+        "text_9HMpCh",
+        "mem_details",
+        "tab",
+        "tab_pgdVtN",
+        "share"
+      ],
+      "settings": {
+        "product_image_size": "large",
+        "product_image_type": "stacked",
+        "thumbnail_height": "flexible",
+        "product_zoom_enable": true,
+        "enable_video_looping": true,
+        "product_video_style": "muted",
+        "sku_enable": false
+      }
+    },
+    "sub": {
+      "type": "product-full-width",
+      "disabled": true,
+      "settings": {
+        "max_width": true
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "product_recommendations_heading": "S-ar putea să-ți placă și",
+        "related_count": 4
+      }
+    },
+    "collection-return": {
+      "type": "collection-return",
+      "disabled": true,
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "sub",
+    "product-recommendations",
+    "collection-return"
+  ]
+}
