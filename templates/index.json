@@ -39,19 +39,6 @@
         "lazyload_images": false
       }
     },
-    "mem_showcase": {
-      "type": "mem-showcase",
-      "settings": {
-        "product": "stickerele-tribunului",
-        "eyebrow": "Nou: stickere",
-        "title": "Stickerele Tribunului",
-        "text": "<p>9 replici celebre ale lui Vadim pe o singură foaie A5. Vinil laminat, cu culori vii, rezistent la apă și în exterior. Gata de scandal pe laptop, telefon sau frigider.</p>",
-        "images_count": 8,
-        "button_label": "Vezi stickerele",
-        "show_add": true,
-        "add_label": "Adaugă în coș"
-      }
-    },
     "mem_avantaje": {
       "type": "text-with-icons",
       "blocks": {
@@ -104,6 +91,33 @@
         "alt": false
       }
     },
+    "mem_showcase": {
+      "type": "mem-showcase",
+      "settings": {
+        "product": "stickerele-tribunului",
+        "eyebrow": "Nou: stickere",
+        "title": "Stickerele Tribunului",
+        "text": "<p>9 replici celebre ale lui Vadim pe o singură foaie A5. Vinil laminat, cu culori vii, rezistent la apă și în exterior. Gata de scandal pe laptop, telefon sau frigider.</p>",
+        "images_count": 8,
+        "button_label": "Vezi stickerele",
+        "show_add": true,
+        "add_label": "Adaugă în coș"
+      }
+    },
+    "mem_noutati": {
+      "type": "mem-noutati",
+      "settings": {
+        "title": "Noutăți",
+        "description": "",
+        "limit": 20,
+        "collection": "",
+        "hide_sold_out": true,
+        "per_row": "medium",
+        "button_label": "",
+        "button_link": "",
+        "alt": false
+      }
+    },
     "text_columns_UwMzUK": {
       "type": "text-columns",
       "blocks": {
@@ -115,9 +129,9 @@
             "image_mask": "none",
             "image_width": 650,
             "title": "Felicitare - 2027 is calling",
-            "text": "<p>Revine în curând pe stoc!</p>",
-            "button_label": "",
-            "button_link": ""
+            "text": "",
+            "button_label": "Vezi produsul",
+            "button_link": "shopify://products/felicitare-2027-is-calling"
           }
         },
         "text_block_MVFAHX": {
@@ -128,9 +142,9 @@
             "image_mask": "none",
             "image_width": 650,
             "title": "Felicitare - Da un Crăciun fericit nu vrei tu?",
-            "text": "<p>Revine în curând pe stoc!</p>",
-            "button_label": "",
-            "button_link": ""
+            "text": "",
+            "button_label": "Vezi produsul",
+            "button_link": "shopify://products/felicitare-da-un-craciun-fericit-nu-vrei-tu"
           }
         }
       },
@@ -588,20 +602,6 @@
         "top_padding": true,
         "bottom_padding": true,
         "lazyload_images": true
-      }
-    },
-    "mem_noutati": {
-      "type": "mem-noutati",
-      "settings": {
-        "title": "Noutăți",
-        "description": "",
-        "limit": 20,
-        "collection": "",
-        "hide_sold_out": true,
-        "per_row": "medium",
-        "button_label": "",
-        "button_link": "",
-        "alt": false
       }
     }
   },
