@@ -221,3 +221,89 @@
 
 /* Memorabil: caruselul „Noutăți” de pe prima pagină (sections/mem-noutati.liquid) */
 .mem-noutati__more { margin-top: 24px; }
+
+/* ---------- produs vedetă (sections/mem-showcase.liquid): text + mai multe poze ale produsului */
+.mh-btn--blue { background: var(--mh-blue); color: #fff !important; }
+.mh-btn--outline { border: 1.5px solid var(--mh-blue); background: #fff; color: var(--mh-blue) !important; cursor: pointer; font-family: inherit; }
+.mh-btn--outline:hover { background: var(--mh-soft); }
+.mh-show {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.6fr);
+  align-items: center;
+  gap: clamp(28px, 4vw, 56px);
+  margin: clamp(48px, 7vw, 96px) 0;
+  padding: clamp(28px, 4vw, 56px);
+  border-radius: 32px;
+  background: var(--mh-soft);
+}
+.mh-show__eyebrow {
+  display: inline-block;
+  margin: 0 0 18px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: var(--mh-blue);
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.mh-show__title {
+  margin: 0;
+  font-family: var(--mh-head);
+  font-weight: 700;
+  font-size: clamp(36px, 4.6vw, 64px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  text-transform: none;
+  color: var(--mh-blue);
+}
+.mh-show__body { margin-top: 18px; max-width: 42ch; font-size: 17px; line-height: 1.6; }
+.mh-show__body p { margin: 0 0 0.8em; }
+.mh-show__price { display: flex; align-items: baseline; gap: 12px; margin: 18px 0 0; font-size: 24px; font-weight: 700; }
+.mh-show__old { font-size: 17px; font-weight: 400; opacity: 0.55; }
+.mh-show__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.mh-show__form { margin: 0; }
+.mh-show__gallery {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.mh-show__item { margin: 0; }
+.mh-show__item:nth-child(n + 6) { display: none; }
+.mh-show__item--big { grid-row: span 2; }
+.mh-show__item a {
+  display: block;
+  height: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0, 40, 120, 0.1);
+  transition: transform 0.25s ease;
+}
+.mh-show__item a:hover { transform: translateY(-3px); }
+.mh-show__item img { display: block; width: 100%; height: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+
+@media (max-width: 899px) {
+  .mh-show { grid-template-columns: minmax(0, 1fr); padding: 28px 0 28px 20px; border-radius: 24px; }
+  .mh-show__text { padding-right: 20px; }
+  .mh-show__gallery {
+    display: flex;
+    gap: 12px;
+    padding: 0 20px 8px 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .mh-show__gallery::-webkit-scrollbar { display: none; }
+  .mh-show__item, .mh-show__item:nth-child(n + 6) { display: block; flex: 0 0 72%; scroll-snap-align: start; }
+  .mh-show__item img { height: auto; }
+  .mh-show__actions .mh-btn { flex: 1 1 auto; text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mh-show__item a, .mh-show__item a:hover { transition: none; transform: none; }
+}
+@media (min-width: 900px) { .mh-show__item--big img { aspect-ratio: auto; } }

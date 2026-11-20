@@ -32,6 +32,9 @@ finalul Manifestului și Organization din snippets/structured-data.liquid (datel
 - Prima pagină: sections/mem-spotlight (un produs pe card albastru), mem-quotes (bandă albastră cu replici-produs),
   mem-numbers (bandă albastră cu cifre) + assets/mem-home.css (și retușuri la titlurile și avantajele de pe prima pagină).
   Nu publica recenzii sau citate de clienți inventate; doar recenzii reale, dintr-o aplicație de recenzii.
+- sections/mem-showcase.liquid („Memorabil: produs vedetă”, stiluri .mh-show în mem-home.css): zonă specială pe prima pagină (după avantaje)
+  pentru un produs, cu titlu, text, preț, „Vezi produsul” + „Adaugă în coș” și pozele produsului (mozaic pe desktop, primele 5;
+  rând care se derulează pe telefon). Acum: Stickerele Tribunului. Produsul și textele se schimbă din Customize.
 - sections/mem-noutati.liquid: caruselul „Noutăți” de pe prima pagină (înainte de felicitări): cele mai noi 20 de produse, după data
   adăugării, fără nimic de setat în admin (ia până la 250 de produse și le ordonează în temă). Ascunde produsele epuizate.
   Opțional se poate alege o colecție (atunci se păstrează ordinea ei). Cardurile și caruselul sunt cele din Streamline.

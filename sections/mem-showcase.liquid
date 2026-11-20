@@ -1,0 +1,96 @@
+{%- comment -%}
+  Memorabil: zonă specială pe prima pagină pentru un produs, cu mai multe poze ale lui.
+  Stânga: text mic, titlu mare, text, preț, butoane („Vezi produsul” + „Adaugă în coș” dacă produsul are o singură variantă).
+  Dreapta: pozele produsului (din Shopify, în ordinea lor), în mozaic pe desktop (prima mare + 4 mici)
+  și într-un rând care se derulează cu degetul pe telefon (toate pozele alese).
+  Stilurile sunt în assets/mem-home.css (.mh-show).
+{%- endcomment -%}
+{{ 'mem-home.css' | asset_url | stylesheet_tag }}
+{%- liquid
+  assign s = section.settings
+  assign p = s.product
+  if p != blank
+    assign title = s.title
+    if title == blank
+      assign title = p.title | split: ' – ' | first
+    endif
+    assign max_images = s.images_count | default: 8
+    assign images = p.media | where: 'media_type', 'image'
+  endif
+-%}
+{%- if p != blank -%}
+<div class="mh-wrap">
+  <section class="mh-show" aria-labelledby="MhShow-{{ section.id }}">
+    <div class="mh-show__text">
+      {%- if s.eyebrow != blank -%}<p class="mh-show__eyebrow">{{ s.eyebrow | escape }}</p>{%- endif -%}
+      <h2 class="mh-show__title" id="MhShow-{{ section.id }}">{{ title | escape }}</h2>
+      {%- if s.text != blank -%}<div class="mh-show__body">{{ s.text }}</div>{%- endif -%}
+      <p class="mh-show__price">
+        {%- if p.compare_at_price > p.price -%}
+          <s class="mh-show__old">{{ p.compare_at_price | money }}</s>
+        {%- endif -%}
+        <span>{{ p.price | money }}</span>
+      </p>
+      <div class="mh-show__actions">
+        <a class="mh-btn mh-btn--blue" href="{{ p.url }}">{{ s.button_label | default: 'Vezi produsul' | escape }}</a>
+        {%- if s.show_add and p.available and p.has_only_default_variant -%}
+          <form action="{{ routes.cart_add_url }}" method="post" class="mh-show__form">
+            <input type="hidden" name="id" value="{{ p.selected_or_first_available_variant.id }}">
+            <input type="hidden" name="quantity" value="1">
+            <button type="submit" class="mh-btn mh-btn--outline">{{ s.add_label | default: 'Adaugă în coș' | escape }}</button>
+          </form>
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- if images.size > 0 -%}
+      <ul class="mh-show__gallery" role="list">
+        {%- for m in images limit: max_images -%}
+          <li class="mh-show__item{% if forloop.first %} mh-show__item--big{% endif %}">
+            <a href="{{ p.url }}" tabindex="-1">
+              {%- liquid
+                assign alt = m.alt
+                if alt == blank
+                  assign alt = p.title | append: ', poza ' | append: forloop.index
+                endif
+                if forloop.first
+                  assign sizes = '(min-width: 900px) 34vw, 75vw'
+                else
+                  assign sizes = '(min-width: 900px) 17vw, 75vw'
+                endif
+              -%}
+              {{ m.preview_image | image_url: width: 1000 | image_tag: loading: 'lazy', widths: '300, 500, 700, 1000', sizes: sizes, alt: alt }}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </section>
+</div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Memorabil: produs vedetă",
+  "settings": [
+    { "type": "product", "id": "product", "label": "Produs" },
+    { "type": "text", "id": "eyebrow", "label": "Text mic", "default": "Nou pe Memorabil" },
+    { "type": "text", "id": "title", "label": "Titlu", "info": "Gol = numele produsului (partea dinainte de „–”)." },
+    { "type": "richtext", "id": "text", "label": "Text" },
+    {
+      "type": "range",
+      "id": "images_count",
+      "label": "Câte poze",
+      "info": "Pe calculator se văd primele 5; pe telefon, toate, cu derulare.",
+      "min": 3,
+      "max": 12,
+      "step": 1,
+      "default": 8
+    },
+    { "type": "text", "id": "button_label", "label": "Text buton", "default": "Vezi produsul" },
+    { "type": "checkbox", "id": "show_add", "label": "Buton „Adaugă în coș”", "default": true, "info": "Apare doar la produsele cu o singură variantă, care sunt pe stoc." },
+    { "type": "text", "id": "add_label", "label": "Text buton coș", "default": "Adaugă în coș" }
+  ],
+  "presets": [{ "name": "Memorabil: produs vedetă" }]
+}
+{% endschema %}
