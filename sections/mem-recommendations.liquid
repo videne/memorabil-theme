@@ -1,0 +1,105 @@
+{%- comment -%}
+  Memorabil: zona „Ți-ar mai plăcea și” de sub zona principală a produsului.
+  Folosește recomandările Shopify (Product Recommendations). Zona se încarcă după ce pagina e gata (assets/mem.js, elementul
+  mem-recommendations) și rămâne ascunsă dacă Shopify nu are nimic de recomandat. Produsele epuizate nu apar.
+  Produs cu o singură variantă: buton „Adaugă” direct în coș. Produs cu mai multe variante (mărimi): „Alege mărimea”, spre pagina produsului.
+{%- endcomment -%}
+{{ 'mem-recommendations.css' | asset_url | stylesheet_tag }}
+
+{%- assign s = section.settings -%}
+{%- assign limit = s.limit | default: 8 -%}
+{%- assign intent = s.intent | default: 'related' -%}
+
+{%- if recommendations.performed and recommendations.products_count > 0 -%}
+  <div class="mem-recs" data-mem-recs-section>
+    <div class="mem-recs__wrap">
+      {%- if s.heading != blank -%}
+        <h2 class="mem-recs__title">{{ s.heading | escape }}</h2>
+      {%- endif -%}
+      <div class="mem-recs__track" tabindex="0" role="region" aria-label="{{ s.heading | escape }}">
+        {%- assign shown = 0 -%}
+        {%- for item in recommendations.products -%}
+          {%- unless item.available -%}{%- continue -%}{%- endunless -%}
+          {%- if item.id == product.id -%}{%- continue -%}{%- endif -%}
+          {%- assign shown = shown | plus: 1 -%}
+          {%- assign single = false -%}
+          {%- if item.variants.size == 1 -%}{%- assign single = true -%}{%- endif -%}
+          <article class="mem-recs__card">
+            <a class="mem-recs__media" href="{{ item.url }}" tabindex="-1" aria-hidden="true">
+              {%- if item.featured_image -%}
+                {{ item.featured_image | image_url: width: 400 | image_tag: widths: '200, 300, 400', sizes: '(min-width: 750px) 22vw, 45vw', loading: 'lazy', alt: item.featured_image.alt | default: item.title }}
+              {%- else -%}
+                <span class="mem-recs__noimg"></span>
+              {%- endif -%}
+            </a>
+            <a class="mem-recs__name" href="{{ item.url }}">{{ item.title | escape }}</a>
+            <p class="mem-recs__price">
+              {%- if item.compare_at_price > item.price -%}
+                <span class="mem-recs__now">{{ item.price | money }}</span>
+                <del class="mem-recs__was">{{ item.compare_at_price | money }}</del>
+              {%- else -%}
+                {%- if item.price_varies -%}<span class="mem-recs__from">de la </span>{%- endif -%}
+                <span class="mem-recs__now">{{ item.price | money }}</span>
+              {%- endif -%}
+            </p>
+            {%- if single -%}
+              <form class="mem-recs__form" action="{{ routes.cart_add_url }}" method="post" data-mem-recs-add>
+                <input type="hidden" name="id" value="{{ item.first_available_variant.id }}">
+                <button type="submit" class="mem-recs__btn" aria-label="Adaugă în coș: {{ item.title | escape }}">
+                  <span data-mem-recs-label>Adaugă</span>
+                </button>
+              </form>
+            {%- else -%}
+              <a class="mem-recs__btn mem-recs__btn--ghost" href="{{ item.url }}" aria-label="Alege mărimea: {{ item.title | escape }}">Alege mărimea</a>
+            {%- endif -%}
+          </article>
+          {%- if shown >= limit -%}{%- break -%}{%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{%- comment -%} Containerul gol care cere recomandările; se înlocuiește cu conținutul de mai sus. {%- endcomment -%}
+<mem-recommendations
+  class="mem-recs-host"
+  data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ limit }}&intent={{ intent }}"
+  data-loaded="{% if recommendations.performed %}true{% else %}false{% endif %}"
+  hidden></mem-recommendations>
+
+{% schema %}
+{
+  "name": "Memorabil: recomandări",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Titlu",
+      "default": "Ți-ar mai plăcea și"
+    },
+    {
+      "type": "range",
+      "id": "limit",
+      "label": "Număr de produse",
+      "min": 4,
+      "max": 10,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "select",
+      "id": "intent",
+      "label": "Tip de recomandări",
+      "options": [
+        { "value": "related", "label": "Asemănătoare" },
+        { "value": "complementary", "label": "Complementare" }
+      ],
+      "default": "related",
+      "info": "„Complementare” merge doar cu aplicația Shopify Search & Discovery; fără ea, nu apare nimic."
+    }
+  ],
+  "presets": [
+    { "name": "Memorabil: recomandări" }
+  ]
+}
+{% endschema %}
