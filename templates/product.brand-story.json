@@ -81,7 +81,8 @@
     },
     "product-recommendations": {
       "type": "product-recommendations",
-      "settings": {}
+      "settings": {},
+      "disabled": true
     },
     "collection-return": {
       "type": "collection-return",
@@ -123,10 +124,19 @@
         "testimonials-2"
       ],
       "settings": {}
+    },
+    "mem_recs": {
+      "type": "mem-recommendations",
+      "settings": {
+        "heading": "Ți-ar mai plăcea și",
+        "limit": 8,
+        "intent": "related"
+      }
     }
   },
   "order": [
     "main",
+    "mem_recs",
     "sub",
     "background-image-text",
     "text-and-image",

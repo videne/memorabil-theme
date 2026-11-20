@@ -81,7 +81,8 @@
     },
     "product-recommendations": {
       "type": "product-recommendations",
-      "settings": {}
+      "settings": {},
+      "disabled": true
     },
     "collection-return": {
       "type": "collection-return",
@@ -146,6 +147,14 @@
     "hero-video": {
       "type": "hero-video",
       "settings": {}
+    },
+    "mem_recs": {
+      "type": "mem-recommendations",
+      "settings": {
+        "heading": "Ți-ar mai plăcea și",
+        "limit": 8,
+        "intent": "related"
+      }
     }
   },
   "order": [
@@ -154,6 +163,7 @@
     "text-and-image2",
     "testimonials",
     "main",
+    "mem_recs",
     "sub",
     "hero-video",
     "product-recommendations",

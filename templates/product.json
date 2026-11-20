@@ -209,15 +209,25 @@
       "settings": {
         "product_recommendations_heading": "S-ar putea să-ți placă și",
         "related_count": 14
-      }
+      },
+      "disabled": true
     },
     "collection-return": {
       "type": "collection-return",
       "settings": {}
+    },
+    "mem_recs": {
+      "type": "mem-recommendations",
+      "settings": {
+        "heading": "Ți-ar mai plăcea și",
+        "limit": 8,
+        "intent": "related"
+      }
     }
   },
   "order": [
     "main",
+    "mem_recs",
     "sub",
     "background-image-text",
     "text-and-image",

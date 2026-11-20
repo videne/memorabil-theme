@@ -221,5 +221,86 @@ function memLei(cents) {
   else init();
 })();
 
+/* ------------------------------------------------------------------ recomandări sub zona produsului */
+/* Cere secțiunea mem-recommendations de la Shopify (Product Recommendations), o pune în pagină și leagă butoanele „Adaugă”.
+   Adăugarea în coș folosește același eveniment ca butoanele Streamline (ajaxProduct:added): coșul lateral se reface singur,
+   se deschide, iar numărul din antet și bara de livrare gratuită se actualizează. */
+class MemRecommendations extends HTMLElement {
+  connectedCallback() {
+    if (this._ready) return;
+    this._ready = true;
+    const url = this.dataset.url;
+    if (!url) return;
+    const load = () => {
+      fetch(url, { headers: { 'X-Requested-With': 'XMLHttpRequest' } })
+        .then((r) => (r.ok ? r.text() : ''))
+        .then((html) => {
+          if (!html) return;
+          const doc = new DOMParser().parseFromString(html, 'text/html');
+          const zone = doc.querySelector('[data-mem-recs-section]');
+          if (!zone || !zone.querySelector('.mem-recs__card')) return;
+          this.innerHTML = '';
+          this.append(document.importNode(zone, true));
+          this.hidden = false;
+          this.bind();
+        })
+        .catch(() => {});
+    };
+    load();
+  }
+
+  bind() {
+    this.querySelectorAll('[data-mem-recs-add]').forEach((form) => {
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        this.add(form);
+      });
+    });
+  }
+
+  add(form) {
+    const button = form.querySelector('button');
+    const label = form.querySelector('[data-mem-recs-label]');
+    if (!button || button.disabled) return;
+    const id = Number(form.querySelector('[name="id"]').value);
+    const original = label.textContent;
+    button.disabled = true;
+    button.classList.add('is-loading');
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Requested-With': 'XMLHttpRequest' },
+      body: JSON.stringify({ id, quantity: 1 }),
+    })
+      .then((r) => r.json().then((data) => ({ ok: r.ok, data })))
+      .then(({ ok, data }) => {
+        button.classList.remove('is-loading');
+        if (!ok) {
+          label.textContent = 'Indisponibil';
+          window.setTimeout(() => { label.textContent = original; button.disabled = false; }, 2200);
+          return;
+        }
+        label.textContent = 'Adăugat ✓';
+        button.classList.add('is-added');
+        if (window.theme && window.theme.settings && window.theme.settings.cartType === 'page') {
+          window.location = window.theme.routes.cartPage;
+          return;
+        }
+        form.dispatchEvent(new CustomEvent('ajaxProduct:added', { detail: { product: data, addToCartBtn: button }, bubbles: true }));
+        window.setTimeout(() => {
+          label.textContent = original;
+          button.classList.remove('is-added');
+          button.disabled = false;
+        }, 2200);
+      })
+      .catch(() => {
+        button.classList.remove('is-loading');
+        label.textContent = original;
+        button.disabled = false;
+      });
+  }
+}
+
+
 if (!customElements.get('mem-delivery-estimate')) customElements.define('mem-delivery-estimate', MemDeliveryEstimate);
 if (!customElements.get('mem-free-shipping')) customElements.define('mem-free-shipping', MemFreeShipping);
+if (!customElements.get('mem-recommendations')) customElements.define('mem-recommendations', MemRecommendations);

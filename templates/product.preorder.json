@@ -83,15 +83,25 @@
     },
     "recommendations": {
       "type": "product-recommendations",
-      "settings": {}
+      "settings": {},
+      "disabled": true
     },
     "collection-return": {
       "type": "collection-return",
       "settings": {}
+    },
+    "mem_recs": {
+      "type": "mem-recommendations",
+      "settings": {
+        "heading": "Ți-ar mai plăcea și",
+        "limit": 8,
+        "intent": "related"
+      }
     }
   },
   "order": [
     "main",
+    "mem_recs",
     "sub",
     "recommendations",
     "collection-return"
