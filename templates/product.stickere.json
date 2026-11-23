@@ -59,7 +59,7 @@
           "type": "tab",
           "settings": {
             "title": "În cât timp se livrează",
-            "content": "<p>Stickerele sunt deja tipărite și pleacă din stoc. Primești coletul în <strong>maximum 5 zile lucrătoare</strong> de la comandă.</p>",
+            "content": "<p>Stickerele sunt deja tipărite și pleacă din stoc: predăm coletul curierului în următoarea zi lucrătoare, iar curierul îl livrează în <strong>cel mult 2 zile lucrătoare</strong>.</p>",
             "page": ""
           }
         },
