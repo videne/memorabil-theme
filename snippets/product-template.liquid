@@ -101,6 +101,13 @@
         <div class="grid__item {{ product_description_width }}{% if product_image_type == 'stacked' %} product-single__sticky{% endif %}">
           <div class="product-single__meta">
             <div class="product-block product-block--header product-single__header small--text-center">
+              {%- comment -%} Memorabil: etichetele (Nou / Bestseller / Reducere) stau deasupra titlului {%- endcomment -%}
+              {%- for block in blocks -%}
+                {%- if block.type == 'mem_badges' -%}
+                  {%- render 'mem-badges', product: product, block: block, above_title: true -%}
+                {%- endif -%}
+              {%- endfor -%}
+
               {%- if settings.vendor_enable -%}
                 <div class="product-single__vendor">
                   {%- assign vendor_handle = product.vendor | handleize  -%}
@@ -207,6 +214,7 @@
                               {{ 1999 | money }}
                             {%- endunless -%}
                           </span>
+                          {%- render 'mem-savings', product: product, current_variant: current_variant -%}
                         </div>
 
                         <div data-product-unit-wrapper class="product__unit-price{% unless current_variant.unit_price_measurement %} hide{% endunless %}">
@@ -379,9 +387,11 @@
                         </div>
                       </div>
                     {%- when 'mem_badges' -%}
-                      {%- render 'mem-badges', product: product, block: block -%}
+                      {%- comment -%} Se afișează deasupra titlului (mai sus în fișier) {%- endcomment -%}
                     {%- when 'mem_delivery' -%}
                       {%- render 'mem-delivery', product: product, block: block -%}
+                    {%- when 'mem_trust' -%}
+                      {%- render 'mem-trust', block: block -%}
                     {%- when 'mem_details' -%}
                       {%- render 'mem-details-tabs', product: product, block: block -%}
                     {%- when 'custom' -%}

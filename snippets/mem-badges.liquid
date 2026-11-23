@@ -3,6 +3,7 @@
   - Nou: produs publicat în ultimele X zile (Theme settings → Memorabil)
   - Bestseller: produsul are tag-ul setat în Theme settings (implicit „bestseller”)
   - Reducere: varianta curentă are preț vechi mai mare decât prețul actual
+  Se randează din product-template.liquid deasupra titlului (above_title: true); în blocuri nu se mai afișează a doua oară.
 {%- endcomment -%}
 {%- liquid
   assign current_variant = product.selected_or_first_available_variant
@@ -33,5 +34,5 @@
   {%- if discount > 0 -%}<span class="mem-badge mem-badge--sale">−{{ discount }}%</span>{%- endif -%}
 {%- endcapture -%}
 {%- if badges != blank -%}
-  <div class="product-block mem-badges" {{ block.shopify_attributes }}>{{ badges }}</div>
+  <div class="product-block mem-badges{% if above_title %} mem-badges--title{% endif %}" {{ block.shopify_attributes }}>{{ badges }}</div>
 {%- endif -%}

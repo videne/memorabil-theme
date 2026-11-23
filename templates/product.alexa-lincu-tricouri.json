@@ -6,7 +6,7 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- * Memorabil: folosește blocurile mem_badges, mem_delivery, mem_details din sections/main-product.liquid.
+ * Memorabil: folosește blocurile mem_badges, mem_delivery, mem_trust, mem_details din sections/main-product.liquid.
  */
 {
   "sections": {
@@ -94,6 +94,19 @@
           "type": "share",
           "settings": {}
         },
+        "mem_trust": {
+          "type": "mem_trust",
+          "settings": {
+            "icon_1": "leaf",
+            "text_1": "Bumbac organic Stanley/Stella",
+            "icon_2": "truck",
+            "text_2": "Livrare gratuită peste 300 lei",
+            "icon_3": "return",
+            "text_3": "Retur în 14 zile",
+            "icon_4": "lock",
+            "text_4": "Plată sigură cu cardul"
+          }
+        },
         "mem_badges": {
           "type": "mem_badges",
           "settings": {}
@@ -123,6 +136,7 @@
         "variant_picker",
         "inventory_status",
         "buy_buttons",
+        "mem_trust",
         "mem_delivery",
         "text_9HMpCh",
         "description",

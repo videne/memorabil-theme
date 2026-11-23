@@ -26,6 +26,7 @@ class MemDeliveryEstimate extends HTMLElement {
   connectedCallback() {
     this.dateEl = this.querySelector('[data-delivery-date]');
     this.noteEl = this.querySelector('[data-delivery-note]');
+    this.stepsEl = this.querySelector('[data-delivery-steps]');
     this.holidays = new Set(
       (this.dataset.holidays || '')
         .split(',')
@@ -60,11 +61,11 @@ class MemDeliveryEstimate extends HTMLElement {
     const today = new Date(Date.UTC(now.year, now.month - 1, now.day));
     const cutoff = Number(this.dataset.cutoffHour || 14) * 60;
     const minutesNow = now.hour * 60 + now.minute;
-    const production = Number(this.dataset.productionDays || 3);
-    const transit = Number(this.dataset.transitDays || 2);
+    const production = Math.max(Number(this.dataset.productionDays || 3), 1);
+    const transit = Math.max(Number(this.dataset.transitDays || 2), 1);
 
     // Ziua în care comanda intră în producție: azi, dacă e zi lucrătoare și nu a trecut ora limită.
-    let start = new Date(today);
+    const start = new Date(today);
     const startsToday = this.isWorkingDay(today) && minutesNow < cutoff;
     if (!startsToday) {
       do {
@@ -72,26 +73,66 @@ class MemDeliveryEstimate extends HTMLElement {
       } while (!this.isWorkingDay(start));
     }
 
-    // Data estimată: ziua de start e prima zi de producție, deci se adaugă (producție + curier − 1) zile lucrătoare.
-    // Ex.: comandă vineri seara → start luni → 3 + 2 zile = vineri.
-    const latest = this.addWorkingDays(start, Math.max(production + transit - 1, 0));
-    const fmt = new Intl.DateTimeFormat('ro-RO', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'UTC' });
+    // Ziua de start e prima zi de producție, deci se adaugă (producție − 1) zile lucrătoare până la predarea la curier
+    // și (producție + curier − 1) până la livrare. Ex.: comandă vineri seara → start luni → predat miercuri → livrat vineri.
+    const dispatched = this.addWorkingDays(start, production - 1);
+    const latest = this.addWorkingDays(start, production + transit - 1);
 
-    if (this.dateEl) {
-      this.dateEl.textContent = `Ajunge estimativ ${fmt.format(latest)}`;
-    }
+    const dayNames = ['duminică', 'luni', 'marți', 'miercuri', 'joi', 'vineri', 'sâmbătă'];
+    const monthNames = ['ian', 'feb', 'mar', 'apr', 'mai', 'iun', 'iul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+    const dayNum = (d) => `${d.getUTCDate()} ${monthNames[d.getUTCMonth()]}`;
+    const short = (d) => `${dayNames[d.getUTCDay()]}, ${dayNum(d)}`;
+    const dayDiff = (d) => Math.round((d.getTime() - today.getTime()) / 86400000);
+    const relative = (d) => (dayDiff(d) === 0 ? 'Azi' : dayDiff(d) === 1 ? 'Mâine' : null);
+    const label = (d) => relative(d) || short(d);
+
+    if (this.dateEl) this.dateEl.textContent = `Ajunge estimativ ${short(latest)}`;
+
+    const set = (sel, text) => {
+      const el = this.querySelector(sel);
+      if (el) el.textContent = text;
+    };
+    set('[data-step-dispatched]', label(dispatched));
+    set('[data-step-delivered]', label(latest));
+    if (this.stepsEl) this.stepsEl.hidden = false;
 
     if (!this.noteEl) return;
+    const noteText = this.querySelector('[data-delivery-note-text]');
     if (startsToday) {
       const left = cutoff - minutesNow;
       const h = Math.floor(left / 60);
       const m = left % 60;
       const time = h > 0 ? `${h} h ${m} min` : `${m} min`;
-      this.noteEl.innerHTML = `dacă plasezi comanda în următoarele <b>${time}</b>.`;
+      noteText.innerHTML = `Comandă în următoarele <b>${time}</b> ca să fie procesată azi.`;
     } else {
-      this.noteEl.textContent = 'dacă plasezi comanda acum.';
+      const startLabel = relative(start) ? relative(start).toLowerCase() : short(start);
+      noteText.textContent = `Comanda se procesează ${startLabel}.`;
     }
     this.noteEl.hidden = false;
+  }
+}
+
+/* ------------------------------------------------------------------ „Economisești X lei” lângă preț */
+/* Randat de server pentru varianta aleasă; la schimbarea variantei (eveniment variantChange din temă) se recalculează. */
+class MemSavings extends HTMLElement {
+  connectedCallback() {
+    this.valueEl = this.querySelector('[data-mem-saved]');
+    this.container = this.closest('[data-section-type="product-template"]') || this.closest('[data-section-id]');
+    this.handler = (event) => this.update(event.detail && event.detail.variant);
+    this.container?.addEventListener('variantChange', this.handler);
+  }
+
+  disconnectedCallback() {
+    this.container?.removeEventListener('variantChange', this.handler);
+  }
+
+  update(variant) {
+    const saved = variant && variant.compare_at_price > variant.price ? variant.compare_at_price - variant.price : 0;
+    this.hidden = saved <= 0;
+    if (saved > 0 && this.valueEl) {
+      const lei = saved / 100;
+      this.valueEl.textContent = Number.isInteger(lei) ? String(lei) : lei.toFixed(2).replace('.', ',');
+    }
   }
 }
 
@@ -302,5 +343,6 @@ class MemRecommendations extends HTMLElement {
 
 
 if (!customElements.get('mem-delivery-estimate')) customElements.define('mem-delivery-estimate', MemDeliveryEstimate);
+if (!customElements.get('mem-savings')) customElements.define('mem-savings', MemSavings);
 if (!customElements.get('mem-free-shipping')) customElements.define('mem-free-shipping', MemFreeShipping);
 if (!customElements.get('mem-recommendations')) customElements.define('mem-recommendations', MemRecommendations);

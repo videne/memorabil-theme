@@ -19,13 +19,34 @@
       data-cutoff-hour="{{ settings.mem_cutoff_hour | default: 14 }}"
       data-holidays="{{ holidays | escape }}"
     >
-      <svg class="mem-delivery__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5v-9Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-        <path d="M3 7.5 12 12l9-4.5M12 12v9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-      </svg>
-      <p class="mem-delivery__text">
-        <strong data-delivery-date>Livrare în maximum {{ total_days }} zile lucrătoare</strong>
-        <span class="mem-delivery__note" data-delivery-note hidden></span>
+      <p class="mem-delivery__title">Livrare estimată</p>
+      <p class="mem-delivery__headline" data-delivery-date>Livrare în maximum {{ total_days }} zile lucrătoare</p>
+      <ol class="mem-delivery__steps" data-delivery-steps hidden>
+        <li class="mem-delivery__step mem-delivery__step--done">
+          <span class="mem-delivery__dot">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12.5 10 17.5 19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="mem-delivery__label">Comandat</span>
+          <span class="mem-delivery__when" data-step-ordered>Azi</span>
+        </li>
+        <li class="mem-delivery__step mem-delivery__step--next">
+          <span class="mem-delivery__dot">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5v-9Z M3 7.5 12 12l9-4.5M12 12v9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="mem-delivery__label">Predat curierului</span>
+          <span class="mem-delivery__when" data-step-dispatched></span>
+        </li>
+        <li class="mem-delivery__step">
+          <span class="mem-delivery__dot">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6.5h11v9H3zM14 9.5h4l3 3.2v2.8h-7M7 18.5a1.8 1.8 0 1 0 0-.01M17 18.5a1.8 1.8 0 1 0 0-.01" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          </span>
+          <span class="mem-delivery__label">Livrat</span>
+          <span class="mem-delivery__when" data-step-delivered></span>
+        </li>
+      </ol>
+      <p class="mem-delivery__note" data-delivery-note hidden>
+        <svg class="mem-delivery__clock" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.5V12l3 2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span data-delivery-note-text></span>
       </p>
     </mem-delivery-estimate>
   </div>

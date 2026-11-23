@@ -3,32 +3,178 @@
 
 /* ---------------------------------------------------------------- livrare estimată */
 .mem-delivery {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  padding: 14px 16px;
-  border: 1px solid var(--colorBodyMediumDim, #e5e5e5);
-  border-radius: 8px;
+  display: block;
+  padding: 16px;
+  border: 1.5px solid #c9d8f2;
+  border-radius: 14px;
+  background: #fff;
   text-align: left;
 }
-.mem-delivery__icon {
-  flex: 0 0 22px;
-  width: 22px;
-  height: 22px;
-  margin-top: 2px;
+.mem-delivery p {
+  margin: 0;
+}
+.mem-delivery__title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
   color: var(--colorBtnPrimary, #0064fa);
 }
-.mem-delivery__text {
-  margin: 0;
-  line-height: 1.45;
+.mem-delivery__headline {
+  margin-top: 2px !important;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.35;
 }
-.mem-delivery__text strong {
-  display: block;
+.mem-delivery__steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin: 16px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.mem-delivery__steps[hidden] {
+  display: none;
+}
+.mem-delivery__step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0 2px;
+  text-align: center;
+  line-height: 1.3;
+}
+/* linia dintre pași: albastră pentru partea făcută, gri după */
+.mem-delivery__step::before {
+  content: "";
+  position: absolute;
+  top: 17px;
+  right: 50%;
+  width: 100%;
+  height: 3px;
+  background: #e3e7ee;
+}
+.mem-delivery__step:first-child::before {
+  display: none;
+}
+.mem-delivery__step--next::before {
+  background: var(--colorBtnPrimary, #0064fa);
+}
+.mem-delivery__dot {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 2px solid #c9d8f2;
+  border-radius: 50%;
+  background: #fff;
+  color: var(--colorBtnPrimary, #0064fa);
+}
+.mem-delivery__dot svg {
+  width: 20px;
+  height: 20px;
+}
+.mem-delivery__step--done .mem-delivery__dot {
+  border-color: var(--colorBtnPrimary, #0064fa);
+  background: var(--colorBtnPrimary, #0064fa);
+  color: #fff;
+}
+.mem-delivery__step--next .mem-delivery__dot {
+  border-color: var(--colorBtnPrimary, #0064fa);
+}
+.mem-delivery__label {
+  margin-top: 8px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.mem-delivery__when {
+  margin-top: 2px;
+  font-size: 15px;
 }
 .mem-delivery__note {
-  display: block;
-  font-size: 0.9em;
-  opacity: 0.8;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 16px !important;
+  padding-top: 12px;
+  border-top: 1px solid #e3e7ee;
+  font-size: 15px;
+  line-height: 1.4;
+}
+.mem-delivery__note[hidden] {
+  display: none;
+}
+.mem-delivery__clock {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  color: var(--colorBtnPrimary, #0064fa);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .mem-delivery__steps:not([hidden]) .mem-delivery__step {
+    animation: mem-step-in 0.4s ease both;
+  }
+  .mem-delivery__steps:not([hidden]) .mem-delivery__step:nth-child(2) { animation-delay: 0.08s; }
+  .mem-delivery__steps:not([hidden]) .mem-delivery__step:nth-child(3) { animation-delay: 0.16s; }
+}
+@keyframes mem-step-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------------------------------------------------------------- garanții (mem_trust) */
+.mem-trust {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.mem-trust__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f1f6ff;
+  font-size: 15px;
+  line-height: 1.3;
+  text-align: left;
+}
+.mem-trust__icon {
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  color: var(--colorBtnPrimary, #0064fa);
+}
+@media (max-width: 380px) {
+  .mem-trust__item { padding: 8px 10px; gap: 8px; }
+}
+
+/* ---------------------------------------------------------------- „Economisești X lei” lângă preț */
+.mem-savings {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #fdecea;
+  color: #e1251b;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.mem-savings[hidden] {
+  display: none;
 }
 
 /* ---------------------------------------------------------------- etichete */
@@ -605,4 +751,12 @@
 @media only screen and (max-width: 768px) {
   .mem-sale-pill { top: 8px; left: 8px; padding: 4px 10px; font-size: 13px; }
   .mem-sale-pill--product { top: 12px; left: 12px; font-size: 15px; }
+}
+
+/* etichetele de deasupra titlului produsului */
+.mem-badges--title {
+  margin-bottom: 8px;
+}
+@media (max-width: 768px) {
+  .product-block--header .mem-badges--title { justify-content: center; }
 }

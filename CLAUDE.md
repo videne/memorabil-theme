@@ -8,8 +8,10 @@ Unde apar: imaginea mare și „De ce Memorabil” de pe prima pagină, banda ca
 finalul Manifestului și Organization din snippets/structured-data.liquid (datele pentru Google, doar pe prima pagină).
 
 ## Ce e custom (prefix mem-)
-- snippets/mem-delivery.liquid + assets/mem.js: „Ajunge estimativ …” = zile de producție + zile de curier (zile lucrătoare; ziua în care începe producția e prima zi)
-- snippets/mem-badges.liquid: Nou / Bestseller (tag) / Reducere
+- snippets/mem-delivery.liquid + assets/mem.js: cardul „Livrare estimată” (alb, chenar albastru deschis): „Ajunge estimativ joi, 26 nov” = zile de producție + zile de curier (zile lucrătoare; ziua în care începe producția e prima zi), o singură dată, fără interval. Cronologie cu 3 pași: Comandat · Azi, Predat curierului · data (producție − 1 zile lucrătoare de la start), Livrat · aceeași dată ca în titlu. Jos, ceasul: „Comandă în următoarele H h M min ca să fie procesată azi.” sau „Comanda se procesează mâine / luni, 30 nov.” În textele noi nu se vorbește despre imprimare sau producție. Fără JavaScript rămâne „Livrare în maximum X zile lucrătoare”.
+- snippets/mem-trust.liquid (bloc „Memorabil: garanții”, mem_trust): grilă 2×2 cu iconiță + text scurt, maximum 4 (iconițe: leaf, pin, return, lock, truck, drop, box), în fiecare șablon de produs imediat după butonul de cumpărare. Textele diferă pe șablon (material, livrare gratuită peste 300 lei, retur în 14 zile, plată cu cardul) și trebuie să rămână adevărate; returul de 14 zile e confirmat în Politica de retur (produsele din catalog se pot returna, exceptând cele personalizate la cererea clientului). Nu pune „imprimat în București”.
+- snippets/mem-savings.liquid + elementul `mem-savings` din assets/mem.js: pastila „Economisești X lei” (roșu #e1251b pe fond deschis) lângă preț, doar când varianta aleasă are preț vechi; se actualizează la schimbarea variantei.
+- snippets/mem-badges.liquid: Nou / Bestseller (tag) / Reducere; pe produs apar deasupra titlului (randate din product-template.liquid, în antet)
 - snippets/mem-sale-pill.liquid: stickerul roșu „−X%” (#e1251b) din colțul stânga sus al pozei, pe cardurile de produs (product-grid-item.liquid, în locul etichetei „Reducere” Streamline) și pe prima poză din pagina produsului (product-images.liquid). Stilurile în mem.css (.mem-sale-pill).
 - snippets/mem-details-tabs.liquid: tab-urile Detalii și materiale, Îngrijire, Siguranța produsului.
   Valoarea de pe produs (metafield custom.*) are prioritate; altfel se folosește valoarea comună din setările blocului
