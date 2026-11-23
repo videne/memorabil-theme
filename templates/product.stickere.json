@@ -6,7 +6,7 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- * Memorabil: folosește blocurile mem_badges, mem_delivery, mem_details din sections/main-product.liquid.
+ * Memorabil: folosește blocurile mem_badges, mem_delivery, mem_trust, mem_details din sections/main-product.liquid.
  */
 {
   "sections": {
@@ -67,6 +67,19 @@
           "type": "share",
           "settings": {}
         },
+        "mem_trust": {
+          "type": "mem_trust",
+          "settings": {
+            "icon_1": "drop",
+            "text_1": "Vinil rezistent la apă",
+            "icon_2": "box",
+            "text_2": "Pleacă din stoc",
+            "icon_3": "return",
+            "text_3": "Retur în 14 zile",
+            "icon_4": "lock",
+            "text_4": "Plată sigură cu cardul"
+          }
+        },
         "mem_badges": {
           "type": "mem_badges",
           "settings": {}
@@ -96,6 +109,7 @@
         "variant_picker",
         "inventory_status",
         "buy_buttons",
+        "mem_trust",
         "mem_delivery",
         "text_9HMpCh",
         "mem_details",

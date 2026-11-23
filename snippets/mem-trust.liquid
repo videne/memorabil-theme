@@ -1,0 +1,43 @@
+{%- comment -%}
+  Memorabil: garanții scurte, în grilă 2×2 (bloc mem_trust). Maximum 4, fiecare cu iconiță + text.
+  Textele trebuie să rămână adevărate (retur 14 zile, plată cu cardul etc.).
+  Iconițe: leaf, pin, return, lock, truck, drop, box.
+{%- endcomment -%}
+{%- capture items -%}
+  {%- for i in (1..4) -%}
+    {%- liquid
+      assign text_key = 'text_' | append: i
+      assign icon_key = 'icon_' | append: i
+      assign item_text = block.settings[text_key]
+      assign item_icon = block.settings[icon_key]
+    -%}
+    {%- if item_text != blank -%}
+      <li class="mem-trust__item">
+        <svg class="mem-trust__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+          {%- case item_icon -%}
+            {%- when 'leaf' -%}
+              <path d="M5 19c0-8 5-13 14-14 0 9-5 14-13 14"/><path d="M5 19c2-5 5-8 9-10"/>
+            {%- when 'pin' -%}
+              <path d="M12 21s-6.5-5.7-6.5-11a6.5 6.5 0 0 1 13 0c0 5.3-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.4"/>
+            {%- when 'return' -%}
+              <path d="M9 7 4.5 11.5 9 16"/><path d="M4.5 11.5H15a4.5 4.5 0 0 1 0 9h-3"/>
+            {%- when 'lock' -%}
+              <rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/>
+            {%- when 'truck' -%}
+              <path d="M3 6.5h11v9H3zM14 9.5h4l3 3.2v2.8h-7"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/>
+            {%- when 'drop' -%}
+              <path d="M12 3.5s6 6.2 6 10.5a6 6 0 0 1-12 0c0-4.3 6-10.5 6-10.5Z"/>
+            {%- when 'box' -%}
+              <path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5v-9Z"/><path d="M3 7.5 12 12l9-4.5M12 12v9"/>
+          {%- endcase -%}
+        </svg>
+        <span>{{ item_text | escape }}</span>
+      </li>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- if items != blank -%}
+  <div class="product-block mem-trust-block" {{ block.shopify_attributes }}>
+    <ul class="mem-trust">{{ items }}</ul>
+  </div>
+{%- endif -%}

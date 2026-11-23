@@ -1,0 +1,20 @@
+{%- comment -%}
+  Memorabil: „Economisești X lei”, lângă preț, doar când varianta aleasă are preț vechi mai mare decât prețul actual.
+  Se actualizează din assets/mem.js (element mem-savings) când se schimbă varianta.
+  Nu apare dacă produsul nu are nicio variantă la reducere.
+{%- endcomment -%}
+{%- if product.compare_at_price_max > product.price -%}
+  {%- liquid
+    assign saved_cents = 0
+    if current_variant.compare_at_price > current_variant.price
+      assign saved_cents = current_variant.compare_at_price | minus: current_variant.price
+    endif
+    assign saved_rest = saved_cents | modulo: 100
+    if saved_rest == 0
+      assign saved_text = saved_cents | divided_by: 100
+    else
+      assign saved_text = saved_cents | divided_by: 100.0 | round: 2 | replace: '.', ','
+    endif
+  -%}
+  <mem-savings class="mem-savings"{% if saved_cents == 0 %} hidden{% endif %}>Economisești <span data-mem-saved>{{ saved_text }}</span> lei</mem-savings>
+{%- endif -%}
