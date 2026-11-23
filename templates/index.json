@@ -47,7 +47,7 @@
           "settings": {
             "icon": "truck",
             "title": "Ajunge în maximum 5 zile lucrătoare",
-            "text": "<p>Imprimăm comanda în cel mult 3 zile, iar curierul o aduce în 1–2 zile.</p>"
+            "text": "<p>Acasă sau la un locker al curierului preferat. 19 lei, gratuit peste 300 de lei.</p>"
           }
         },
         "av_retur": {
@@ -314,7 +314,7 @@
           "type": "text",
           "settings": {
             "enlarge_text": false,
-            "text": "<p>Unele replici se pierd printre mesaje. Altele rămân ani la rând. Le repeți cu prietenii, la birou, la o cafea. Și râzi de fiecare dată ca prima oară.</p><p>Noi le ducem mai departe: pe tricouri și hanorace Stanley/Stella, din bumbac organic certificat GOTS. Moi, trainice, imprimate în București, doar când le alegi tu.</p><p>Pentru că unele vorbe merită mai mult decât să fie spuse. Merită purtate.<br>Și pentru că nu ne stă bine să tăcem.</p><p><a href=\"/pages/despre-noi\">Citește manifestul →</a></p>"
+            "text": "<p>Unele replici se pierd printre mesaje. Altele rămân ani la rând. Le repeți cu prietenii, la birou, la o cafea. Și râzi de fiecare dată ca prima oară.</p><p>Noi le ducem mai departe: pe tricouri și hanorace Stanley/Stella, din bumbac organic certificat GOTS. Moi, trainice, făcute să fie purtate des.</p><p>Pentru că unele vorbe merită mai mult decât să fie spuse. Merită purtate.<br>Și pentru că nu ne stă bine să tăcem.</p><p><a href=\"/pages/despre-noi\">Citește manifestul →</a></p>"
           }
         }
       },
@@ -434,7 +434,7 @@
         "image2_mask": "none",
         "subtitle": "De ce Memorabil",
         "title": "",
-        "text": "<h2>Pentru că nu ne stă bine să tăcem.</h2><p>Replicile pe care le știe toată lumea merită purtate, nu doar citate. Le punem pe tricouri și hanorace Stanley/Stella, din bumbac organic certificat GOTS, și le imprimăm la comandă, în București, abia după ce comanzi.</p>",
+        "text": "<h2>Pentru că nu ne stă bine să tăcem.</h2><p>Replicile pe care le știe toată lumea merită purtate, nu doar citate. Le punem pe tricouri și hanorace Stanley/Stella, din bumbac organic certificat GOTS, moi și făcute să țină.</p>",
         "button_label": "Despre noi",
         "button_link": "shopify://pages/despre-noi",
         "button_style": "secondary",
