@@ -6,8 +6,25 @@
 {%- endcomment -%}
 {%- liquid
   assign production = settings.mem_production_days | default: 3
+  comment
+    Produsele din stoc (tipurile din Theme settings → Memorabil → „Tipuri de produs din stoc”, ex. felicitări, stickere)
+    pleacă la curier după mem_stock_production_days zile lucrătoare de la comandă. În calcul, ziua de start e prima zi,
+    deci „a doua zi lucrătoare” înseamnă 2 zile de pregătire.
+  endcomment
+  assign stock_types = settings.mem_stock_types | downcase | split: ','
+  assign product_type = product.type | downcase | strip
+  for t in stock_types
+    assign t_clean = t | strip
+    if t_clean != blank and t_clean == product_type
+      assign stock_days = settings.mem_stock_production_days | default: 1
+      assign production = stock_days | plus: 1
+    endif
+  endfor
   assign transit = settings.mem_transit_days | default: 2
   assign total_days = production | plus: transit
+  if stock_days
+    assign total_days = stock_days | plus: transit
+  endif
   assign holidays = settings.mem_holidays | strip_newlines | replace: ' ', ''
 -%}
 {%- if product.available -%}

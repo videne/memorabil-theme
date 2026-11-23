@@ -799,6 +799,24 @@
         "default": 3
       },
       {
+        "type": "text",
+        "id": "mem_stock_types",
+        "label": "Tipuri de produs din stoc",
+        "info": "Tipurile de produs (Product type) care sunt deja pe stoc, separate prin virgulă. Pentru ele, comanda pleacă la curier mai repede.",
+        "default": "FELICITARE, Stickere"
+      },
+      {
+        "type": "range",
+        "id": "mem_stock_production_days",
+        "label": "Produse din stoc: zile până la curier",
+        "info": "Câte zile lucrătoare după comandă e predat coletul curierului (1 = a doua zi lucrătoare).",
+        "min": 0,
+        "max": 5,
+        "step": 1,
+        "unit": "zi",
+        "default": 1
+      },
+      {
         "type": "range",
         "id": "mem_transit_days",
         "label": "Zile lucrătoare de livrare (curier)",
