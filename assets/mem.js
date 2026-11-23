@@ -66,7 +66,9 @@ class MemDeliveryEstimate extends HTMLElement {
 
     // Ziua în care comanda intră în producție: azi, dacă e zi lucrătoare și nu a trecut ora limită.
     const start = new Date(today);
-    const startsToday = this.isWorkingDay(today) && minutesNow < cutoff;
+    // Produsele din stoc (data-stock) n-au oră limită: o comandă din ziua asta pleacă la curier în următoarea zi lucrătoare.
+    const isStock = this.dataset.stock === 'true';
+    const startsToday = this.isWorkingDay(today) && (isStock || minutesNow < cutoff);
     if (!startsToday) {
       do {
         start.setUTCDate(start.getUTCDate() + 1);
@@ -98,7 +100,11 @@ class MemDeliveryEstimate extends HTMLElement {
 
     if (!this.noteEl) return;
     const noteText = this.querySelector('[data-delivery-note-text]');
-    if (startsToday) {
+    if (isStock) {
+      noteText.textContent = startsToday
+        ? 'Comandă azi și pleacă la curier în următoarea zi lucrătoare.'
+        : `Comanda pleacă la curier ${relative(dispatched) ? relative(dispatched).toLowerCase() : short(dispatched)}.`;
+    } else if (startsToday) {
       const left = cutoff - minutesNow;
       const h = Math.floor(left / 60);
       const m = left % 60;

@@ -32,6 +32,7 @@
     <mem-delivery-estimate
       class="mem-delivery"
       data-production-days="{{ production }}"
+      data-stock="{% if stock_days %}true{% else %}false{% endif %}"
       data-transit-days="{{ transit }}"
       data-cutoff-hour="{{ settings.mem_cutoff_hour | default: 14 }}"
       data-holidays="{{ holidays | escape }}"
